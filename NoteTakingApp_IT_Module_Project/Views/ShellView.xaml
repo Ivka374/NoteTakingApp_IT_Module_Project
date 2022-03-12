@@ -9,6 +9,7 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True">
+    
     <Border Background="#272537" CornerRadius="20">
         <Grid>
 
@@ -40,7 +41,7 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"/>
 
-                <RadioButton Content="Pinned"
+                <RadioButton Content="Favourites"
                              MinHeight="50"
                              Foreground="White"
                              FontSize="14"
@@ -49,13 +50,14 @@
                 <Expander Header="Tags" 
                           Foreground="White"
                           MinHeight="50"
-                          ExpandDirection="Down" IsExpanded="True"
-                          FontSize="14">
+                          ExpandDirection="Down" IsExpanded="False"
+                          FontSize="14"
+                          Style="{StaticResource ExpanderMenuTheme}">
 
-                    <ItemsControl x:Name="listOfTags" ItemsSource="{Binding listOfTags}">
+                    <ItemsControl x:Name="Tags">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <RadioButton Content="{Binding Name}"
+                                <RadioButton Content="{Binding Path=Name, Mode=OneWayToSource}"
                                            VerticalAlignment="Center"
                                            Foreground="White"
                                            MinHeight="50"
@@ -86,6 +88,9 @@
 
             </Button>
 
+            <ContentControl x:Name="ActiveItem"
+                            Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3"
+                            Margin="10"/>
 
             <!-- Column 2 -->
             <ToggleButton Grid.Column="2"
@@ -103,19 +108,20 @@
                          Height="35" MinWidth="60"
                         Margin="0,0,0,0" Grid.ColumnSpan="2" VerticalAlignment="Top">
 
-                <Button x:Name="minimize" 
+                <Button x:Name="Minimize" 
                         Background="Transparent"
                         BorderBrush="Transparent">
                     <Image Source="/Images/minimize.png" Stretch="Fill"/>
                 </Button>
-                <Button x:Name="maximize" 
+                <Button x:Name="Maximize" 
                         Background="Transparent"
                         BorderBrush="Transparent">
                     <Image Source="/Images/maximize.png" Stretch="Fill"/>
                 </Button>
-                <Button x:Name="close" 
+                <Button x:Name="Close" 
                         Background="Transparent"
-                        BorderBrush="Transparent">
+                        BorderBrush="Transparent"
+                        Click="Close_Click">
                     <Image Source="/Images/close.png" Stretch="Fill"/>
                 </Button>
 

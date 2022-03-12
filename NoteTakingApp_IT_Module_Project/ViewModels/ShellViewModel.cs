@@ -1,42 +1,36 @@
 ﻿using Caliburn.Micro;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using NoteTakingApp_UI.Models;
+
 
 namespace NoteTakingApp_UI.ViewModels
 {
-    public class Tag
-    {
-        public Tag(string name)
-        {
-            Name = name;
-        }
-
-        public string Name { get; set; }
-    }
-
-    public class ListOfTags
-    {
-        public ListOfTags(string title)
-        {
-            Title = title;
-        }
-
-        public string Title { get; set; }
-        public List<Tag> TagsList { get; set; } = new List<Tag>();
-
-        public void AddTag(Tag tag)
-        {
-            TagsList.Add(tag);
-        }
-    }
     public class ShellViewModel : Conductor<object>
     {
+        private BindableCollection<TagModel> _tags = new BindableCollection<TagModel>();
+
+        public BindableCollection<TagModel> Tags
+        {
+            get { return _tags; }
+            set
+            {
+                _tags = value;
+            }
+        }
+
         public ShellViewModel()
         {
-            ListOfTags listOfTags = new ListOfTags("Tags");
-            Tag personal = new Tag("Personal");
-            Tag work = new Tag("Work");
+            //simulating content of tags - probablu make them default
+            Tags.Add(new TagModel { Name = "Personal" });
+            Tags.Add(new TagModel { Name = "Work" });
+        }
+
+        public void LoadHomePage()
+        {
+            ActivateItemAsync(new HomePageViewModel());
+        }
+        public void LoadFavouritesPage()
+        {
+            ActivateItemAsync(new FavouritesPageViewModel());
         }
     }
 }

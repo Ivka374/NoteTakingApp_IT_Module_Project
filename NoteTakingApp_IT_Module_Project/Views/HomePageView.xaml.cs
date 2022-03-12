@@ -8,23 +8,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace NoteTakingApp_UI.Views
 {
     /// <summary>
-    /// Interaction logic for ShellView.xaml
+    /// Interaction logic for HomeView.xaml
     /// </summary>
-    public partial class ShellView : Window
+    public partial class HomeView : UserControl
     {
-        public ShellView()
+        public HomeView()
         {
             InitializeComponent();
-        }
-
-        private void Close_Click(object sender, RoutedEventArgs e)
-        {
-            //ShellView.C;
         }
     }
 }
