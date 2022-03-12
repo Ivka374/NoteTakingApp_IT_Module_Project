@@ -5,17 +5,16 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                
+
                 <ResourceDictionary>
                     <local:Bootstrapper x:Key="Bootstrapper"/>
                 </ResourceDictionary>
 
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/ExpanderMenuTheme.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-
-        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
 
     </Application.Resources>
 </Application>

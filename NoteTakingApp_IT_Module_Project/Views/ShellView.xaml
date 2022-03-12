@@ -16,7 +16,8 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -24,6 +25,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
+            <!-- Column 0 -->
             <TextBlock Text="Logo"
                        VerticalAlignment="Center" HorizontalAlignment="Left"
                        Margin="20,0,0,0"
@@ -44,11 +46,32 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"/>
 
+                <Expander Header="Tags" 
+                          Foreground="White"
+                          MinHeight="50"
+                          ExpandDirection="Down" IsExpanded="True"
+                          FontSize="14">
+
+                    <ItemsControl x:Name="listOfTags" ItemsSource="{Binding listOfTags}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <RadioButton Content="{Binding Name}"
+                                           VerticalAlignment="Center"
+                                           Foreground="White"
+                                           MinHeight="50"
+                                           Style="{StaticResource MenuButtonTheme}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                </Expander>
+
             </StackPanel>
 
+            <!-- Column 1 -->
             <Button Grid.Column="1" 
                     MinWidth="50" MinHeight="50"
-                    Margin="10,0"
+                    Margin="10,0,10,0"
                     VerticalAlignment="Center"
                     BorderBrush="MediumPurple" BorderThickness="3"
                     Background="Transparent">
@@ -59,18 +82,44 @@
                     </Style>
                 </Button.Resources>
 
-                <StackPanel>
-                    <Image Source="Images/plus.jpg"/>
-                </StackPanel>
-                
+                <Image Source="/Images/plus.png" Height="35" Width="35"/>
+
             </Button>
 
-            <ToggleButton Grid.Column="4"
+
+            <!-- Column 2 -->
+            <ToggleButton Grid.Column="2"
                           MinHeight="30" MinWidth="40"
-                          HorizontalAlignment="Right" VerticalAlignment="Center"
-                          Margin="10,20,20,10">
+                          HorizontalAlignment="Right" VerticalAlignment="Top"
+                          Margin="0,28,20,0">
                 Dark mode
             </ToggleButton>
+
+
+            <!-- Column 3-->
+            <StackPanel Grid.Column="3"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                         Height="35" MinWidth="60"
+                        Margin="0,0,0,0" Grid.ColumnSpan="2" VerticalAlignment="Top">
+
+                <Button x:Name="minimize" 
+                        Background="Transparent"
+                        BorderBrush="Transparent">
+                    <Image Source="/Images/minimize.png" Stretch="Fill"/>
+                </Button>
+                <Button x:Name="maximize" 
+                        Background="Transparent"
+                        BorderBrush="Transparent">
+                    <Image Source="/Images/maximize.png" Stretch="Fill"/>
+                </Button>
+                <Button x:Name="close" 
+                        Background="Transparent"
+                        BorderBrush="Transparent">
+                    <Image Source="/Images/close.png" Stretch="Fill"/>
+                </Button>
+
+            </StackPanel>
 
         </Grid>
     </Border>
