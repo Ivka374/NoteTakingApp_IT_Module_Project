@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NoteTakingApp_UI.ViewModels
 {
-    public class FavouritesPageViewModel : Screen
+    public class FavouritesPageViewModel : Conductor<object>
     {
         //maybe connect to list of favourite/pinned notes here
     }

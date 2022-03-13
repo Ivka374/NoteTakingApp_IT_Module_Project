@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NoteTakingApp_UI.ViewModels
 {
-    public class HomePageViewModel : Screen
+    public class HomePageViewModel : Conductor<object>
     {
         //maybe connect to full notes database here?
     }
