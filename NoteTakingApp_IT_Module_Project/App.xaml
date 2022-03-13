@@ -12,6 +12,7 @@
 
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/ExpanderMenuTheme.xaml"/>
+                <ResourceDictionary Source="Theme/FavouritedStarInNoteTheme.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

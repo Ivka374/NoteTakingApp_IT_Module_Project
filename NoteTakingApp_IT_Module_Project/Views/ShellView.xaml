@@ -80,7 +80,7 @@
                     Margin="10,0,10,0"
                     VerticalAlignment="Center"
                     BorderBrush="MediumPurple" BorderThickness="3"
-                    Background="Transparent" Click="CreateNote_Click">
+                    Background="Transparent">
 
                 <Button.Resources>
                     <Style TargetType="Border">
