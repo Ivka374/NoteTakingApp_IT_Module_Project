@@ -21,7 +21,8 @@ namespace NoteTakingApp_IT_Module_Project.Views
         }
 
         public static readonly DependencyProperty EnabledUncheckedProperty =
-            DependencyProperty.Register("EnabledUnchecked",
+            DependencyProperty.Register(
+                "EnabledUnchecked",
                 typeof(ImageSource),
                 typeof(ImageSwappingToggleButton),
                 new PropertyMetadata(onEnabledUncheckedChangedCallback));
