@@ -36,6 +36,7 @@
 
         <!-- These don't work for now -->
         <Style.Triggers>
+            
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=StackPanel}, Path=IsExtended}" Value="False">
                 <Setter Property="Image.Source" Value="/Images/expand.png"/>
             </DataTrigger>
@@ -43,6 +44,11 @@
             <DataTrigger  Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=StackPanel}, Path=IsExtended}" Value="True">
                 <Setter Property="Image.Source" Value="/Images/collapse.png"/>
             </DataTrigger>
+
+            <Trigger Property="IsExpanded" Value="True">
+                <Setter Property="Background" Value="#22202f"/>
+            </Trigger>
+            
         </Style.Triggers>
 
     </Style>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NoteTakingApp_UI.Models
 {
-    class NoteModel
+    public class NoteModel
     {
         public string Title { get; set; }
         public NoteContentModel Content { get; set; }

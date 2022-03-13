@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NoteTakingApp_UI.Models
 {
-    class NoteContentModel
+    public class NoteContentModel
     {
         public string TextContent { get; set; }
         public Score MusicContent { get; set; }

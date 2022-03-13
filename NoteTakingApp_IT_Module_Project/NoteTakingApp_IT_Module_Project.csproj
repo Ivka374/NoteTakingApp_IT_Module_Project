@@ -13,7 +13,9 @@
     <None Remove="Images\maximize.png" />
     <None Remove="Images\minimize.png" />
     <None Remove="Images\plus.png" />
-    <None Remove="Images\star.png" />
+    <None Remove="Images\purpleStar.png" />
+    <None Remove="Images\verticalMenu.png" />
+    <None Remove="Images\whiteStar.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,7 +50,13 @@
     <Resource Include="Images\maximize.png" />
     <Resource Include="Images\minimize.png" />
     <Resource Include="Images\plus.png" />
-    <Resource Include="Images\star.png">
+    <Resource Include="Images\purpleStar.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\verticalMenu.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\whiteStar.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

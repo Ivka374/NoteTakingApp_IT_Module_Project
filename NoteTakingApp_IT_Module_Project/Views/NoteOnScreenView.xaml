@@ -5,14 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NoteTakingApp_UI.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Border MinWidth="200" MinHeight="100" MaxWidth="300">
+             d:DesignHeight="450" d:DesignWidth="800"
+             x:Name="noteOnScreen">
+    <Border Width="200" MinHeight="100" MaxHeight="200">
+        
+        <!-- Background will be changable hopefully -->
         <Border.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                 <GradientStop Color="CornflowerBlue" Offset="0.0"/>
                 <GradientStop Color="MidnightBlue" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
+        
         <Border.Clip>
             <RectangleGeometry RadiusX="10" RadiusY="10"
                                Rect="0,0,200,100"/>
@@ -20,13 +24,13 @@
 
         <Grid>
             <StackPanel>
-                <TextBlock Text="Title"
+                <!-- Maybe will make the text change
+                depending on background -->
+                <TextBlock Text="{Binding Title}"
                            Foreground="White"
                            FontSize="14"
                            Margin="10,5,5,0"/>
-                <TextBlock Text="Quite a bit of content because I 
-                           want to see how it looks and those widths
-                           and heights are starting to torture me"
+                <TextBlock Text="{Binding Content}"
                            TextWrapping="WrapWithOverflow"
                            Foreground="White"
                            FontSize="9"
