@@ -23,11 +23,6 @@ namespace NoteTakingApp_UI.Views
             InitializeComponent();
         }
 
-        private void Close_Click(object sender, RoutedEventArgs e)
-        {
-            //ShellView.C;
-        }
-
         private void CreateNote_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("placeholder");
@@ -37,6 +32,20 @@ namespace NoteTakingApp_UI.Views
         {
             NoteModel note = new NoteModel(); //needs more tweaks for the input
             //will add the note to the database of notes
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.Close();
+        }
+        private void Maximize_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Minimize_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

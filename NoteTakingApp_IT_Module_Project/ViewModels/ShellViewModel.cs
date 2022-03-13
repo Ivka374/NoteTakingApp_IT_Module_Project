@@ -35,6 +35,5 @@ namespace NoteTakingApp_UI.ViewModels
         {
             ActivateItemAsync(new FavouritesPageViewModel());
         }
-
     }
 }
