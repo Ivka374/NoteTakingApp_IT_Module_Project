@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTakingApp_IT_Module_Project", "NoteTakingApp_IT_Module_Project\NoteTakingApp_IT_Module_Project.csproj", "{5B55D40B-DD7A-482A-AE3F-088D35C648F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTakingApp_UI", "NoteTakingApp_IT_Module_Project\NoteTakingApp_UI.csproj", "{5B55D40B-DD7A-482A-AE3F-088D35C648F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
