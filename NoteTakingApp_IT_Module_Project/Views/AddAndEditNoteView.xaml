@@ -69,10 +69,10 @@
                         Margin="10,10,20,0">
 
                 <!-- Fvourited Note Button -->
-                <local:ImageSwappingToggleButton
+                <local:ImageSwappingToggleButton VerticalAlignment="Center"
                     IsChecked="False"
                     IsEnabled="True"
-                    EnabledChecked="/Images/whiteStar.png"
+                    EnabledChecked="/Images/purpleStar.png"
                     EnabledUnckecked="/Images/whiteStar.png"
                     DisabledUnchecked="/Images/purpleStar.png"/>
 
@@ -83,7 +83,8 @@
                         x:Name="NoteSettingsButton">
                     <Image Source="/Images/verticalMenu.png"
                            Stretch="None"/>
-
+                    
+                    <!-- Settings Menu -->
                     <Button.ContextMenu>
                         <ContextMenu x:Name="NoteSettings" 
                                      PlacementRectangle=

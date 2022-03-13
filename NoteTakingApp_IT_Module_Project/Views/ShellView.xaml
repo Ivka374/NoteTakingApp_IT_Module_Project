@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:NoteTakingApp_UI.Views" xmlns:viewmodels="clr-namespace:NoteTakingApp_UI.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ShellViewModel}"
+        xmlns:local="clr-namespace:NoteTakingApp_UI.Views" xmlns:viewmodels="clr-namespace:NoteTakingApp_UI.ViewModels" xmlns:local1="clr-namespace:NoteTakingApp_IT_Module_Project.Views" d:DataContext="{d:DesignInstance Type=viewmodels:ShellViewModel}"
         mc:Ignorable="d"
         Height="600" Width="920"
         WindowStyle="None"
@@ -96,13 +96,16 @@
                             Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3"
                             Margin="10"/>
 
-            <!-- Column 2 - for my dynamic toggle button-->
-            <ToggleButton Grid.Column="2"
-                          MinHeight="30" MinWidth="40"
-                          HorizontalAlignment="Right" VerticalAlignment="Top"
-                          Margin="0,28,20,0">
-                Dark mode
-            </ToggleButton>
+            <!-- Column 2 -->
+            <local1:ImageSwappingToggleButton Grid.Column="2" 
+                                              HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"
+                                              Margin="10,20,10,15"
+                IsChecked="False"
+                IsEnabled="True"
+                EnabledChecked="/Images/lightModeOn.png"
+                EnabledUnckecked="/Images/darkModeOn.png"
+                DisabledUnchecked="/Images/lightModeOn.png"/>
 
 
             <!-- Column 3-->
