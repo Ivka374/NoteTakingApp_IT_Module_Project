@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using NoteTakingApp_UI.Models;
 
 namespace NoteTakingApp_UI.Data
 {
     class NoteData
     {
         //Template for SQL Commands from previous projects
-        /*
-        public List<NotesClass> GetAll()
+        
+        public List<NoteModel> GetAll()
         {
-            var notesList = new List<NotesClass>();
+            var notesList = new List<NoteModel>();
             using (var connection = Database.GetConnection())
             {
                 var command = new MySqlCommand("SELECT * FROM notes", connection);
@@ -21,11 +23,11 @@ namespace NoteTakingApp_UI.Data
                 {
                         while (reader.Read())
                         {
-                            var note = new Note(
-                                reader.GetInt32(0),
+                            var note = new NoteModel(
+                                /*reader.GetInt32(0),
                                 reader.GetString(1),
                                 reader.GetDecimal(2),
-                                reader.GetInt32(3)
+                                reader.GetInt32(3)*/
                             );
 
                             notesList.Add(note);
@@ -38,9 +40,9 @@ namespace NoteTakingApp_UI.Data
             return notesList;
         }
 
-        public Note Get(int id)
+        public NoteModel Get(int id)
         {
-            Note note = null;
+            NoteModel note = null;
             using (var connection = Database.GetConnection())
             {
                 var command = new MySqlCommand("SELECT * FROM notes WHERE Id=@id", connection);
@@ -50,11 +52,11 @@ namespace NoteTakingApp_UI.Data
                 {
                     if(reader.Read())
                     {
-                        note = new Note(
-                                reader.GetInt32(0),
+                        note = new NoteModel(
+                                /*reader.GetInt32(0),
                                 reader.GetString(1),
                                 reader.GetDecimal(2),
-                                reader.GetInt32(3)
+                                reader.GetInt32(3)*/
                         );
                     }
                 }
@@ -65,24 +67,24 @@ namespace NoteTakingApp_UI.Data
             return note;
         }
 
-        public void Add(Note note)
+        public void Add(NoteModel note)
         {
             using (var connection = Database.GetConnection()){
                 var command = new MySqlCommand("INSERT INTO note (someAttributes) VALUES(@someAttributes)", connection);
-                command.Parameters.AddWithValue("name", product.Name);
+                command.Parameters.AddWithValue("name", note.Title);
                 connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
             }
         }
 
-        public void Update(Note note)
+        public void Update(NoteModel note)
         {
             using (var connection = Database.GetConnection())
             {
                 var command = new MySqlCommand("UPDATE product SET Name=@name,...  WHERE Id=@id", connection);
-                command.Parameters.AddWithValue("id", note.Id);
-                command.Parameters.AddWithValue("name", note.Name);
+                //command.Parameters.AddWithValue("id", note.Id); NoteModel doesn't have an ID parameter
+                command.Parameters.AddWithValue("name", note.Title);
                 connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -102,7 +104,5 @@ namespace NoteTakingApp_UI.Data
 
             }
         }
-    }
-        */
     }
 }
