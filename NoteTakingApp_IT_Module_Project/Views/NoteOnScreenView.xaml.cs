@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace NoteTakingApp_UI.Views
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for NoteOnScreenView.xaml
     /// </summary>
-    public partial class HomePageView : UserControl
+    public partial class NoteOnScreenView : UserControl
     {
-        public HomePageView()
+        public NoteOnScreenView()
         {
             InitializeComponent();
         }

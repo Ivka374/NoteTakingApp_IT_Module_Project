@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:NoteTakingApp_UI.Views"
+        xmlns:local="clr-namespace:NoteTakingApp_UI.Views" xmlns:viewmodels="clr-namespace:NoteTakingApp_UI.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ShellViewModel}"
         mc:Ignorable="d"
         Height="600" Width="920"
         WindowStyle="None"
@@ -35,13 +35,15 @@
 
             <StackPanel Grid.Row="1" MinWidth="200">
 
-                <RadioButton Content="Home"
+                <RadioButton x:Name="LoadHomePage"
+                             Content="Home"
                              MinHeight="50"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"/>
 
-                <RadioButton Content="Favourites"
+                <RadioButton x:Name="LoadFavouritesPage"
+                             Content="Favourites"
                              MinHeight="50"
                              Foreground="White"
                              FontSize="14"
@@ -54,7 +56,7 @@
                           FontSize="14"
                           Style="{StaticResource ExpanderMenuTheme}">
 
-                    <ItemsControl x:Name="Tags">
+                    <ItemsControl x:Name="Tags" ItemsSource="{Binding Tags}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <RadioButton Content="{Binding Path=Name, Mode=OneWayToSource}"
@@ -71,12 +73,13 @@
             </StackPanel>
 
             <!-- Column 1 -->
-            <Button Grid.Column="1" 
+            <Button x:Name="CreateNote"
+                    Grid.Column="1" 
                     MinWidth="50" MinHeight="50"
                     Margin="10,0,10,0"
                     VerticalAlignment="Center"
                     BorderBrush="MediumPurple" BorderThickness="3"
-                    Background="Transparent">
+                    Background="Transparent" Click="CreateNote_Click">
 
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -92,7 +95,7 @@
                             Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3"
                             Margin="10"/>
 
-            <!-- Column 2 -->
+            <!-- Column 2 - for my dynamic toggle button-->
             <ToggleButton Grid.Column="2"
                           MinHeight="30" MinWidth="40"
                           HorizontalAlignment="Right" VerticalAlignment="Top"
@@ -120,8 +123,7 @@
                 </Button>
                 <Button x:Name="Close" 
                         Background="Transparent"
-                        BorderBrush="Transparent"
-                        Click="Close_Click">
+                        BorderBrush="Transparent">
                     <Image Source="/Images/close.png" Stretch="Fill"/>
                 </Button>
 

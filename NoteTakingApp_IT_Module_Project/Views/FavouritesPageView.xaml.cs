@@ -16,9 +16,9 @@ namespace NoteTakingApp_UI.Views
     /// <summary>
     /// Interaction logic for FavouritesView.xaml
     /// </summary>
-    public partial class FavouritesView : UserControl
+    public partial class FavouritesPageView : UserControl
     {
-        public FavouritesView()
+        public FavouritesPageView()
         {
             InitializeComponent();
         }

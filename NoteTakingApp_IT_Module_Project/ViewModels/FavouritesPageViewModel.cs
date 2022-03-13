@@ -7,5 +7,6 @@ namespace NoteTakingApp_UI.ViewModels
 {
     public class FavouritesPageViewModel : Screen
     {
+        //maybe connect to list of favourite/pinned notes here
     }
 }
