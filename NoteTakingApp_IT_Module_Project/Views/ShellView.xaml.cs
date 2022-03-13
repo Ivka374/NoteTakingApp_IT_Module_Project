@@ -1,4 +1,5 @@
 ﻿using NoteTakingApp_UI.Models;
+using NoteTakingApp_UI.ViewModels;
 using System.Windows;
 
 namespace NoteTakingApp_UI.Views
@@ -11,6 +12,10 @@ namespace NoteTakingApp_UI.Views
         public ShellView()
         {
             InitializeComponent();
+            //continuing example
+            var viewModel = new MusicViewModel();
+            DataContext = viewModel;
+            viewModel.LoadTestData();
         }
 
         private void AddNote()
@@ -21,7 +26,7 @@ namespace NoteTakingApp_UI.Views
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+
         }
         private void Maximize_Click(object sender, RoutedEventArgs e)
         {

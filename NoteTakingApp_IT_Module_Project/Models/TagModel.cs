@@ -9,6 +9,5 @@ namespace NoteTakingApp_UI.Models
     {
         public string Name { get; set; }
         public ConsoleColor colour { get; set; } //is this the right type?
-        public Image icon { get; set; }
     }
 }

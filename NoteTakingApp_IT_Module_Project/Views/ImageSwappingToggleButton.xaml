@@ -16,37 +16,58 @@
                     <Style.Triggers>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition 
-                                                Binding="{Binding
-                                                RelativeSource={RelativeSource FindAncestor,
-                                                AncestorType={x:Type ToggleButton}},
-                                                Path=IsChecked}"
-                                                Value="True"/>
+                                <Condition Binding="{Binding
+                                           RelativeSource={RelativeSource FindAncestor,
+                                           AncestorType={x:Type ToggleButton}},
+                                           Path=IsChecked}"
+                                           Value="True"/>
                                 <Condition Binding="{Binding 
                                                 RelativeSource={RelativeSource Self},
                                                 Path=IsEnabled}"
-                                                       Value="True"/>
+                                                Value="True"/>
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Source"
-                                                Value="{Binding
+                                            Value="{Binding
+                                            RelativeSource={RelativeSource FindAncestor,
+                                            AncestorType={x:Type UserControl}},
+                                            Path=EnabledChecked}"/>
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding
+                                           RelativeSource={RelativeSource FindAncestor,
+                                           AncestorType={x:Type ToggleButton}},
+                                           Path=IsChecked}"
+                                           Value="False"/>
+                                <Condition Binding="{Binding 
+                                                RelativeSource={RelativeSource Self},
+                                                Path=IsEnabled}"
+                                                Value="True"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Source"
+                                            Value="{Binding
                                             RelativeSource={RelativeSource FindAncestor,
                                             AncestorType={x:Type UserControl}},
                                             Path=EnabledUnchecked}"/>
                         </MultiDataTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding
+                                           RelativeSource={RelativeSource FindAncestor,
+                                           AncestorType={x:Type ToggleButton}},
+                                           Path=IsChecked}"
+                                           Value="False"/>
                                 <Condition Binding="{Binding 
-                                                RelativeSource={RelativeSource FindAncestor,
-                                                AncestorType={x:Type ToggleButton}},
-                                                Path=IsChecked}"
-                                                       Value="False"/>
-                            </MultiTrigger.Conditions>
+                                                RelativeSource={RelativeSource Self},
+                                                Path=IsEnabled}"
+                                                Value="False"/>
+                            </MultiDataTrigger.Conditions>
                             <Setter Property="Source"
-                                                Value="{Binding
+                                            Value="{Binding
                                             RelativeSource={RelativeSource FindAncestor,
                                             AncestorType={x:Type UserControl}},
                                             Path=DisabledUnchecked}"/>
-                        </MultiTrigger>
+                        </MultiDataTrigger>
                     </Style.Triggers>
                 </Style>
             </Image.Style>

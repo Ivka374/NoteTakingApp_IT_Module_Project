@@ -9,7 +9,9 @@
   <ItemGroup>
     <None Remove="Images\close.png" />
     <None Remove="Images\collapse.png" />
+    <None Remove="Images\darkModeOn.png" />
     <None Remove="Images\expand.png" />
+    <None Remove="Images\lightModeOn.png" />
     <None Remove="Images\maximize.png" />
     <None Remove="Images\minimize.png" />
     <None Remove="Images\plus.png" />
@@ -44,7 +46,13 @@
     <Resource Include="Images\collapse.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\darkModeOn.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\expand.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\lightModeOn.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\maximize.png" />
