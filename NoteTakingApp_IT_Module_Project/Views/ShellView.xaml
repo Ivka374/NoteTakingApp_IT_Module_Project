@@ -8,7 +8,8 @@
         Height="600" Width="920"
         WindowStyle="None"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True"
+        x:Name="MainWindow">
     
     <Border Background="#272537" CornerRadius="20">
         <Grid>
@@ -113,12 +114,12 @@
 
                 <Button x:Name="Minimize" 
                         Background="Transparent"
-                        BorderBrush="Transparent">
+                        BorderBrush="Transparent" Click="Minimize_Click">
                     <Image Source="/Images/minimize.png" Stretch="Fill"/>
                 </Button>
                 <Button x:Name="Maximize" 
                         Background="Transparent"
-                        BorderBrush="Transparent">
+                        BorderBrush="Transparent" Click="Maximize_Click">
                     <Image Source="/Images/maximize.png" Stretch="Fill"/>
                 </Button>
                 <Button x:Name="Close" 
