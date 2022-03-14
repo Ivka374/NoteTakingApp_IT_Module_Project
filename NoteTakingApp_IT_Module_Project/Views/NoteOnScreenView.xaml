@@ -26,14 +26,16 @@
             <StackPanel>
                 <!-- Maybe will make the text change
                 depending on background -->
-                <TextBlock Text="{Binding Title}"
+                <TextBlock Text="{Binding Source=CurrentNote,
+                    Path=Title}"
                            Foreground="White"
-                           FontSize="14"
+                           FontSize="14" FontFamily="/Font/#Poppins"
                            Margin="10,5,5,0"/>
-                <TextBlock Text="{Binding Content}"
+                <TextBlock Text="{Binding Source=CurrentNote,
+                    Path=Content}"
                            TextWrapping="WrapWithOverflow"
                            Foreground="White"
-                           FontSize="9"
+                           FontSize="9" FontFamily="/Font/#Poppins"
                            Margin="10,5,5,0"/>
             </StackPanel>
         </Grid>

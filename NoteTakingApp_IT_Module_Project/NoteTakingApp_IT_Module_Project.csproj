@@ -7,15 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Font\Poppins-Bold.ttf" />
+    <None Remove="Font\Poppins-BoldItalic.ttf" />
+    <None Remove="Font\Poppins-Italic.ttf" />
+    <None Remove="Font\Poppins-Regular.ttf" />
+    <None Remove="Images\bold.png" />
     <None Remove="Images\close.png" />
     <None Remove="Images\collapse.png" />
+    <None Remove="Images\colourPalette.png" />
     <None Remove="Images\darkModeOn.png" />
+    <None Remove="Images\delete.png" />
     <None Remove="Images\expand.png" />
+    <None Remove="Images\italic.png" />
     <None Remove="Images\lightModeOn.png" />
     <None Remove="Images\maximize.png" />
     <None Remove="Images\minimize.png" />
+    <None Remove="Images\musicNotation.png" />
     <None Remove="Images\plus.png" />
     <None Remove="Images\purpleStar.png" />
+    <None Remove="Images\underline.png" />
     <None Remove="Images\verticalMenu.png" />
     <None Remove="Images\whiteStar.png" />
   </ItemGroup>
@@ -34,22 +44,40 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Font\" />
-    <Folder Include="Images\ForNotes\" />
-    <Folder Include="Images\ForTags\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Resource Include="Font\Poppins-Bold.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Font\Poppins-BoldItalic.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Font\Poppins-Italic.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Font\Poppins-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\bold.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\close.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\collapse.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\colourPalette.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\darkModeOn.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\delete.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\expand.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\italic.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\lightModeOn.png">
@@ -57,8 +85,14 @@
     </Resource>
     <Resource Include="Images\maximize.png" />
     <Resource Include="Images\minimize.png" />
+    <Resource Include="Images\musicNotation.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\plus.png" />
     <Resource Include="Images\purpleStar.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\underline.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\verticalMenu.png">

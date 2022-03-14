@@ -32,7 +32,8 @@
                        VerticalAlignment="Center" HorizontalAlignment="Left"
                        Margin="20,0,0,0"
                        Foreground="White"
-                       FontSize="22"/>
+                       FontSize="22"
+                       FontFamily="/Font/#Poppins"/>
 
             <StackPanel Grid.Row="1" MinWidth="200">
 
@@ -40,21 +41,21 @@
                              Content="Home"
                              MinHeight="50"
                              Foreground="White"
-                             FontSize="14"
+                             FontSize="14" FontFamily="/Font/#Poppins"
                              Style="{StaticResource MenuButtonTheme}"/>
 
                 <RadioButton x:Name="LoadFavouritesPage"
                              Content="Favourites"
                              MinHeight="50"
                              Foreground="White"
-                             FontSize="14"
+                             FontSize="14" FontFamily="/Font/#Poppins"
                              Style="{StaticResource MenuButtonTheme}"/>
 
                 <Expander Header="Tags" 
                           Foreground="White"
                           MinHeight="50"
                           ExpandDirection="Down" IsExpanded="False"
-                          FontSize="14"
+                          FontSize="14" FontFamily="/Font/#Poppins"
                           Style="{StaticResource ExpanderMenuTheme}">
 
                     <ItemsControl x:Name="Tags" ItemsSource="{Binding Tags}">

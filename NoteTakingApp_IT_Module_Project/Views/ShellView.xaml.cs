@@ -12,10 +12,7 @@ namespace NoteTakingApp_UI.Views
         public ShellView()
         {
             InitializeComponent();
-            //continuing example
-            var viewModel = new MusicViewModel();
-            DataContext = viewModel;
-            viewModel.LoadTestData();
+            //continuing music example
         }
 
         private void AddNote()
@@ -26,16 +23,16 @@ namespace NoteTakingApp_UI.Views
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
         private void Maximize_Click(object sender, RoutedEventArgs e)
         {
-            
+            //this.Maximize();
         }
 
         private void Minimize_Click(object sender, RoutedEventArgs e)
         {
-
+            //this.Minimize();
         }
     }
 }

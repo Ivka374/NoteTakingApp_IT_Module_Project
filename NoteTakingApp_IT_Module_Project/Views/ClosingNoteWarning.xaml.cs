@@ -13,20 +13,13 @@ using System.Windows.Shapes;
 namespace NoteTakingApp_IT_Module_Project.Views
 {
     /// <summary>
-    /// Interaction logic for AddAndEditNoteView.xaml
+    /// Interaction logic for ClosingNoteWarning.xaml
     /// </summary>
-    public partial class AddAndEditNoteView : Window
+    public partial class ClosingNoteWarning : Window
     {
-        public AddAndEditNoteView()
+        public ClosingNoteWarning()
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //not necessary
-        }
-
-        
     }
 }

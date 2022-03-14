@@ -8,25 +8,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
     /// <summary>
-    /// Interaction logic for AddAndEditNoteView.xaml
+    /// Interaction logic for AnimatedExpander.xaml
     /// </summary>
-    public partial class AddAndEditNoteView : Window
+    public partial class AnimatedExpander : UserControl
     {
-        public AddAndEditNoteView()
+        public AnimatedExpander()
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //not necessary
-        }
-
-        
     }
 }

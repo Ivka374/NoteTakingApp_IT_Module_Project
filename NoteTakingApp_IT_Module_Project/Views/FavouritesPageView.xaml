@@ -11,7 +11,7 @@
 
         <TextBlock Text="Favourites"
                    Foreground="White"
-                   FontSize="28"
+                   FontSize="28" FontFamily="/Font/#Poppins"
                    HorizontalAlignment="Left"
                    Margin="0,0,0,20"/>
 

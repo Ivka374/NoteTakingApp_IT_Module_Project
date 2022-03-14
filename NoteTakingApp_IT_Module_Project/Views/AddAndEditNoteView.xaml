@@ -15,8 +15,8 @@
         
         <Border.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                <GradientStop Color="CornflowerBlue" Offset="0.0"/>
-                <GradientStop Color="MidnightBlue" Offset="1"/>
+                <GradientStop Color="Gold" Offset="0.0"/>
+                <GradientStop Color="OrangeRed" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
 
@@ -45,16 +45,46 @@
             <TextBlock Grid.ColumnSpan="1"
                            Text="{Binding Tiltle}"
                            Foreground="White"
-                           FontSize="36"
+                           FontSize="36" FontFamily="/Font/#Poppins"
                            Margin="20,10,10,0"/>
+            
                 <RibbonSeparator Margin="20,10,10,0" 
                                  Grid.ColumnSpan="2" Grid.Row="1"/>
-                <TextBlock Grid.Row="2" Grid.ColumnSpan="2"
+
+            <TextBox Grid.Row="2" Grid.ColumnSpan="2"
                            Text="{Binding Content}"
-                           Foreground="White"
-                           FontSize="18"
+                           Foreground="White" Background="Transparent"
+                           BorderThickness="0"
+                           FontSize="18" FontFamily="/Font/#Poppins"
                            Margin="20,10,10,0"
-                           TextWrapping="WrapWithOverflow"/>
+                           TextWrapping="WrapWithOverflow">
+                <TextBox.ContextMenu>
+                    <ContextMenu Style="{StaticResource ContextMenuTheme}"
+                                 Foreground="Black"
+                                 FontFamily="/Font/#Poppins"
+                                 FontSize="14">
+
+                        <MenuItem Header="Bold">
+                            <MenuItem.Icon>
+                                <Image Source="/Images/bold.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                        <MenuItem Header="Italic">
+                            <MenuItem.Icon>
+                                <Image Source="/Images/italic.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                        <MenuItem Header="Underline">
+                            <MenuItem.Icon>
+                                <Image Source="/Images/underline.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        
+                    </ContextMenu>
+                </TextBox.ContextMenu>
+            </TextBox>
 
             <StackPanel Grid.Row="3" Grid.ColumnSpan="2"
                             Orientation="Horizontal" 
@@ -89,11 +119,31 @@
                         <ContextMenu x:Name="NoteSettings" 
                                      PlacementRectangle=
                                      "{Binding RelativeSource=
-                            {RelativeSource Self}}">
-                            <MenuItem Header="Add Score" x:Name="AddScoreOption"/>
-                            <MenuItem Header="Cahnge Colour" x:Name="ChangeColourOption"/>
-                            <MenuItem Header="Delete" x:Name="DeleteOption"/>
-                        </ContextMenu>
+                            {RelativeSource Self}}"
+                                     Style="{StaticResource ContextMenuTheme}"
+                                     Foreground="Black"
+                                     FontFamily="/Font/#Poppins"
+                                     FontSize="14">
+
+                            <MenuItem Header="Add Score">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Images/musicNotation.png"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+
+                                <MenuItem Header="Change Colour">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Images/colourPalette.png"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+
+                                <MenuItem Header="Delete" >
+                                    <MenuItem.Icon>
+                                        <Image Source="/Images/delete.png"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+
+                            </ContextMenu>
                     </Button.ContextMenu>
                     <Button.Triggers>
                         <EventTrigger SourceName="NoteSettingsButton" 
