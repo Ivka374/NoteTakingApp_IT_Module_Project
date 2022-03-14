@@ -19,7 +19,6 @@ namespace NoteTakingApp_UI.ViewModels
 
             _windowManager = new WindowManager();
         }
-
         public void LoadHomePage()
         {
             ActivateItemAsync(new HomePageViewModel());
