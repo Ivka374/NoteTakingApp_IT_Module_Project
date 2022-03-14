@@ -1,6 +1,9 @@
 ﻿using NoteTakingApp_UI.Models;
 using NoteTakingApp_UI.ViewModels;
 using System.Windows;
+using System.Diagnostics;
+using System;
+using System.Windows.Controls;
 
 namespace NoteTakingApp_UI.Views
 {
@@ -13,6 +16,7 @@ namespace NoteTakingApp_UI.Views
         public ShellView()
         {
             InitializeComponent();
+            Close.AddHandler(Button.ClickEvent, new RoutedEventHandler(Close_Click)); //this has to be here for some reason, just leave it be
             //continuing music example
         }
 
@@ -26,7 +30,7 @@ namespace NoteTakingApp_UI.Views
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            //this.Close() wont work for the life of me this needs research
+            Environment.Exit(0);
         }
         private void Maximize_Click(object sender, RoutedEventArgs e)
         {
