@@ -9,6 +9,7 @@ namespace NoteTakingApp_UI.Views
     /// </summary>
     public partial class ShellView : Window
     {
+        bool isMaximized = false;
         public ShellView()
         {
             InitializeComponent();
@@ -17,22 +18,32 @@ namespace NoteTakingApp_UI.Views
 
         private void AddNote()
         {
-            NoteModel note = new NoteModel(); //needs more tweaks for the input
+            NoteModel note = new NoteModel(); 
+            
+            //needs more tweaks for the input
             //will add the note to the database of notes
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            
+            //this.Close() wont work for the life of me this needs research
         }
         private void Maximize_Click(object sender, RoutedEventArgs e)
         {
-            //this.Maximize();
+            if (isMaximized == false)
+            {
+                MainWindow.WindowState = WindowState.Maximized;
+                isMaximized = true;
+            }
+            else
+            {
+                MainWindow.WindowState = WindowState.Normal;
+                isMaximized = false;
+            }
         }
-
         private void Minimize_Click(object sender, RoutedEventArgs e)
         {
-            //this.Minimize();
+            MainWindow.WindowState = WindowState.Minimized;
         }
     }
 }
