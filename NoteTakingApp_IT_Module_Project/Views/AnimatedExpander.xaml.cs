@@ -20,7 +20,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
     {
         public AnimatedExpander()
         {
-            InitializeComponent();
+            InitializeComponent(); //from atila- what is this for again?
         }
     }
 }

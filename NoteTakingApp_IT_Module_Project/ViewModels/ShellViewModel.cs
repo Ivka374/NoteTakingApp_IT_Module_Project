@@ -20,17 +20,6 @@ namespace NoteTakingApp_UI.ViewModels
 
             _windowManager = new WindowManager();
         }
-
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            //if (e.ChangedButton == MouseButton.Left)
-                
-        }
-        private void Close()
-        {
-            
-        }
-
         public void LoadHomePage()
         {
             ActivateItemAsync(new HomePageViewModel());

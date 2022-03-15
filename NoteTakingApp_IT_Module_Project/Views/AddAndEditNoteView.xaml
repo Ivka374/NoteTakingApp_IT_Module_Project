@@ -10,7 +10,9 @@
         x:Name="NoteView"
         WindowStyle="None"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True"
+        >
+    
     <Border>
         
         <Border.Background>
@@ -51,7 +53,7 @@
                 <RibbonSeparator Margin="20,10,10,0" 
                                  Grid.ColumnSpan="2" Grid.Row="1"/>
 
-            <TextBox Grid.Row="2" Grid.ColumnSpan="2"
+            <TextBox x:Name="noteTextBox" Grid.Row="2" Grid.ColumnSpan="2"
                            Text="{Binding Content}"
                            Foreground="White" Background="Transparent"
                            BorderThickness="0"
@@ -99,12 +101,12 @@
                         Margin="10,10,20,0">
 
                 <!-- Fvourited Note Button -->
-                <local:ImageSwappingToggleButton VerticalAlignment="Center"
+                <local:ImageSwappingToggleButton x:Name="favoriteButton" VerticalAlignment="Center"
                     IsChecked="False"
                     IsEnabled="True"
                     EnabledChecked="/Images/purpleStar.png"
                     EnabledUnckecked="/Images/whiteStar.png"
-                    DisabledUnchecked="/Images/purpleStar.png"/>
+                    DisabledUnchecked="/Images/purpleStar.png" Loaded="ImageSwappingToggleButton_Loaded"/>
 
                 <!-- Settings Menu Button -->
                 <Button Background="Transparent"
@@ -125,19 +127,19 @@
                                      FontFamily="/Font/#Poppins"
                                      FontSize="14">
 
-                            <MenuItem Header="Add Score">
+                            <MenuItem x:Name="addScoreMenuItem" Header="Add Score">
                                     <MenuItem.Icon>
                                         <Image Source="/Images/musicNotation.png"/>
                                     </MenuItem.Icon>
                                 </MenuItem>
 
-                                <MenuItem Header="Change Colour">
+                                <MenuItem x:Name="changeColourMenuItem" Header="Change Colour">
                                     <MenuItem.Icon>
                                         <Image Source="/Images/colourPalette.png"/>
                                     </MenuItem.Icon>
                                 </MenuItem>
 
-                                <MenuItem Header="Delete" >
+                                <MenuItem x:Name="deleteMenuItem" Header="Delete" >
                                     <MenuItem.Icon>
                                         <Image Source="/Images/delete.png"/>
                                     </MenuItem.Icon>
