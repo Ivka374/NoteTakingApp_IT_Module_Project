@@ -10,7 +10,9 @@
         x:Name="NoteView"
         WindowStyle="None"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True"
+        >
+    
     <Border>
         
         <Border.Background>
@@ -99,12 +101,12 @@
                         Margin="10,10,20,0">
 
                 <!-- Fvourited Note Button -->
-                <local:ImageSwappingToggleButton VerticalAlignment="Center"
+                <local:ImageSwappingToggleButton x:Name="favoriteButton" VerticalAlignment="Center"
                     IsChecked="False"
                     IsEnabled="True"
                     EnabledChecked="/Images/purpleStar.png"
                     EnabledUnckecked="/Images/whiteStar.png"
-                    DisabledUnchecked="/Images/purpleStar.png"/>
+                    DisabledUnchecked="/Images/purpleStar.png" Loaded="ImageSwappingToggleButton_Loaded"/>
 
                 <!-- Settings Menu Button -->
                 <Button Background="Transparent"
