@@ -1,6 +1,7 @@
 ﻿using NoteTakingApp_UI.Models;
 using NoteTakingApp_UI.ViewModels;
 using System.Windows;
+using System.Windows.Input;
 
 namespace NoteTakingApp_UI.Views
 {
@@ -21,18 +22,10 @@ namespace NoteTakingApp_UI.Views
             //will add the note to the database of notes
         }
 
-        private void Close_Click(object sender, RoutedEventArgs e)
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            
-        }
-        private void Maximize_Click(object sender, RoutedEventArgs e)
-        {
-            //this.Maximize();
-        }
-
-        private void Minimize_Click(object sender, RoutedEventArgs e)
-        {
-            //this.Minimize();
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
         }
     }
 }

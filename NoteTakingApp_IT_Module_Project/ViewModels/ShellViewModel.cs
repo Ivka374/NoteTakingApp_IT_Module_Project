@@ -2,6 +2,7 @@
 using NoteTakingApp_IT_Module_Project.ViewModels;
 using NoteTakingApp_UI.Models;
 using System.Windows;
+using System.Windows.Input;
 
 namespace NoteTakingApp_UI.ViewModels
 {
@@ -18,6 +19,16 @@ namespace NoteTakingApp_UI.ViewModels
             Tags.Add(new TagModel { Name = "Work" });
 
             _windowManager = new WindowManager();
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //if (e.ChangedButton == MouseButton.Left)
+                
+        }
+        private void Close()
+        {
+            
         }
 
         public void LoadHomePage()

@@ -22,6 +22,12 @@ namespace NoteTakingApp_IT_Module_Project.Views
             InitializeComponent();
         }
 
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //not necessary
