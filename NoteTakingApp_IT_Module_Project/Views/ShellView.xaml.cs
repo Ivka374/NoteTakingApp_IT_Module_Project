@@ -4,6 +4,7 @@ using System.Windows;
 using System.Diagnostics;
 using System;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace NoteTakingApp_UI.Views
 {
@@ -16,7 +17,8 @@ namespace NoteTakingApp_UI.Views
         public ShellView()
         {
             InitializeComponent();
-            Close.AddHandler(Button.ClickEvent, new RoutedEventHandler(Close_Click)); //this has to be here for some reason, just leave it be
+            Close.AddHandler(Button.ClickEvent, new RoutedEventHandler(Close_Click)); //this has to be here for some reason, just leave it be; 
+            //alright, but for some reason it throws me an error??
             //continuing music example
         }
 
@@ -28,7 +30,7 @@ namespace NoteTakingApp_UI.Views
             //will add the note to the database of notes
         }
 
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Close_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
         }
