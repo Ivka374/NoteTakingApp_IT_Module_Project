@@ -22,7 +22,6 @@ namespace NoteTakingApp_UI.Views
             InitializeComponent();
             Close.AddHandler(Button.ClickEvent, new RoutedEventHandler(Close_Click)); //this has to be here for some reason, just leave it be
         }
-
         private void AddNote()
         {
             NoteModel note = new NoteModel(); 

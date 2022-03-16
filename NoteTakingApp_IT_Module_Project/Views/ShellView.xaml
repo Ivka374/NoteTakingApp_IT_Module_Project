@@ -9,7 +9,8 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
-        x:Name="MainWindow">
+        x:Name="MainWindow"
+        >
     
     <Border Background="#272537" CornerRadius="20">
         <Grid>
