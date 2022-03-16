@@ -106,7 +106,7 @@
                     IsEnabled="True"
                     EnabledChecked="/Images/purpleStar.png"
                     EnabledUnckecked="/Images/whiteStar.png"
-                    DisabledUnchecked="/Images/purpleStar.png" Loaded="ImageSwappingToggleButton_Loaded"/>
+                    DisabledUnchecked="/Images/purpleStar.png"/>
 
                 <!-- Settings Menu Button -->
                 <Button Background="Transparent"
