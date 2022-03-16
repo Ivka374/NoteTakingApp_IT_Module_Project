@@ -10,53 +10,56 @@ namespace NoteTakingApp_UI.Data
 {
     class NoteData
     {
-        //Template for SQL Commands from previous projects
-        
+        //Commands were written in a separate file so i can test them more easily, that's why it shows that i changed the entire class
+        //Kendrick Lamar - untested unfinished.
+
         public List<NoteModel> GetAll()
         {
-            var notesList = new List<NoteModel>();
+            var noteList = new List<NoteModel>();
             using (var connection = Database.GetConnection())
             {
-                var command = new MySqlCommand("SELECT * FROM notes", connection);
+                var command = new MySqlCommand("SELECT * FROM notemodel", connection);
                 connection.Open();
                 using (var reader = command.ExecuteReader())
                 {
-                        while (reader.Read())
-                        {
-                            var note = new NoteModel(
-                                /*reader.GetInt32(0),
-                                reader.GetString(1),
-                                reader.GetDecimal(2),
-                                reader.GetInt32(3)*/
-                            );
+                    while (reader.Read())
+                    {
+                        var note = new NoteModel(
+                            reader.GetInt32(0),
+                            reader.GetString(1),
+                            reader.GetString(2),
+                            reader.GetBoolean(3),
+                            reader.GetString(4)
+                        );
 
-                            notesList.Add(note);
-                        }
+                        noteList.Add(note);
+                    }
 
                 }
                 connection.Close();
             }
 
-            return notesList;
+            return noteList;
         }
 
-        public NoteModel Get(int id)
+        public NoteModel Get(string title)
         {
             NoteModel note = null;
             using (var connection = Database.GetConnection())
             {
-                var command = new MySqlCommand("SELECT * FROM notes WHERE Id=@id", connection);
-                command.Parameters.AddWithValue("id", id);
+                var command = new MySqlCommand("SELECT * FROM notemodel WHERE notetitle=@title", connection);
+                command.Parameters.AddWithValue("notetitle", title);
                 connection.Open();
                 using (var reader = command.ExecuteReader())
                 {
-                    if(reader.Read())
+                    if (reader.Read())
                     {
                         note = new NoteModel(
-                                /*reader.GetInt32(0),
-                                reader.GetString(1),
-                                reader.GetDecimal(2),
-                                reader.GetInt32(3)*/
+                            reader.GetInt32(0),
+                            reader.GetString(1),
+                            reader.GetString(2),
+                            reader.GetBoolean(3),
+                            reader.GetString(4)
                         );
                     }
                 }
@@ -69,9 +72,31 @@ namespace NoteTakingApp_UI.Data
 
         public void Add(NoteModel note)
         {
-            using (var connection = Database.GetConnection()){
-                var command = new MySqlCommand("INSERT INTO note (someAttributes) VALUES(@someAttributes)", connection);
-                command.Parameters.AddWithValue("name", note.Title);
+            using (var connection = Database.GetConnection())
+            {
+                var command = new MySqlCommand("INSERT INTO notemodel (notetitle, notecontent, noteisfav, notetheme) VALUES(@notetitle, @notecontent, @noteisfav, @notetheme)", connection);
+                command.Parameters.AddWithValue("notetitle", note.Title);
+                command.Parameters.AddWithValue("notecontent", note.Content.TextContent);
+                command.Parameters.AddWithValue("noteisfav", note.IsFavourite);
+                command.Parameters.AddWithValue("notetheme", note.ThemeName);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+                foreach (var tag in note.NoteTags)
+                {
+                    this.AddTag(tag, note);
+                }
+            }
+        }
+
+        public void AddTag(TagModel tag, NoteModel note)
+        {
+            using (var connection = Database.GetConnection())
+            {
+                var command = new MySqlCommand("INSERT INTO tagmodel (tagname, tagcolor, noteid) VALUES(@tagname, @tagcolor, @noteid)", connection);
+                command.Parameters.AddWithValue("tagname", tag.Name);
+                command.Parameters.AddWithValue("tagcolor", tag.Colour);
+                command.Parameters.AddWithValue("noteid", note.ID);
                 connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -82,9 +107,12 @@ namespace NoteTakingApp_UI.Data
         {
             using (var connection = Database.GetConnection())
             {
-                var command = new MySqlCommand("UPDATE product SET Name=@name,...  WHERE Id=@id", connection);
-                //command.Parameters.AddWithValue("id", note.Id); NoteModel doesn't have an ID parameter
-                command.Parameters.AddWithValue("name", note.Title);
+                var command = new MySqlCommand("UPDATE notemodel SET notetitle=@notetitle, notecontent=@notecontent, noteisfav=@noteisfav, notethemename=@notethemename WHERE noteid=@id", connection);
+                command.Parameters.AddWithValue("id", note.ID);
+                command.Parameters.AddWithValue("notetitle", note.Title);
+                command.Parameters.AddWithValue("notecontent", note.Content);
+                command.Parameters.AddWithValue("noteisfav", note.IsFavourite);
+                command.Parameters.AddWithValue("notethemename", note.ThemeName);
                 connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -92,11 +120,25 @@ namespace NoteTakingApp_UI.Data
 
         }
 
+        public void UpdateTag(TagModel tag, NoteModel note)
+        {
+            using (var connection = Database.GetConnection())
+            {
+                var command = new MySqlCommand("UPDATE tagmodel SET tagname=@tagname, tagcolor=@tagcolor WHERE noteid=@noteid", connection);
+                command.Parameters.AddWithValue("tagname", tag.Name);
+                command.Parameters.AddWithValue("tagcolor", tag.Colour);
+                command.Parameters.AddWithValue("noteid", note.ID);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+        }
+
         public void Delete(int id)
         {
             using (var connection = Database.GetConnection())
             {
-                var command = new MySqlCommand("DELETE note WHERE Id=@id", connection);
+                var command = new MySqlCommand("DELETE product WHERE Id=@id", connection);
                 command.Parameters.AddWithValue("id", id);
                 connection.Open();
                 command.ExecuteNonQuery();
