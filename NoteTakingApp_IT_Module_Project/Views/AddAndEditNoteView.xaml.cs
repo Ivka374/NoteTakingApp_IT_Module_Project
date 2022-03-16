@@ -11,6 +11,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using NoteTakingApp_UI.Models;
 using NoteTakingApp_UI.ViewModels;
+using NoteTakingApp_UI.Views;
+using Caliburn.Micro;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
@@ -19,15 +21,18 @@ namespace NoteTakingApp_IT_Module_Project.Views
     /// </summary>
     public partial class AddAndEditNoteView : Window
     {
+        WindowManager _windowManager = new WindowManager();
+        public static AddAndEditNoteView thisInstance;    //i have no idea if this is right or wrong, if ur concerned
+                                                          //about it please check references and correct
         public AddAndEditNoteView()
         {
             InitializeComponent();
             deleteMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(deleteMenuItem_Click)); //delete button now has onclick event
             changeColourMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(changeColourMenuItem_Click)); //change color now has onclick event
             addScoreMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(addScoreMenuItem_Click)); //add score now has onclick event
-            this.PreviewKeyDown += new KeyEventHandler(AddAndEditNoteView_PreviewKeyDown); // window now detects keyboard input
+            Mouse.AddMouseDownHandler(this, Window_MouseDown); //window now has mouseDown event check
+            this.PreviewKeyDown += new KeyEventHandler(AddAndEditNoteView_PreviewKeyDown); // window now detects mouseDown event
         }
-
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
@@ -40,53 +45,22 @@ namespace NoteTakingApp_IT_Module_Project.Views
         }
         private void deleteMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            noteTextBox.Text = ""; //deletes written note text
+            this.Close(); //deletes written note text
         }
         private void changeColourMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            //should this be a different window or should it cycle through predermined colors on click?
+            //waiting on window
         }
         private void addScoreMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            //ill need help with this i have no idea what it would look like on screen lol
+            //waiting on help
         }
         private void AddAndEditNoteView_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            //REMEMBER TO ADD A CHECK FOR TITLE AS WELL WHEN ITS IMPLEMENTED!!!
-            //REMEMBER TO ADD A CHECK FOR TITLE AS WELL WHEN ITS IMPLEMENTED!!!
-            //REMEMBER TO ADD A CHECK FOR TITLE AS WELL WHEN ITS IMPLEMENTED!!!
-            if(noteTextBox.Text == "")
+            if (e.Key == Key.Escape)
             {
-                if (e.Key == Key.Escape)
-                {
-                    this.Close();
-                }
-            }
-            //saves a new note
-            else
-            {
-                if (e.Key == Key.Escape)
-                {
-                    
-                    NoteModel note = new NoteModel();
-                    NoteContentModel noteContents = new NoteContentModel();
-                    noteContents.TextContent = noteTextBox.Text;
-                    //noteContents.MusicContent = ???;
-                    //note.Title = ???;
-                    //note.ThemeName = ???;
-                    //note.NoteTags = ???;
-                    note.Content = noteContents;
-                    if(favoriteButton.IsChecked == true)
-                    {
-                        note.IsFavourite = true;
-                    }
-                    else
-                    {
-                        note.IsFavourite = false;
-                    }
-                    //how to add this to the HomePageViewModel list var? shit man this aint nothing like unity ;-;
-                    this.Close();
-                }
+                thisInstance = this;
+                _windowManager.ShowDialogAsync(new ClosingNoteWarning()); //gives error, i believe it has something to do with the .xaml portion of the code
             }
         }
     }

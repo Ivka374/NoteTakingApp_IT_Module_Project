@@ -15,16 +15,13 @@ namespace NoteTakingApp_UI.Views
     /// </summary>
     public partial class ShellView : Window
     {
-        WindowManager windowManager;
+
         bool isMaximized = false;
         public ShellView()
         {
             InitializeComponent();
             Close.AddHandler(Button.ClickEvent, new RoutedEventHandler(Close_Click)); //this has to be here for some reason, just leave it be
-            CreateNote.AddHandler(Button.ClickEvent, new RoutedEventHandler(CreateNote_Click)); //this has to be here for some reason, just leave it be
-            //continuing music example
         }
-
         private void AddNote()
         {
             NoteModel note = new NoteModel(); 
@@ -58,10 +55,6 @@ namespace NoteTakingApp_UI.Views
         private void Minimize_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.WindowState = WindowState.Minimized;
-        }
-        private void CreateNote_Click(object sender, RoutedEventArgs e)
-        {
-            windowManager.ShowDialogAsync(new AddAndEditNoteViewModel());
         }
     }
 }

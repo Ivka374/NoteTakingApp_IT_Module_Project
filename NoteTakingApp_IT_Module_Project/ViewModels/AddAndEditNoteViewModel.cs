@@ -6,7 +6,7 @@ using System.Windows.Input;
 
 namespace NoteTakingApp_IT_Module_Project.ViewModels
 {
-    class AddAndEditNoteViewModel : Window
+    public class AddAndEditNoteViewModel : Window
     {
         private void HandleEsc(object sender, KeyEventArgs e)
         {

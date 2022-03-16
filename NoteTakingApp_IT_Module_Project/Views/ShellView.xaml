@@ -9,7 +9,8 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
-        x:Name="MainWindow">
+        x:Name="MainWindow"
+        >
     
     <Border Background="#272537" CornerRadius="20">
         <Grid>
@@ -114,7 +115,7 @@
                         Orientation="Horizontal"
                         HorizontalAlignment="Right"
                          Height="35" MinWidth="60"
-                        Margin="0,0,0,0" Grid.ColumnSpan="2" VerticalAlignment="Top">
+                        Margin="0,3,6,0" Grid.ColumnSpan="2" VerticalAlignment="Top">
 
                 <Button x:Name="Minimize" 
                         Background="Transparent"
