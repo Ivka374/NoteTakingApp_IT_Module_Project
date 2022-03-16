@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Caliburn.Micro;
+using NoteTakingApp_IT_Module_Project.ViewModels;
 
 namespace NoteTakingApp_UI.Views
 {
@@ -13,12 +15,13 @@ namespace NoteTakingApp_UI.Views
     /// </summary>
     public partial class ShellView : Window
     {
+        WindowManager windowManager;
         bool isMaximized = false;
         public ShellView()
         {
             InitializeComponent();
-            Close.AddHandler(Button.ClickEvent, new RoutedEventHandler(Close_Click)); //this has to be here for some reason, just leave it be; 
-            //alright, but for some reason it throws me an error??
+            Close.AddHandler(Button.ClickEvent, new RoutedEventHandler(Close_Click)); //this has to be here for some reason, just leave it be
+            CreateNote.AddHandler(Button.ClickEvent, new RoutedEventHandler(CreateNote_Click)); //this has to be here for some reason, just leave it be
             //continuing music example
         }
 
@@ -30,6 +33,11 @@ namespace NoteTakingApp_UI.Views
             //will add the note to the database of notes
         }
 
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            this.DragMove();
+        }
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
@@ -50,6 +58,10 @@ namespace NoteTakingApp_UI.Views
         private void Minimize_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.WindowState = WindowState.Minimized;
+        }
+        private void CreateNote_Click(object sender, RoutedEventArgs e)
+        {
+            windowManager.ShowDialogAsync(new AddAndEditNoteViewModel());
         }
     }
 }
