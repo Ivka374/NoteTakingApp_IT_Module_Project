@@ -7,7 +7,18 @@ namespace NoteTakingApp_UI.Models
 {
     public class TagModel
     {
+        public int ID { get; set; }
         public string Name { get; set; }
-        public ConsoleColor colour { get; set; } //is this the right type?
+        public ConsoleColor Colour { get; set; } //is this the right type?
+        public TagModel()
+        {
+
+        }
+        public TagModel(int id, string name, ConsoleColor colour)
+        {
+            ID = id;
+            Name = name;
+            Colour = colour;
+        }
     }
 }
