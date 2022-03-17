@@ -20,6 +20,7 @@ namespace NoteTakingApp_UI.Views
         {
             InitializeComponent();
             Close.AddHandler(Button.ClickEvent, new RoutedEventHandler(Close_Click)); //this has to be here for some reason, just leave it be
+            Mouse.AddMouseDownHandler(this, Window_MouseDown); //window now has mouseDown event check
         }
         private void AddNote()
         {
@@ -27,6 +28,8 @@ namespace NoteTakingApp_UI.Views
             
             //needs more tweaks for the input
             //will add the note to the database of notes
+
+            //is this method still needed here? id say delete it
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
