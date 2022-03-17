@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NoteTakingApp_IT_Module_Project.Views"
         mc:Ignorable="d"
-        Title="ClosingNoteWarning" Height="110" Width="150"
-        WindowStyle="None" Background="Transparent">
+        Height="200" Width="250"
+        Background="Transparent" AllowsTransparency="True"
+        WindowStyle="None" ResizeMode="NoResize">
     <Border Background="Lavender" CornerRadius="10">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="110"/>
-                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="190"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -20,10 +21,11 @@
             </Grid.RowDefinitions>
 
             <!-- Row 0 -->
-            <TextBlock Margin="15,15,5,5" 
-                       FontSize="9" FontFamily="/Font/#Poppins"
+            <TextBlock Margin="20,20,5,20" 
+                       FontSize="16" FontFamily="/Font/#Poppins"
                        Text="Do you want to save changes before exit?"
                        TextWrapping="WrapWithOverflow"/>
+            
             <Image Source="/Images/questionMark.png"
                    Grid.Column="1"/>
 
@@ -32,7 +34,7 @@
                              Margin="10,5,5,0" />
 
             <!-- Row 2 -->
-            <StackPanel Grid.Row="2" Margin="10,5,10,10"
+            <StackPanel Grid.Row="2" Margin="20,10,20,20"
                         Orientation="Horizontal"
                         Grid.ColumnSpan="2">
 
@@ -40,17 +42,17 @@
                         Content=" Yes " FontFamily="/Font/#Poppins"
                         BorderBrush="MediumPurple" 
                         Background="Transparent"
-                        Margin="5" FontSize="10"/>
+                        Margin="7" FontSize="20"/>
                 <Button x:Name="CloseWithoutSave"
                         Content=" No " FontFamily="/Font/#Poppins"
                         BorderBrush="MediumPurple" 
                         Background="Transparent"
-                        Margin="5" FontSize="10"/>
+                        Margin="5" FontSize="20"/>
                 <Button x:Name="CancelClose"
                         Content=" Cancel " FontFamily="/Font/#Poppins"
                         BorderBrush="MediumPurple" 
                         Background="Transparent"
-                        Margin="5" FontSize="10"/>
+                        Margin="5" FontSize="20"/>
 
             </StackPanel>
         </Grid>

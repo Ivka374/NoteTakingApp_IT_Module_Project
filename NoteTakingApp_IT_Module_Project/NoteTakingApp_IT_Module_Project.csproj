@@ -25,6 +25,7 @@
     <None Remove="Images\musicNotation.png" />
     <None Remove="Images\plus.png" />
     <None Remove="Images\purpleStar.png" />
+    <None Remove="Images\questionMark.png" />
     <None Remove="Images\underline.png" />
     <None Remove="Images\verticalMenu.png" />
     <None Remove="Images\whiteStar.png" />
@@ -90,6 +91,9 @@
     </Resource>
     <Resource Include="Images\plus.png" />
     <Resource Include="Images\purpleStar.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\questionMark.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\underline.png">
