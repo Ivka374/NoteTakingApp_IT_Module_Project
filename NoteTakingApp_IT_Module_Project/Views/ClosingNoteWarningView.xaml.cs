@@ -17,9 +17,9 @@ namespace NoteTakingApp_IT_Module_Project.Views
     /// <summary>
     /// Interaction logic for ClosingNoteWarning.xaml
     /// </summary>
-    public partial class ClosingNoteWarning : Window
+    public partial class ClosingNoteWarningView : Window
     {
-        public ClosingNoteWarning()
+        public ClosingNoteWarningView()
         {
             InitializeComponent();
             CloseWithSave.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(CloseWithSave_Click)); //save button now has onclick event

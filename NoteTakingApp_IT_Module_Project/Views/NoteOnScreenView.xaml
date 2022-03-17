@@ -12,7 +12,7 @@
         <!-- Background will be changable hopefully -->
         <Border.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                <GradientStop Color="CornflowerBlue" Offset="0.0"/>
+                <GradientStop Color="MediumTurquoise" Offset="0.0"/>
                 <GradientStop Color="MidnightBlue" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
@@ -26,13 +26,15 @@
             <StackPanel>
                 <!-- Maybe will make the text change
                 depending on background -->
-                <TextBlock Text="{Binding Source=CurrentNote,
-                    Path=Title}"
+                <TextBlock Text="{Binding Title}"
                            Foreground="White"
                            FontSize="14" FontFamily="/Font/#Poppins"
                            Margin="10,5,5,0"/>
-                <TextBlock Text="{Binding Source=CurrentNote,
-                    Path=Content}"
+
+                <RibbonSeparator Margin="10,5,10,0" 
+                                 Grid.ColumnSpan="2" Grid.Row="1"/>
+
+                <TextBlock Text="{Binding Content}"
                            TextWrapping="WrapWithOverflow"
                            Foreground="White"
                            FontSize="9" FontFamily="/Font/#Poppins"

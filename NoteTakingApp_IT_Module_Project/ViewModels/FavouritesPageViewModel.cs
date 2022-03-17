@@ -8,8 +8,8 @@ namespace NoteTakingApp_UI.ViewModels
 {
     public class FavouritesPageViewModel : Conductor<object>
     {
-        private List<NoteModel> _favouriteNotes = new List<NoteModel>();
-        public List<NoteModel> FavouriteNotes
+        private BindableCollection<NoteModel> _favouriteNotes = new BindableCollection<NoteModel>();
+        public BindableCollection<NoteModel> FavouriteNotes
         {
             get { return _favouriteNotes; }
             set { _favouriteNotes = value; }

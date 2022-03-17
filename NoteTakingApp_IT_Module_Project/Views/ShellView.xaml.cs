@@ -15,7 +15,6 @@ namespace NoteTakingApp_UI.Views
     /// </summary>
     public partial class ShellView : Window
     {
-
         bool isMaximized = false;
         public ShellView()
         {
