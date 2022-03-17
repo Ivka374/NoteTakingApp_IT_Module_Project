@@ -14,6 +14,7 @@ using NoteTakingApp_UI.ViewModels;
 using NoteTakingApp_UI.Views;
 using Caliburn.Micro;
 using NoteTakingApp_IT_Module_Project.ViewModels;
+using Manufaktura.Controls.Model;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
@@ -43,7 +44,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
 
         private void deleteMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            this.Close(); //deletes written note text
+            this.Close(); 
         }
         private void changeColourMenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -51,14 +52,14 @@ namespace NoteTakingApp_IT_Module_Project.Views
         }
         private void addScoreMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            //waiting on help
+            Score score = new Score();  //seriously i have no idea what to do
         }
         private void AddAndEditNoteView_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Escape)
+            if (e.Key == System.Windows.Input.Key.Escape)
             {
                 thisInstance = this;
-                _windowManager.ShowDialogAsync(new ClosingNoteWarningViewModel()); //gives error, i believe it has something to do with the .xaml portion of the code
+                _windowManager.ShowDialogAsync(new ClosingNoteWarningViewModel()); // no longer gives error big yay!
             }
         }
     }
