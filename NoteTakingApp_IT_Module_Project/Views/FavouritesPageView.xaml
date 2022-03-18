@@ -32,15 +32,10 @@
 
             <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border Margin="10"  MinHeight="100" Width="200">
-                            <!-- Background will be changable hopefully -->
-                            <Border.Background>
-                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                                    <GradientStop Color="MediumTurquoise" Offset="0.0"/>
-                                    <GradientStop Color="MidnightBlue" Offset="1"/>
-                                </LinearGradientBrush>
-                            </Border.Background>
-
+                        <Border Margin="10"  MinHeight="100" Width="200"
+                                MouseLeftButtonDown="Border_MouseLeftButtonDown"
+                                Style="{StaticResource NoteColoursChangeTheme}">
+                           
                             <Border.Clip>
                                 <RectangleGeometry RadiusX="10" RadiusY="10"
                                                     Rect="0,0,200,100"/>
@@ -52,7 +47,7 @@
                                     depending on background -->
                                     <TextBlock Text="{Binding Title}"
                                                TextWrapping="WrapWithOverflow"
-                                                Foreground="White"
+                                                Foreground="Black"
                                                 FontSize="14" FontFamily="/Font/#Poppins"
                                                 Margin="10,5,5,0"/>
 
@@ -61,7 +56,7 @@
 
                                     <TextBlock Text="{Binding Content.TextContent}"
                                                 TextWrapping="WrapWithOverflow"
-                                                Foreground="White"
+                                                Foreground="Black"
                                                 FontSize="9" FontFamily="/Font/#Poppins"
                                                 Margin="10,5,5,0"/>
                                 </StackPanel>

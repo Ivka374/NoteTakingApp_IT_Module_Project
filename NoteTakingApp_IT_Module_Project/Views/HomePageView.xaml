@@ -33,70 +33,11 @@
                 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border Margin="10" MinHeight="100" Width="200">
+                    <Border Margin="10" MinHeight="100" Width="200"
+                                MouseLeftButtonDown="Border_MouseLeftButtonDown"
+                            Style="{StaticResource NoteColoursChangeTheme}">
 
-                        <Border.Style>
-                            <Style TargetType="Border">
-                                <Setter Property="Background">
-                                    <Setter.Value>
-                                        <LinearGradientBrush>
-                                            <LinearGradientBrush.GradientStops>
-                                                <GradientStop Color="#D397FA" Offset="0.0"/>
-                                                <GradientStop Color="#8364E8" Offset="1"/>
-                                            </LinearGradientBrush.GradientStops>
-                                        </LinearGradientBrush>
-                                    </Setter.Value>
-                                </Setter>
-
-                                <Style.Triggers>
-                                    
-                                    <DataTrigger Binding="{Binding ThemeName,
-                                        RelativeSource={RelativeSource FindAncestor,
-                                        AncestorType={x:Type Border}}}"
-                                                 Value="1">
-                                        <Setter Property="Background">
-                                            <Setter.Value>
-                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                                                    <GradientStop Color="MediumTurquoise" Offset="0.0"/>
-                                                    <GradientStop Color="MidnightBlue" Offset="1"/>
-                                                </LinearGradientBrush>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </DataTrigger>
-
-                                    <DataTrigger Binding="{Binding ThemeName,
-                                        RelativeSource={RelativeSource FindAncestor,
-                                        AncestorType={x:Type Border}}}"
-                                                 Value="2">
-                                        <Setter Property="Background">
-                                            <Setter.Value>
-                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                                                    <GradientStop Color="#FFF95B" Offset="0.0"/>
-                                                    <GradientStop Color="#FF930F" Offset="1"/>
-                                                </LinearGradientBrush>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </DataTrigger>
-
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
-
-                        <!--<Border.Triggers>
-                            <DataTrigger Binding="{Binding ThemeName}" Value="1">
-                                <Setter Property="Background"/>
-                            </DataTrigger>
-                        </Border.Triggers>
-                            
-                            --><!-- Background will be changable hopefully --><!--
-                            <Border.Background>
-                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                                    <GradientStop Color="MediumTurquoise" Offset="0.0"/>
-                                    <GradientStop Color="MidnightBlue" Offset="1"/>
-                                </LinearGradientBrush>
-                            </Border.Background>-->
-                            
-                            <Border.Clip>
+                        <Border.Clip>
                                 <RectangleGeometry RadiusX="10" RadiusY="10"
                                                     Rect="0,0,200,100"/>
                             </Border.Clip>
@@ -107,7 +48,7 @@
                                     depending on background -->
                                     <TextBlock Text="{Binding Title}"
                                                TextWrapping="WrapWithOverflow"
-                                                Foreground="White"
+                                                Foreground="Black"
                                                 FontSize="14" FontFamily="/Font/#Poppins"
                                                 Margin="10,5,5,0"/>
 
@@ -116,7 +57,7 @@
 
                                     <TextBlock Text="{Binding Content.TextContent}"
                                                 TextWrapping="Wrap"
-                                                Foreground="White"
+                                                Foreground="Black"
                                                 FontSize="9" FontFamily="/Font/#Poppins"
                                                 Margin="10,5,5,0"/>
                                 </StackPanel>

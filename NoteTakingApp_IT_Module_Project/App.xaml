@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="/Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="/Theme/DropdownMenuTheme.xaml"/>
                 <ResourceDictionary Source="/Theme/ContextMenuTheme.xaml"/>
+                <ResourceDictionary Source="/Theme/NoteColoursChangeTheme.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

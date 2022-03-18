@@ -55,7 +55,7 @@
                              FontSize="14" FontFamily="/Font/#Poppins"
                              Style="{StaticResource MenuButtonTheme}"/>
 
-                <ComboBox Foreground="White"
+                <!--<ComboBox Foreground="White"
                           MinHeight="50"
                           FontSize="14" FontFamily="/Font/#Poppins">
 
@@ -63,17 +63,11 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
 
-                                <!--<ComboBoxItem Content="{Binding Name,
-                                    Mode=OneWayToSource}"
-                                              VerticalAlignment="Center"
-                                              Foreground="White"
-                                              MinHeight="50"/>-->
-
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
 
-                </ComboBox>
+                </ComboBox>-->
             </StackPanel>
 
             <!-- Column 1 -->
