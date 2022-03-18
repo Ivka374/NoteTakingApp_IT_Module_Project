@@ -34,7 +34,7 @@
                 <RibbonSeparator Margin="10,5,10,0" 
                                  Grid.ColumnSpan="2" Grid.Row="1"/>
 
-                <TextBlock Text="{Binding Content}"
+                <TextBlock Text="{Binding Content.TextContent}"
                            TextWrapping="WrapWithOverflow"
                            Foreground="White"
                            FontSize="9" FontFamily="/Font/#Poppins"

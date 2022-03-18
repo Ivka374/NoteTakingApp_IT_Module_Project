@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:NoteTakingApp_UI.Views"
+             xmlns:local="clr-namespace:NoteTakingApp_UI.Views" xmlns:viewmodels="clr-namespace:NoteTakingApp_UI.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:HomePageViewModel}"
              mc:Ignorable="d" Background="Transparent"
              d:DesignHeight="450" d:DesignWidth="800"
              x:Name="homePage">
@@ -15,22 +15,116 @@
                    HorizontalAlignment="Left"
                    Margin="0,0,0,20"/>
 
-        <WrapPanel Orientation="Horizontal">
-            <WrapPanel.Resources>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Margin" Value="10,10" />
-                    <Setter Property="Padding" Value="10,10" />
-                </Style>
-            </WrapPanel.Resources>
+        
 
             <ItemsControl ItemsSource="{Binding AllNotes}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal">
+                        <WrapPanel.Resources>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Margin" Value="10,10" />
+                                <Setter Property="Padding" Value="10,10" />
+                            </Style>
+                        </WrapPanel.Resources>
+                    </WrapPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+                
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        
+                        <Border Margin="10" MinHeight="100" Width="200">
+
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush>
+                                            <LinearGradientBrush.GradientStops>
+                                                <GradientStop Color="#D397FA" Offset="0.0"/>
+                                                <GradientStop Color="#8364E8" Offset="1"/>
+                                            </LinearGradientBrush.GradientStops>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Style.Triggers>
+                                    
+                                    <DataTrigger Binding="{Binding ThemeName,
+                                        RelativeSource={RelativeSource FindAncestor,
+                                        AncestorType={x:Type Border}}}"
+                                                 Value="1">
+                                        <Setter Property="Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                                    <GradientStop Color="MediumTurquoise" Offset="0.0"/>
+                                                    <GradientStop Color="MidnightBlue" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </DataTrigger>
+
+                                    <DataTrigger Binding="{Binding ThemeName,
+                                        RelativeSource={RelativeSource FindAncestor,
+                                        AncestorType={x:Type Border}}}"
+                                                 Value="2">
+                                        <Setter Property="Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                                    <GradientStop Color="#FFF95B" Offset="0.0"/>
+                                                    <GradientStop Color="#FF930F" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </DataTrigger>
+
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+
+                        <!--<Border.Triggers>
+                            <DataTrigger Binding="{Binding ThemeName}" Value="1">
+                                <Setter Property="Background"/>
+                            </DataTrigger>
+                        </Border.Triggers>
+                            
+                            --><!-- Background will be changable hopefully --><!--
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                    <GradientStop Color="MediumTurquoise" Offset="0.0"/>
+                                    <GradientStop Color="MidnightBlue" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>-->
+                            
+                            <Border.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10"
+                                                    Rect="0,0,200,100"/>
+                            </Border.Clip>
+
+                            <Grid>
+                                <StackPanel>
+                                    <!-- Maybe will make the text change
+                                    depending on background -->
+                                    <TextBlock Text="{Binding Title}"
+                                               TextWrapping="WrapWithOverflow"
+                                                Foreground="White"
+                                                FontSize="14" FontFamily="/Font/#Poppins"
+                                                Margin="10,5,5,0"/>
+
+                                    <Separator Margin="10,5,10,0" 
+                                                        Grid.ColumnSpan="2" Grid.Row="1"/>
+
+                                    <TextBlock Text="{Binding Content.TextContent}"
+                                                TextWrapping="Wrap"
+                                                Foreground="White"
+                                                FontSize="9" FontFamily="/Font/#Poppins"
+                                                Margin="10,5,5,0"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
 
-        </WrapPanel>
     </StackPanel>
 </UserControl>

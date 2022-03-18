@@ -9,7 +9,17 @@ namespace NoteTakingApp_UI.ViewModels
     public class ShellViewModel : Conductor<object>
     {
         WindowManager _windowManager;
-        public BindableCollection<TagModel> Tags { get; set; }
+        private BindableCollection<TagModel> tags;
+        public BindableCollection<TagModel> Tags { 
+            get 
+            {
+                return tags;
+            }
+            set 
+            {
+                this.tags = value;
+            } 
+        }
 
         public ShellViewModel()
         {

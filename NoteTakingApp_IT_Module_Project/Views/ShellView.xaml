@@ -3,7 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:NoteTakingApp_UI.Views" xmlns:viewmodels="clr-namespace:NoteTakingApp_UI.ViewModels" xmlns:local1="clr-namespace:NoteTakingApp_IT_Module_Project.Views" d:DataContext="{d:DesignInstance Type=viewmodels:ShellViewModel}"
+        xmlns:local="clr-namespace:NoteTakingApp_UI.Views"
+        xmlns:viewmodels="clr-namespace:NoteTakingApp_UI.ViewModels" 
+        xmlns:local1="clr-namespace:NoteTakingApp_IT_Module_Project.Views" 
+        d:DataContext="{d:DesignInstance Type=viewmodels:ShellViewModel}"
         mc:Ignorable="d"
         Height="600" Width="920"
         WindowStyle="None"
@@ -52,27 +55,25 @@
                              FontSize="14" FontFamily="/Font/#Poppins"
                              Style="{StaticResource MenuButtonTheme}"/>
 
-                <Expander Header="Tags" 
-                          Foreground="White"
+                <ComboBox Foreground="White"
                           MinHeight="50"
-                          ExpandDirection="Down" IsExpanded="False"
-                          FontSize="14" FontFamily="/Font/#Poppins"
-                          Style="{StaticResource ExpanderMenuTheme}">
+                          FontSize="14" FontFamily="/Font/#Poppins">
 
-                    <ItemsControl x:Name="Tags" ItemsSource="{Binding Tags}">
+                    <ItemsControl x:Name="Tags">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <RadioButton Content="{Binding Path=Name, Mode=OneWayToSource}"
-                                           VerticalAlignment="Center"
-                                           Foreground="White"
-                                           MinHeight="50"
-                                           Style="{StaticResource MenuButtonTheme}"/>
+
+                                <!--<ComboBoxItem Content="{Binding Name,
+                                    Mode=OneWayToSource}"
+                                              VerticalAlignment="Center"
+                                              Foreground="White"
+                                              MinHeight="50"/>-->
+
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
 
-                </Expander>
-
+                </ComboBox>
             </StackPanel>
 
             <!-- Column 1 -->
@@ -98,17 +99,7 @@
                             Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3"
                             Margin="10"/>
 
-            <!-- Column 2 -->
-            <local1:ImageSwappingToggleButton Grid.Column="2" 
-                                              HorizontalAlignment="Center" 
-                                              VerticalAlignment="Center"
-                                              Margin="10,20,10,15"
-                IsChecked="False"
-                IsEnabled="True"
-                EnabledChecked="/Images/lightModeOn.png"
-                EnabledUnckecked="/Images/darkModeOn.png"
-                DisabledUnchecked="/Images/lightModeOn.png"/>
-
+            <!-- Column 2 was for dark mode but is empty now -->
 
             <!-- Column 3-->
             <StackPanel Grid.Column="3"

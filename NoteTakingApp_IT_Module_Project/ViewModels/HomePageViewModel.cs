@@ -8,7 +8,52 @@ namespace NoteTakingApp_UI.ViewModels
 {
     public class HomePageViewModel : Conductor<object>
     {
-        private List<NoteModel> _allNotes = new List<NoteModel>();
+        private List<NoteModel> _allNotes;
+
+        public HomePageViewModel()
+        {
+            _allNotes = new List<NoteModel>();
+
+            _allNotes.Add(new NoteModel() { Title = "ExperimentView1",
+                IsFavourite = false,
+                Content = new NoteContentModel() { TextContent = "Does this display properly?" },
+                ThemeName = "2" });
+            _allNotes.Add(new NoteModel()
+            {
+                Title = "ExperimentView2",
+                IsFavourite = true,
+                Content = new NoteContentModel() { TextContent = "Does this display properly or no?" },
+                ThemeName = "2"
+            });
+            _allNotes.Add(new NoteModel()
+            {
+                Title = "ExperimentView3",
+                IsFavourite = false,
+                Content = new NoteContentModel() { TextContent = "Does this display properly at last?" },
+                ThemeName = "2"
+            });
+            _allNotes.Add(new NoteModel()
+            {
+                Title = "ExperimentView4",
+                IsFavourite = false,
+                Content = new NoteContentModel() { TextContent = "Does this display properly at last?" },
+                ThemeName = "2"
+            });
+            _allNotes.Add(new NoteModel()
+            {
+                Title = "ExperimentView5",
+                IsFavourite = false,
+                Content = new NoteContentModel() { TextContent = "Does this display properly at last?" },
+                ThemeName = "2"
+            });
+            _allNotes.Add(new NoteModel()
+            {
+                Title = "ExperimentView6",
+                IsFavourite = false,
+                Content = new NoteContentModel() { TextContent = "Does this display properly at last?" },
+                ThemeName = "2"
+            });
+        }
         public List<NoteModel> AllNotes 
         { 
             get { return _allNotes; }

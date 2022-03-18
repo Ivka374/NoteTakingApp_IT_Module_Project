@@ -55,5 +55,10 @@ namespace NoteTakingApp_UI.Views
         {
             MainWindow.WindowState = WindowState.Minimized;
         }
+
+        private void Expander_Expanded(object sender, RoutedEventArgs e)
+        {
+            System.Console.WriteLine();
+        }
     }
 }
