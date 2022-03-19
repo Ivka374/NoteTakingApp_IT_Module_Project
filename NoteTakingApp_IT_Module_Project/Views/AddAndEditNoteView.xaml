@@ -44,7 +44,7 @@
                      Background="Transparent"
                      BorderBrush="Transparent"
                      TextWrapping="Wrap"
-                     Width="410">
+                     Width="370">
                 
                 
             </TextBox>
@@ -152,7 +152,8 @@
                         Margin="10,10,20,0">
 
                 <!-- Fvourited Note Button -->
-                <local:ImageSwappingToggleButton x:Name="favoriteButton" VerticalAlignment="Center"
+                <local:ImageSwappingToggleButton x:Name="favoriteButton" 
+                                                 VerticalAlignment="Center"
                     IsChecked="False"
                     IsEnabled="True"
                     EnabledChecked="/Images/purpleStar.png"
