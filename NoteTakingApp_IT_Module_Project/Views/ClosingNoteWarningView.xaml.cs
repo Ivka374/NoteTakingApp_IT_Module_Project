@@ -1,7 +1,9 @@
-﻿using NoteTakingApp_UI.Models;
+﻿using NoteTakingApp_UI.Data;
+using NoteTakingApp_UI.Models;
 
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -31,9 +33,9 @@ namespace NoteTakingApp_IT_Module_Project.Views
         {
             NoteModel note = new NoteModel();
             NoteContentModel noteContents = new NoteContentModel();
-            noteContents.TextContent = AddAndEditNoteView.thisInstance.noteTextBox.ToString();
+            noteContents.TextContent = AddAndEditNoteView.thisInstance.noteTextBox.Text;
             //noteContents.MusicContent = ???;     
-            //note.Title = ???;    
+            note.Title = AddAndEditNoteView.thisInstance.titleTextBox.Text;    
             //note.ThemeName = ???;
             //note.NoteTags = ???;
             note.Content = noteContents;
@@ -45,6 +47,8 @@ namespace NoteTakingApp_IT_Module_Project.Views
             {
                 note.IsFavourite = false;
             }
+            //NoteData noteData = new NoteData();
+            //noteData.AddNote(note);                    adds note to database
             this.Close();
             AddAndEditNoteView.thisInstance.Close();
         }

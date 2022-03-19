@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
 
 namespace NoteTakingApp_UI.Models
 {
@@ -11,12 +12,12 @@ namespace NoteTakingApp_UI.Models
         public NoteContentModel Content { get; set; }
         public List<TagModel> NoteTags { get; set; }
         public bool IsFavourite { get; set; }
-        public string ThemeName { get; set; }
+        public int ThemeName { get; set; }
         public NoteModel()
         {
 
         }
-        public NoteModel(int id, string title, string content, bool isFav, string themeName)
+        public NoteModel(int id, string title, string content, bool isFav, int themeName)
         {
             ID = id;
             Title = title;
@@ -24,5 +25,6 @@ namespace NoteTakingApp_UI.Models
             IsFavourite = isFav;
             ThemeName = themeName;
         }
+      
     }
 }

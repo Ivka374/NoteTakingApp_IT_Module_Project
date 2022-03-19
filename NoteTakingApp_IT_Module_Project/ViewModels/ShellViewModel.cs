@@ -8,6 +8,7 @@ namespace NoteTakingApp_UI.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
+        public static ShellViewModel homeWindow;
         WindowManager _windowManager;
         private BindableCollection<TagModel> tags;
         public BindableCollection<TagModel> Tags { 
@@ -44,6 +45,7 @@ namespace NoteTakingApp_UI.ViewModels
             LoadHomePage();
 
             _windowManager = new WindowManager();
+            homeWindow = this;
         }
         public void LoadHomePage()
         {

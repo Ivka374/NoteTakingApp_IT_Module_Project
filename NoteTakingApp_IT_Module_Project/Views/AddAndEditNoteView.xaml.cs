@@ -59,7 +59,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
             if (e.Key == System.Windows.Input.Key.Escape)
             {
                 thisInstance = this;
-                _windowManager.ShowDialogAsync(new ClosingNoteWarningViewModel()); // no longer gives error big yay!
+                _windowManager.ShowDialogAsync(new ClosingNoteWarningViewModel());
             }
         }
     }

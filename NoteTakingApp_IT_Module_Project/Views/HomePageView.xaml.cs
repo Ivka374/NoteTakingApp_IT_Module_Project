@@ -1,4 +1,10 @@
-﻿using System;
+﻿using Caliburn.Micro;
+
+using NoteTakingApp_IT_Module_Project.ViewModels;
+
+using NoteTakingApp_UI.Models;
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,15 +24,14 @@ namespace NoteTakingApp_UI.Views
     /// </summary>
     public partial class HomePageView : UserControl
     {
-        
+        WindowManager _windowManager = new WindowManager();
         public HomePageView()
         {
             InitializeComponent();
         }
-
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //opens the note that was clicked on
+            //need help :/ idk how to transfer note content over to addandeditnoteview
         }
     }
 }
