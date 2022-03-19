@@ -12,23 +12,8 @@
         Background="Transparent"
         AllowsTransparency="True">
     
-    <Border>
+    <Border Style="{StaticResource NoteColoursChangeTheme}">
         
-        <Border.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                <GradientStop Color="MediumTurquoise" Offset="0.0"/>
-                <GradientStop Color="MidnightBlue" Offset="1"/>
-                <!--
-                <GradientStop Color="GreenYellow" Offset="0.0"/>
-                <GradientStop Color="Green" Offset="1"/>
-                This is the green gradient(Maybe not the best match though)
-                
-                <GradientStop Color="#F14167" Offset="0.0"/>
-                <GradientStop Color="#FF681F" Offset="1"/>
-                This is an option for a pink/red/orange gradient-->
-            </LinearGradientBrush>
-        </Border.Background>
-
         <Border.Clip>
             <RectangleGeometry RadiusX="20" RadiusY="20"
                                Rect="0,0,500,400"/>
