@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NoteTakingApp_IT_Module_Project.ViewModels
 {
-    class TagPageViewModel
+    public class TagPageViewModel : Screen
     {
         private BindableCollection<NoteModel> selectedTagCollection;
         public string SelectedTagName { get; set; }
@@ -16,15 +16,5 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
             get { return selectedTagCollection; }
             set { selectedTagCollection = value; }
         }
-
-        public TagPageViewModel()
-        {
-
-        }
-        public TagPageViewModel(string name)
-        {
-            SelectedTagName = name;
-        }
-
     }
 }

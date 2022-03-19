@@ -31,7 +31,7 @@
             </Grid.RowDefinitions>
 
             <!-- Column 0 -->
-            <TextBlock Text="Logo"
+            <TextBlock Text="StaveN"
                        VerticalAlignment="Center" HorizontalAlignment="Left"
                        Margin="20,0,0,0"
                        Foreground="White"
@@ -58,7 +58,9 @@
                           MinHeight="50"
                           FontSize="14" FontFamily="/Font/#Poppins"
                           ItemsSource="{Binding Tags}"
-                          x:Name="LoadTagPage" Selected="LoadTagPage_Selected" SelectionChanged="LoadTagPage_SelectionChanged">
+                          x:Name="LoadTagPage" 
+                          SelectedIndex="0"
+                          SelectedItem="{Binding SelectedTag}">
 
                     <ComboBox.ItemTemplate>
                         <DataTemplate>

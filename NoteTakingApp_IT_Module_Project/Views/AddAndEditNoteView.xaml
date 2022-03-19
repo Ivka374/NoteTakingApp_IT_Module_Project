@@ -11,7 +11,7 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True">
-    
+
     <Border Style="{StaticResource NoteColoursChangeTheme}">
         
         <Border.Clip>
@@ -37,12 +37,14 @@
             
             <!-- Column 0 -->
             <TextBox Grid.ColumnSpan="1"
-                           Text="{Binding Tiltle}"
+                           Text="{Binding Title}"
                            Foreground="White"
                            FontSize="36" FontFamily="/Font/#Poppins"
                            Margin="20,10,10,0"
                      Background="Transparent"
-                     BorderBrush="Transparent">
+                     BorderBrush="Transparent"
+                     TextWrapping="Wrap"
+                     Width="410">
                 
                 
             </TextBox>
@@ -56,7 +58,7 @@
                            BorderThickness="0"
                            FontSize="18" FontFamily="/Font/#Poppins"
                            Margin="20,10,10,0"
-                           TextWrapping="WrapWithOverflow">
+                           TextWrapping="Wrap">
                 
                 <TextBox.ContextMenu>
                     <ContextMenu Style="{StaticResource ContextMenuTheme}"
@@ -181,13 +183,93 @@
                                     </MenuItem.Icon>
                                 </MenuItem>
 
-                                <MenuItem x:Name="changeColourMenuItem" Header="Change Colour">
-                                    <MenuItem.Icon>
-                                        <Image Source="/Images/colourPalette.png"/>
-                                    </MenuItem.Icon>
+                            <MenuItem x:Name="changeColourMenuItem" Header="Change Colour">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/colourPalette.png"/>
+                                </MenuItem.Icon>
+
+                                <!-- Colour change options menu -->
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                    <Border Height="20" Width="20" CornerRadius="10">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                                <GradientStop Color="#D397FA" Offset="0.0"/>
+                                                <GradientStop Color="#8364E8" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    </MenuItem.Header>
                                 </MenuItem>
 
-                                <MenuItem x:Name="deleteMenuItem" Header="Delete" >
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <Border Height="20" Width="20" CornerRadius="10">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                                <GradientStop Color="Turquoise" Offset="0.0"/>
+                                                <GradientStop Color="MediumBlue" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    </MenuItem.Header>
+                                </MenuItem>
+
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <Border Height="20" Width="20" CornerRadius="10">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                                <GradientStop Color="#FFF95B" Offset="0.0"/>
+                                                <GradientStop Color="#FF930F" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    </MenuItem.Header>
+                                </MenuItem>
+
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <Border Height="20" Width="20" CornerRadius="10">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                                <GradientStop Color="#FF0F7B" Offset="0.0"/>
+                                                <GradientStop Color="#F89B29" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    </MenuItem.Header>
+                                </MenuItem>
+
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <Border Height="20" Width="20" CornerRadius="10">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                                <GradientStop Color="#07F49E" Offset="0.0"/>
+                                                <GradientStop Color="#42047E" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    </MenuItem.Header>
+                                </MenuItem>
+
+                                <MenuItem>
+                                    <MenuItem.Header>
+                                        <Border Height="20" Width="20" CornerRadius="10">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                                <GradientStop Color="#FC4778" Offset="0.0"/>
+                                                <GradientStop Color="#3952F5" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    </MenuItem.Header>
+                                </MenuItem>
+
+                            </MenuItem>
+
+                            <MenuItem x:Name="deleteMenuItem" Header="Delete" >
                                     <MenuItem.Icon>
                                         <Image Source="/Images/delete.png"/>
                                     </MenuItem.Icon>

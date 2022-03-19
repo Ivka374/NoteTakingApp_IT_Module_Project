@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NoteTakingApp_UI.ViewModels
 {
-    public class HomePageViewModel : Conductor<object>
+    public class HomePageViewModel : Screen
     {
         private List<NoteModel> _allNotes;
 

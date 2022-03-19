@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NoteTakingApp_UI.ViewModels
 {
-    public class FavouritesPageViewModel : Conductor<object>
+    public class FavouritesPageViewModel : Screen
     {
         private BindableCollection<NoteModel> _favouriteNotes;
 

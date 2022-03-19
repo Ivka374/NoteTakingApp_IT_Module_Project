@@ -21,12 +21,27 @@ namespace NoteTakingApp_UI.ViewModels
             } 
         }
 
+        private TagModel selectedTag;
+
+        public TagModel SelectedTag
+        {
+            get { return selectedTag; }
+            set 
+            { 
+                selectedTag = value;
+                NotifyOfPropertyChange(() => SelectedTag);
+            }
+        }
+
+
         public ShellViewModel()
         {
             //simulating content of tags - probably make them default
             Tags = new BindableCollection<TagModel>();
             Tags.Add(new TagModel { Name = "Personal" });
             Tags.Add(new TagModel { Name = "Work" });
+
+            LoadHomePage();
 
             _windowManager = new WindowManager();
         }

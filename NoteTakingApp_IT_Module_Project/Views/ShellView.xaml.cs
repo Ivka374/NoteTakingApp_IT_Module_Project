@@ -63,15 +63,6 @@ namespace NoteTakingApp_UI.Views
         {
             System.Console.WriteLine();
         }
-
-        private void LoadTagPage_Selected(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void LoadTagPage_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-           
-        }
+                
     }
 }
