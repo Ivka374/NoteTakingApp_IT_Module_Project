@@ -9,7 +9,7 @@ namespace NoteTakingApp_UI.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public ConsoleColor Colour { get; set; } //is this the right type?
+        public ConsoleColor Colour { get; set; } //will remove this soon if agreed
         public TagModel()
         {
 

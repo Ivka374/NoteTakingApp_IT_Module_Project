@@ -19,7 +19,7 @@ namespace NoteTakingApp_UI.ViewModels
                 Title = "FavouriteExperimentView1",
                 IsFavourite = true,
                 Content = new NoteContentModel() { TextContent = "Does this display properly?" },
-                ThemeName = "2"
+                ThemeName = "1"
             });
             _favouriteNotes.Add(new NoteModel()
             {
@@ -30,10 +30,11 @@ namespace NoteTakingApp_UI.ViewModels
             });
             _favouriteNotes.Add(new NoteModel()
             {
-                Title = "FavouriteExperimentView3",
+                Title = "FavouriteExperimentView321",
                 IsFavourite = true,
-                Content = new NoteContentModel() { TextContent = "Does this display properly at last or are the edges a bit off again?" },
-                ThemeName = "2"
+                Content = new NoteContentModel() { TextContent = "Does this display properly at last or are the edges a bit off again? Well, yes sweetie but do these expand like they should or are they just going to remain bland and uniform throughot the page? Hmmm?" },
+                ThemeName = "3",
+                NoteTags = new List<TagModel>() { new TagModel() { Name = "Cool"}, new TagModel() { Name = "Cute"}, new TagModel() { Name = "Funny"} }
             });
         }
 

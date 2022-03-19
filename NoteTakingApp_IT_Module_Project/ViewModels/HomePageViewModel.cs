@@ -23,7 +23,8 @@ namespace NoteTakingApp_UI.ViewModels
                 Title = "ExperimentView2",
                 IsFavourite = true,
                 Content = new NoteContentModel() { TextContent = "Does this display properly or no?" },
-                ThemeName = "2"
+                ThemeName = "2",
+                NoteTags = new List<TagModel>() { new TagModel() { Name = "Cool" }, new TagModel() { Name = "Funny" } }
             });
             _allNotes.Add(new NoteModel()
             {

@@ -20,34 +20,21 @@
             <ItemsControl ItemsSource="{Binding AllNotes}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal">
-                        <WrapPanel.Resources>
-                            <Style TargetType="{x:Type Button}">
-                                <Setter Property="Margin" Value="10,10" />
-                                <Setter Property="Padding" Value="10,10" />
-                            </Style>
-                        </WrapPanel.Resources>
-                    </WrapPanel>
+                    <WrapPanel/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
                 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                     <Border Margin="10" MinHeight="100" Width="200"
+                            CornerRadius="10"
                                 MouseLeftButtonDown="Border_MouseLeftButtonDown"
                             Style="{StaticResource NoteColoursChangeTheme}">
 
-                        <Border.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10"
-                                                    Rect="0,0,200,100"/>
-                            </Border.Clip>
-
                             <Grid>
                                 <StackPanel>
-                                    <!-- Maybe will make the text change
-                                    depending on background -->
                                     <TextBlock Text="{Binding Title}"
-                                               TextWrapping="WrapWithOverflow"
+                                               TextWrapping="Wrap"
                                                 Foreground="Black"
                                                 FontSize="14" FontFamily="/Font/#Poppins"
                                                 Margin="10,5,5,0"/>
@@ -58,9 +45,37 @@
                                     <TextBlock Text="{Binding Content.TextContent}"
                                                 TextWrapping="Wrap"
                                                 Foreground="Black"
-                                                FontSize="9" FontFamily="/Font/#Poppins"
-                                                Margin="10,5,5,0"/>
-                                </StackPanel>
+                                                FontSize="12" FontFamily="/Font/#Poppins"
+                                                Margin="10,5,5,5"/>
+
+                                <!-- Tag view -->
+                                <ItemsControl ItemsSource="{Binding NoteTags}">
+
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border Margin="7" Height="30" MinWidth="40"
+                                                    BorderBrush="Black" BorderThickness="0.5"
+                                                    Background="Transparent" CornerRadius="15">
+
+                                                <TextBlock Text="{Binding Name}"
+                                                           Foreground="Black"
+                                                           FontSize="12" FontFamily="/Font/#Poppins"
+                                                           Margin="5" VerticalAlignment="Center"
+                                                           HorizontalAlignment="Center"/>
+
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+
+                                </ItemsControl>
+
+                            </StackPanel>
                             </Grid>
                         </Border>
                     </DataTemplate>

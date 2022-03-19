@@ -22,7 +22,7 @@
                                                           (GradientBrush.GradientStops)[1].(GradientStop.Color)"
                                                            Storyboard.TargetName="Border">
                                 <EasingColorKeyFrame KeyTime="0"
-                                                        Value="#785EB2" />
+                                                        Value="#423860" />
                             </ColorAnimationUsingKeyFrames>
                         </Storyboard>
                     </VisualState>
@@ -35,21 +35,21 @@
                                                           (GradientBrush.GradientStops)[1].(GradientStop.Color)"
                                                           Storyboard.TargetName="Border">
                                 <EasingColorKeyFrame KeyTime="0"
-                                                        Value="MediumPurple" />
+                                                        Value="#8667C7" />
                             </ColorAnimationUsingKeyFrames>
                             
                             <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).
                                                           (SolidColorBrush.Color)"
                                                           Storyboard.TargetName="Arrow">
                                 <EasingColorKeyFrame KeyTime="0"
-                                                        Value="MediumPurple" />
+                                                        Value="#785EB2" />
                             </ColorAnimationUsingKeyFrames>
                             
                             <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).
                                                           (GradientBrush.GradientStops)[1].(GradientStop.Color)"
                                                           Storyboard.TargetName="Border">
                                 <EasingColorKeyFrame KeyTime="0"
-                                                        Value="MediumPurple" />
+                                                        Value="#5D4B89" />
                             </ColorAnimationUsingKeyFrames>
                         </Storyboard>
                     </VisualState>
@@ -84,9 +84,9 @@
                 <Border.BorderBrush>
                     <LinearGradientBrush EndPoint="0,1"
                                          StartPoint="0,0">
-                        <GradientStop Color="#AE94E4"
+                        <GradientStop Color="Transparent"
                                       Offset="0" />
-                        <GradientStop Color="#5D4B89"
+                        <GradientStop Color="Transparent"
                                       Offset="1" />
                     </LinearGradientBrush>
                 </Border.BorderBrush>
@@ -96,8 +96,8 @@
                                          EndPoint="0,1">
                         <LinearGradientBrush.GradientStops>
                             <GradientStopCollection>
-                                <GradientStop Color="White" />
-                                <GradientStop Color="#9D7DDE"
+                                <GradientStop Color="#272537" />
+                                <GradientStop Color="#272537"
                                               Offset="1.0" />
                             </GradientStopCollection>
                         </LinearGradientBrush.GradientStops>
@@ -109,16 +109,16 @@
                     CornerRadius="2,0,0,2"
                     Margin="1" >
                 <Border.Background>
-                    <SolidColorBrush Color="White"/>
+                    <SolidColorBrush Color="Transparent"/>
                 </Border.Background>
             </Border>
             <Path x:Name="Arrow"
                   Grid.Column="1"
-                  HorizontalAlignment="Center"
+                  HorizontalAlignment="Stretch"
                   VerticalAlignment="Center"
                   Data="M 0 0 L 4 4 L 8 0 Z" >
                 <Path.Fill>
-                    <SolidColorBrush Color="#5D4B89"/>
+                    <ImageBrush ImageSource="/Images/expand.png" Stretch="UniformToFill"/>
                 </Path.Fill>
             </Path>
         </Grid>
@@ -161,7 +161,7 @@
                                                                       Storyboard.TargetProperty="(TextElement.Foreground).
                                                                       (SolidColorBrush.Color)">
                                             <EasingColorKeyFrame KeyTime="0"
-                                                                 Value="MediumPurple" />
+                                                                 Value="#5D4B89" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -224,10 +224,10 @@
                                 <Border x:Name="DropDownBorder"
                                         BorderThickness="1">
                                     <Border.BorderBrush>
-                                        <SolidColorBrush Color="MediumPurple" />
+                                        <SolidColorBrush Color="#785EB2" />
                                     </Border.BorderBrush>
                                     <Border.Background>
-                                        <SolidColorBrush Color="White" />
+                                        <SolidColorBrush Color="#5D4B89" />
                                     </Border.Background>
                                 </Border>
                                 <ScrollViewer Margin="4,6,4,6"
@@ -288,7 +288,7 @@
                                                                         Storyboard.TargetProperty="(Panel.Background).
                                                                         (SolidColorBrush.Color)">
                                             <EasingColorKeyFrame KeyTime="0"
-                                                                    Value="#B59EE6" />
+                                                                    Value="#423860" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -298,7 +298,7 @@
                                                                         Storyboard.TargetProperty="(Panel.Background).
                                                                         (SolidColorBrush.Color)">
                                             <EasingColorKeyFrame KeyTime="0"
-                                                                    Value="#BCA7E8" />
+                                                                    Value="#8667C7" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
