@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using NoteTakingApp_UI.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,9 +10,18 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
 {
     public class AddAndEditNoteViewModel : Window
     {
+        private NoteModel openNote;
+
+        public NoteModel OpenNote
+        {
+            get { return openNote; }
+            set { openNote = value; }
+        }
+
+
         public void AddTagToNote()
         {
-            //add a new tag nodel instance to the list of tags of the note that is open
+            //shoukd be reassigned after the menu
         }
 
 

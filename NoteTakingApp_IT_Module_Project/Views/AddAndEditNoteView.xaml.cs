@@ -31,7 +31,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
             InitializeComponent();
             deleteMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(deleteMenuItem_Click)); //delete button now has onclick event
             changeColourMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(changeColourMenuItem_Click)); //change color now has onclick event
-            addScoreMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(addScoreMenuItem_Click)); //add score now has onclick event
+            addStaffMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(addStaffeMenuItem_Click)); //add score now has onclick event
             Mouse.AddMouseDownHandler(this, Window_MouseDown); //window now has mouseDown event check
             this.PreviewKeyDown += new KeyEventHandler(AddAndEditNoteView_PreviewKeyDown); // window now detects mouseDown event
             _windowManager = new WindowManager();
@@ -50,7 +50,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
         {
             //waiting on window
         }
-        private void addScoreMenuItem_Click(object sender, RoutedEventArgs e)
+        private void addStaffeMenuItem_Click(object sender, RoutedEventArgs e)
         {
             Score score = new Score();  //seriously i have no idea what to do
         }

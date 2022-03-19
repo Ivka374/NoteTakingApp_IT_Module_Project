@@ -15,6 +15,7 @@
     <None Remove="Images\bold.png" />
     <None Remove="Images\close.png" />
     <None Remove="Images\colourPalette.png" />
+    <None Remove="Images\defaultContextMenuIcon.png" />
     <None Remove="Images\delete.png" />
     <None Remove="Images\expand.png" />
     <None Remove="Images\italic.png" />
@@ -65,6 +66,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\colourPalette.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\defaultContextMenuIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\delete.png">

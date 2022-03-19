@@ -14,6 +14,8 @@
                 <ResourceDictionary Source="/Theme/DropdownMenuTheme.xaml"/>
                 <ResourceDictionary Source="/Theme/ContextMenuTheme.xaml"/>
                 <ResourceDictionary Source="/Theme/NoteColoursChangeTheme.xaml"/>
+                <ResourceDictionary Source="/Theme/CustomScrollViewerTheme.xaml"/>
+                <ResourceDictionary Source="/Theme/MenuItemTheme.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
