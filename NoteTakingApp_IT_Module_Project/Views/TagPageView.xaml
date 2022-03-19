@@ -27,7 +27,7 @@
                 <DataTemplate>
                     <Border Margin="10" MinHeight="100" Width="200"
                             CornerRadius="10"
-                                MouseLeftButtonDown="Border_MouseLeftButtonDown"
+                            MouseLeftButtonDown="Border_MouseLeftButtonDown"
                             Style="{StaticResource NoteColoursChangeTheme}">
 
                         <Grid>

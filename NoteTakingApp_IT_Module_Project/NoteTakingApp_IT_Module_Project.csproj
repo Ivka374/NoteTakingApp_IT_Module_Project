@@ -11,6 +11,7 @@
     <None Remove="Font\Poppins-BoldItalic.ttf" />
     <None Remove="Font\Poppins-Italic.ttf" />
     <None Remove="Font\Poppins-Regular.ttf" />
+    <None Remove="Images\blackPlus.png" />
     <None Remove="Images\bold.png" />
     <None Remove="Images\close.png" />
     <None Remove="Images\colourPalette.png" />
@@ -52,6 +53,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Font\Poppins-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\blackPlus.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\bold.png">

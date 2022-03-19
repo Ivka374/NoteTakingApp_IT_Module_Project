@@ -22,5 +22,10 @@ namespace NoteTakingApp_IT_Module_Project.Views
         {
             InitializeComponent();
         }
+
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

@@ -40,7 +40,7 @@ namespace NoteTakingApp_UI.ViewModels
         }
         public void LoadTagPage()
         {
-            ActivateItemAsync(new TagPageViewModel({ SelectedTagName = }));
+            ActivateItemAsync(new TagPageViewModel());
         }
 
         public void CreateNote() => _windowManager.ShowDialogAsync(new AddAndEditNoteViewModel());

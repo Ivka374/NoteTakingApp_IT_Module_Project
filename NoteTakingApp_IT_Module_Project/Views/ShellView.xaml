@@ -58,7 +58,7 @@
                           MinHeight="50"
                           FontSize="14" FontFamily="/Font/#Poppins"
                           ItemsSource="{Binding Tags}"
-                          x:Name="LoadTagPage">
+                          x:Name="LoadTagPage" Selected="LoadTagPage_Selected" SelectionChanged="LoadTagPage_SelectionChanged">
 
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
