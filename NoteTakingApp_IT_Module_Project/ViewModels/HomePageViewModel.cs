@@ -3,6 +3,8 @@ using NoteTakingApp_UI.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace NoteTakingApp_UI.ViewModels
 {
@@ -13,17 +15,17 @@ namespace NoteTakingApp_UI.ViewModels
         public HomePageViewModel()
         {
             _allNotes = new List<NoteModel>();
-
+            
             _allNotes.Add(new NoteModel() { Title = "ExperimentView1",
                 IsFavourite = false,
                 Content = new NoteContentModel() { TextContent = "Does this display properly?" },
-                ThemeName = "1" });
+                ThemeName = 1 });
             _allNotes.Add(new NoteModel()
             {
                 Title = "ExperimentView2",
                 IsFavourite = true,
                 Content = new NoteContentModel() { TextContent = "Does this display properly or no?" },
-                ThemeName = "2",
+                ThemeName = 2,
                 NoteTags = new List<TagModel>() { new TagModel() { Name = "Cool" }, new TagModel() { Name = "Funny" } }
             });
             _allNotes.Add(new NoteModel()
@@ -31,14 +33,14 @@ namespace NoteTakingApp_UI.ViewModels
                 Title = "ExperimentView3",
                 IsFavourite = false,
                 Content = new NoteContentModel() { TextContent = "Does this display properly at last?" },
-                ThemeName = "3"
+                ThemeName = 3
             });
             _allNotes.Add(new NoteModel()
             {
                 Title = "ExperimentView4",
                 IsFavourite = false,
                 Content = new NoteContentModel() { TextContent = "Does this display properly at last?" },
-                ThemeName = "4"
+                ThemeName = 4
             });
             _allNotes.Add(new NoteModel()
             {
@@ -51,7 +53,7 @@ namespace NoteTakingApp_UI.ViewModels
                 Title = "ExperimentView6",
                 IsFavourite = false,
                 Content = new NoteContentModel() { TextContent = "Does this display properly at last?" },
-                ThemeName = "5"
+                ThemeName = 5
             });
         }
         public List<NoteModel> AllNotes 
@@ -59,6 +61,6 @@ namespace NoteTakingApp_UI.ViewModels
             get { return _allNotes; }
             set { _allNotes = value; }
         }
-
+     
     }
 }
