@@ -26,7 +26,7 @@ namespace NoteTakingApp_UI.Views
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            //opens the note that was clicked on
         }
     }
 }

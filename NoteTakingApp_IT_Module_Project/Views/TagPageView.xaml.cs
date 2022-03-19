@@ -11,21 +11,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NoteTakingApp_UI.Views
+namespace NoteTakingApp_IT_Module_Project.Views
 {
     /// <summary>
-    /// Interaction logic for FavouritesView.xaml
+    /// Interaction logic for TagPageView.xaml
     /// </summary>
-    public partial class FavouritesPageView : UserControl
+    public partial class TagPageView : UserControl
     {
-        public FavouritesPageView()
+        public TagPageView()
         {
             InitializeComponent();
-        }
-
-        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            //also opens note that was clicked on (maybe the 2 views should be merged if I can figure out how)
         }
     }
 }

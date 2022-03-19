@@ -59,6 +59,6 @@ namespace NoteTakingApp_UI.ViewModels
             get { return _allNotes; }
             set { _allNotes = value; }
         }
-        //maybe connect to full notes database here?
+
     }
 }

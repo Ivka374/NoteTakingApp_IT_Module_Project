@@ -38,6 +38,11 @@ namespace NoteTakingApp_UI.ViewModels
         {
             ActivateItemAsync(new FavouritesPageViewModel());
         }
+        public void LoadTagPage()
+        {
+            ActivateItemAsync(new TagPageViewModel({ SelectedTagName = }));
+        }
+
         public void CreateNote() => _windowManager.ShowDialogAsync(new AddAndEditNoteViewModel());
     }
 }

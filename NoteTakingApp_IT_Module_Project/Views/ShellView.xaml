@@ -21,9 +21,8 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -58,7 +57,8 @@
                 <ComboBox Foreground="White"
                           MinHeight="50"
                           FontSize="14" FontFamily="/Font/#Poppins"
-                          ItemsSource="{Binding Tags}">
+                          ItemsSource="{Binding Tags}"
+                          x:Name="LoadTagPage">
 
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -96,10 +96,8 @@
                             Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3"
                             Margin="10"/>
 
-            <!-- Column 2 was for dark mode but is empty now -->
-
-            <!-- Column 3-->
-            <StackPanel Grid.Column="3"
+            <!-- Column 2-->
+            <StackPanel Grid.Column="2"
                         Orientation="Horizontal"
                         HorizontalAlignment="Right"
                          Height="35" MinWidth="60"
