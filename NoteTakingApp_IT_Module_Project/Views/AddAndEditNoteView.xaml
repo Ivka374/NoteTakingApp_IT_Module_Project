@@ -36,7 +36,7 @@
             
             
             <!-- Column 0 -->
-            <TextBox Grid.ColumnSpan="1"
+            <TextBox x:Name="titleTextBox" Grid.ColumnSpan="1"
                            Text="{Binding Title}"
                            Foreground="White"
                            FontSize="36" FontFamily="/Font/#Poppins"

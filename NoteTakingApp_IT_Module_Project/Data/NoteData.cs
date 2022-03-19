@@ -29,7 +29,7 @@ namespace NoteTakingApp_UI.Data
                             reader.GetString(1),
                             reader.GetString(2),
                             reader.GetBoolean(3),
-                            reader.GetString(4)
+                            reader.GetInt32(4)
                         );
                         note.NoteTags = GetTagsForNote(note.ID);
 
@@ -86,7 +86,7 @@ namespace NoteTakingApp_UI.Data
                             reader.GetString(1),
                             reader.GetString(2),
                             reader.GetBoolean(3),
-                            reader.GetString(4)
+                            reader.GetInt32(4)
                         );
                         note.NoteTags = GetTagsForNote(note.ID);
 
@@ -117,7 +117,7 @@ namespace NoteTakingApp_UI.Data
                             reader.GetString(1),
                             reader.GetString(2),
                             reader.GetBoolean(3),
-                            reader.GetString(4)
+                            reader.GetInt32(4)
                         );
                         note.NoteTags = GetTagsForNote(note.ID);
                     }
@@ -146,7 +146,7 @@ namespace NoteTakingApp_UI.Data
                             reader.GetString(1),
                             reader.GetString(2),
                             reader.GetBoolean(3),
-                            reader.GetString(4)
+                            reader.GetInt32(4)
                         );
                         note.NoteTags = GetTagsForNote(note.ID);
                     }
@@ -324,7 +324,7 @@ namespace NoteTakingApp_UI.Data
                             reader.GetString(1),
                             reader.GetString(2),
                             reader.GetBoolean(3),
-                            reader.GetString(4)
+                            reader.GetInt32(4)
                         );
                         note.NoteTags = GetTagsForNote(note.ID);
                     }

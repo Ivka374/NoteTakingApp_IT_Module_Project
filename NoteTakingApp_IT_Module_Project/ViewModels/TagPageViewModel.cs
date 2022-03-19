@@ -15,12 +15,9 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         {
             get
             {
-                return "Tag";
-                //return new ShellViewModel().SelectedTag.Name; - this is garbage but it gets my idea across
+                return ShellViewModel.homeWindow.SelectedTag.Name; //if this isnt what u wanted then just msg me on discord
             }
         }
-
-
         public BindableCollection<NoteModel> SelectedTagCollection
         {
             get { return selectedTagCollection; }
