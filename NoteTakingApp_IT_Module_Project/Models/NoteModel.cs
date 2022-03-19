@@ -7,8 +7,6 @@ namespace NoteTakingApp_UI.Models
 {
     public class NoteModel
     {
-        public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent(
-        "Click", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(NoteModel));
         public int ID { get; set; }
         public string Title { get; set; }
         public NoteContentModel Content { get; set; }

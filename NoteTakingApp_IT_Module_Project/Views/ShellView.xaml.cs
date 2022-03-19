@@ -34,7 +34,7 @@ namespace NoteTakingApp_UI.Views
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ChangedButton == MouseButton.Left)
+            if (e.ChangedButton == MouseButton.Left)  //crashes app when editing notes no idea why
             this.DragMove();
         }
         private void Close_Click(object sender, RoutedEventArgs e)

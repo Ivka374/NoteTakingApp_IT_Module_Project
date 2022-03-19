@@ -19,7 +19,7 @@
 
         
 
-            <ItemsControl ItemsSource="{Binding AllNotes}">
+            <ItemsControl x:Name="allNotesControl" ItemsSource="{Binding AllNotes}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>
