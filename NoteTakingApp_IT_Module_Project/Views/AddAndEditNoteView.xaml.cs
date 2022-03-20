@@ -9,9 +9,9 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using NoteTakingApp_UI.Models;
-using NoteTakingApp_UI.ViewModels;
-using NoteTakingApp_UI.Views;
+using NoteTakingApp_IT_Module_Project.Models;
+using NoteTakingApp_IT_Module_Project.ViewModels;
+using NoteTakingApp_IT_Module_Project.Views;
 using Caliburn.Micro;
 using NoteTakingApp_IT_Module_Project.ViewModels;
 using Manufaktura.Controls.Model;
@@ -26,7 +26,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
     {
         WindowManager _windowManager;
         public static AddAndEditNoteView thisInstance;
-        public static NoteModel editingDataContext; // this is the var for the note that was open to be edited
+
         public AddAndEditNoteView()
         {
             InitializeComponent();

@@ -1,5 +1,5 @@
 ﻿using Caliburn.Micro;
-using NoteTakingApp_UI.Models;
+using NoteTakingApp_IT_Module_Project.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,20 +10,17 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
 {
     public class AddAndEditNoteViewModel : Window
     {
-        private NoteModel openNote;
+        public static NoteModel EditingDataContext { get; set; }          // this is the var for the note that was open to be edited
 
-        public NoteModel OpenNote
+        public AddAndEditNoteViewModel()
         {
-            get { return openNote; }
-            set { openNote = value; }
+
         }
-
-
+        
         public void AddTagToNote()
         {
-            //shoukd be reassigned after the menu
+            //should be reassigned after the menu
         }
-
 
     }
 }

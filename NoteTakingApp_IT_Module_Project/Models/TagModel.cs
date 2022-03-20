@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Controls; //is this the right kind?
 
-namespace NoteTakingApp_UI.Models
+namespace NoteTakingApp_IT_Module_Project.Models
 {
     public class TagModel
     {

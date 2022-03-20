@@ -1,6 +1,6 @@
 ﻿using Caliburn.Micro;
-using NoteTakingApp_UI.Models;
-using NoteTakingApp_UI.ViewModels;
+using NoteTakingApp_IT_Module_Project.Models;
+using NoteTakingApp_IT_Module_Project.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;

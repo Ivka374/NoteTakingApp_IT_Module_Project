@@ -1,10 +1,10 @@
 ﻿using Caliburn.Micro;
 using NoteTakingApp_IT_Module_Project.ViewModels;
-using NoteTakingApp_UI.Models;
+using NoteTakingApp_IT_Module_Project.Models;
 using System.Windows;
 using System.Windows.Input;
 
-namespace NoteTakingApp_UI.ViewModels
+namespace NoteTakingApp_IT_Module_Project.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {

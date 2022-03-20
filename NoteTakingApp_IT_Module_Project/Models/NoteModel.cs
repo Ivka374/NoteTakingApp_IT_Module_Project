@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 
-namespace NoteTakingApp_UI.Models
+namespace NoteTakingApp_IT_Module_Project.Models
 {
     public class NoteModel
     {
