@@ -91,7 +91,7 @@
                     </Setter>
                 </DataTrigger>
 
-                <DataTrigger Binding="{Binding EditingDataContext.ThemeName}"
+                <DataTrigger Binding="{Binding EditingDataContext.ThemeName }"
                                                  Value="5">
                     <Setter Property="Background">
                         <Setter.Value>
@@ -216,12 +216,12 @@
                             <Button.ContextMenu>
                                 <ContextMenu Style="{StaticResource ContextMenuTheme}">
 
-                                    <MenuItem>
+                                    <MenuItem x:Name="tagCreateMenuItem" >
                                         <MenuItem.Icon>
                                             <Image Source="/Images/blackPlus.png" Width="20"/>
                                         </MenuItem.Icon>
                                         <MenuItem.Header>
-                                            <TextBox>
+                                            <TextBox x:Name="tagTextBox">
                                                 Create New Tag
                                             </TextBox>
                                         </MenuItem.Header>

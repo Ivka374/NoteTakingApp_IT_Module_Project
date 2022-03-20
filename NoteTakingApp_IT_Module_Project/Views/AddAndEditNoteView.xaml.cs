@@ -5,6 +5,8 @@ using NoteTakingApp_IT_Module_Project.ViewModels;
 using Caliburn.Micro;
 using Manufaktura.Controls.Model;
 using NoteTakingApp_IT_Module_Project.Data;
+using System.Text.RegularExpressions;
+using NoteTakingApp_IT_Module_Project.Models;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
@@ -83,6 +85,22 @@ namespace NoteTakingApp_IT_Module_Project.Views
         private void Color5_Click(object sender, RoutedEventArgs e)
         {
             AddAndEditNoteViewModel.EditingDataContext.ThemeName = 5;
+        }
+        private void tagCreateMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            var regex = new Regex(@"[^a-zA-Z0-9\s]");
+            if (regex.IsMatch(tagTextBox.Text))
+            {
+                MessageBox.Show("You may not use special characters in your tags.", "Cannot create tag!", MessageBoxButton.OK, MessageBoxImage.Error);
+                tagTextBox.Text = "";
+            }
+            else
+            {
+                //gives error :/
+                TagModel newTag = new TagModel();
+                newTag.Name = tagTextBox.Text;
+                AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(newTag);
+            }
         }
         private void AddingHandlersToColors()
         {
