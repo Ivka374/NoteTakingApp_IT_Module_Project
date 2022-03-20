@@ -23,7 +23,7 @@
                         <Border Grid.Column="1"
                   BorderThickness="0,1,1,1">
                             <Border.BorderBrush>
-                                <SolidColorBrush Color="Lavender" />
+                                <SolidColorBrush Color="Transparent" />
                             </Border.BorderBrush>
                             <ScrollContentPresenter CanContentScroll="{TemplateBinding CanContentScroll}" />
                         </Border>

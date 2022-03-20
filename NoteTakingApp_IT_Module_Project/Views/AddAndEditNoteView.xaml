@@ -219,33 +219,14 @@
                                 </Style>
                             </ContextMenu.Resources>
 
-                            <MenuItem x:Name="addStaffMenuItem" Header="Add Staff">
-                                    <MenuItem.Icon>
-                                        <Image Source="/Images/musicNotation.png"/>
-                                    </MenuItem.Icon>
-                                
-                                <!-- Enter clef and ?rhythm? -->
-                                <MenuItem>
-                                    <MenuItem.Header>
-                                        <StackPanel>
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text="Clef" Padding="0,5,5,0"/>
-                                                <TextBox x:Name="clefInput" MinWidth="40"
-                                                     Margin="5,5,0,5"/>
-                                            </StackPanel>
-
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text="Tact" Padding="0,5,5,0"/>
-                                                <TextBox x:Name="tactInput" MinWidth="40"
-                                                     Margin="5,5,0,5"/>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </MenuItem.Header>
-                                </MenuItem>
-                                
+                            <MenuItem x:Name="addScoreMenuItem" Header="Add/Edit Score">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/musicNotation.png"/>
+                                </MenuItem.Icon>
                             </MenuItem>
 
                             <MenuItem x:Name="changeColourMenuItem" Header="Change Colour">
+                                
                                 <MenuItem.Icon>
                                     <Image Source="/Images/colourPalette.png"/>
                                 </MenuItem.Icon>
