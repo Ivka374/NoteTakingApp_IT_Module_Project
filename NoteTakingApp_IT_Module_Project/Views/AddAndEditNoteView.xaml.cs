@@ -8,9 +8,6 @@ using NoteTakingApp_IT_Module_Project.Data;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
-    /// <summary>
-    /// Interaction logic for AddAndEditNoteView.xaml
-    /// </summary>
     public partial class AddAndEditNoteView : Window
     {
         WindowManager _windowManager;
@@ -18,11 +15,14 @@ namespace NoteTakingApp_IT_Module_Project.Views
         public AddAndEditNoteView()
         {
             InitializeComponent();
+
             deleteMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(deleteMenuItem_Click)); //delete button now has onclick event
             changeColourMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(changeColourMenuItem_Click)); //change color now has onclick event
             addScoreMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(addScoreeMenuItem_Click)); //add score now has onclick event
+
             Mouse.AddMouseDownHandler(this, Window_MouseDown); //window now has mouseDown event check
             this.PreviewKeyDown += new KeyEventHandler(AddAndEditNoteView_PreviewKeyDown); // window now detects mouseDown event
+
             AddingHandlersToColors(); //all colors now have onclick events
 
             _windowManager = new WindowManager();
