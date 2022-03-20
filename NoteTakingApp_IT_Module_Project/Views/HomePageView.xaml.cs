@@ -1,9 +1,8 @@
 ﻿using Caliburn.Micro;
-
 using NoteTakingApp_IT_Module_Project.ViewModels;
+using NoteTakingApp_IT_Module_Project.Views;
 
 using NoteTakingApp_UI.Models;
-
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,14 +23,20 @@ namespace NoteTakingApp_UI.Views
     /// </summary>
     public partial class HomePageView : UserControl
     {
+        public static bool editing;
+
         WindowManager _windowManager = new WindowManager();
         public HomePageView()
         {
             InitializeComponent();
         }
-        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Note_Click(object sender, RoutedEventArgs e)
         {
-            //need help :/ idk how to transfer note content over to addandeditnoteview
+            Button clickedNote = sender as Button;
+            var dataObject = clickedNote.DataContext as NoteModel;
+            editing = true;
+            AddAndEditNoteView.editingDataContext = dataObject;
+            _windowManager.ShowDialogAsync(new AddAndEditNoteViewModel());
         }
     }
 }

@@ -24,8 +24,8 @@ namespace NoteTakingApp_IT_Module_Project.Views
     public partial class AddAndEditNoteView : Window
     {
         WindowManager _windowManager;
-        public static AddAndEditNoteView thisInstance;    //i have no idea if this is right or wrong, if ur concerned
-                                                          //about it please check references and correct
+        public static AddAndEditNoteView thisInstance;
+        public static NoteModel editingDataContext; // this is the var for the note that was open to be edited
         public AddAndEditNoteView()
         {
             InitializeComponent();
