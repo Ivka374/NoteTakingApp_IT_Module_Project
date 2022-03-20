@@ -29,7 +29,7 @@
 
             <Style.Triggers>
 
-                <DataTrigger Binding="{Binding ThemeName}"
+                <DataTrigger Binding="{Binding EditnigDataContext.ThemeName}"
                                                  Value="0">
                     <Setter Property="Background">
                         <Setter.Value>
@@ -42,7 +42,7 @@
                 </DataTrigger>
 
 
-                <DataTrigger Binding="{Binding ThemeName}"
+                <DataTrigger Binding="{Binding EditnigDataContext.ThemeName}"
                                                  Value="1">
                     <Setter Property="Background">
                         <Setter.Value>
