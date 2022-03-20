@@ -326,7 +326,7 @@
                                 </MenuItem.Icon>
 
                                 <!-- Colour change options menu -->
-                                <MenuItem>
+                                <MenuItem x:Name="color0">
                                     <MenuItem.Header>
                                         <StackPanel Orientation="Horizontal">
                                             <Border Height="20" Width="20" CornerRadius="10">
@@ -343,7 +343,7 @@
                                     </MenuItem.Header>
                                 </MenuItem>
 
-                                <MenuItem>
+                                <MenuItem x:Name="color1">
                                     <MenuItem.Header>
                                         <StackPanel Orientation="Horizontal">
                                             <Border Height="20" Width="20" CornerRadius="10">
@@ -360,7 +360,7 @@
                                     </MenuItem.Header>
                                 </MenuItem>
 
-                                <MenuItem>
+                                <MenuItem x:Name="color2">
                                     <MenuItem.Header>
                                         <StackPanel Orientation="Horizontal">
                                             <Border Height="20" Width="20" CornerRadius="10">
@@ -377,7 +377,7 @@
                                     </MenuItem.Header>
                                 </MenuItem>
 
-                                <MenuItem>
+                                <MenuItem x:Name="color3">
                                     <MenuItem.Header>
                                         <StackPanel Orientation="Horizontal">
                                             <Border Height="20" Width="20" CornerRadius="10">
@@ -394,7 +394,7 @@
                                     </MenuItem.Header>
                                 </MenuItem>
 
-                                <MenuItem>
+                                <MenuItem x:Name="color4">
                                     <MenuItem.Header>
                                         <StackPanel Orientation="Horizontal">
                                             <Border Height="20" Width="20" CornerRadius="10">
@@ -411,7 +411,7 @@
                                     </MenuItem.Header>
                                 </MenuItem>
 
-                                <MenuItem>
+                                <MenuItem x:Name="color5">
                                     <MenuItem.Header>
                                         <StackPanel Orientation="Horizontal">
                                             <Border Height="20" Width="20" CornerRadius="10">

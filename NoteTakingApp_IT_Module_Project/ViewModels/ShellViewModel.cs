@@ -3,6 +3,7 @@ using NoteTakingApp_IT_Module_Project.ViewModels;
 using NoteTakingApp_IT_Module_Project.Models;
 using System.Windows;
 using System.Windows.Input;
+using NoteTakingApp_IT_Module_Project.Views;
 
 namespace NoteTakingApp_IT_Module_Project.ViewModels
 {
@@ -60,6 +61,11 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
             ActivateItemAsync(new TagPageViewModel());
         }
 
-        public void CreateNote() => _windowManager.ShowDialogAsync(new AddAndEditNoteViewModel());
+        public void CreateNote() 
+        { 
+            AddAndEditNoteViewModel.EditingDataContext = new NoteModel();
+            _windowManager.ShowDialogAsync(new AddAndEditNoteViewModel()); 
+        }
+        
     }
 }
