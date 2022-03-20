@@ -14,8 +14,100 @@
         Background="Transparent"
         AllowsTransparency="True">
 
-    <Border Style="{StaticResource NoteColoursChangeTheme}">
-        
+    <Window.Resources>
+        <Style x:Key="OpenNoteColoursChangeTheme" TargetType="Border">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="#D397FA" Offset="0.0"/>
+                            <GradientStop Color="#8364E8" Offset="1"/>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+
+                <DataTrigger Binding="{Binding ThemeName}"
+                                                 Value="0">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#D397FA" Offset="0.0"/>
+                                <GradientStop Color="#8364E8" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+
+
+                <DataTrigger Binding="{Binding ThemeName}"
+                                                 Value="1">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="Turquoise" Offset="0.0"/>
+                                <GradientStop Color="MidnightBlue" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding EditnigDataContext.ThemeName}"
+                                                 Value="2">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#FFF95B" Offset="0.0"/>
+                                <GradientStop Color="#FF930F" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding EditnigDataContext.ThemeName}"
+                                                 Value="3">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#FF0F7B" Offset="0.0"/>
+                                <GradientStop Color="#F89B29" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding EditnigDataContext.ThemeName}"
+                                                 Value="4">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#07F49E" Offset="0.0"/>
+                                <GradientStop Color="#42047E" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding }"
+                                                 Value="5">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#FC4778" Offset="0.0"/>
+                                <GradientStop Color="#3952F5" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Border Style="{StaticResource OpenNoteColoursChangeTheme}">
         <Border.Clip>
             <RectangleGeometry RadiusX="20" RadiusY="20"
                                Rect="0,0,500,400"/>
@@ -40,7 +132,7 @@
             <!-- Column 0 -->
             <TextBox x:Name="titleTextBox" Grid.ColumnSpan="1"
                            Text="{Binding EditingDataContext.Title}"
-                           Foreground="White"
+                           Foreground="Black"
                            FontSize="36" FontFamily="/Font/#Poppins"
                            Margin="20,10,10,0"
                      Background="Transparent"
@@ -59,7 +151,7 @@
                 <StackPanel>
                     <TextBox x:Name="noteTextBox"
                            Text="{Binding EditingDataContext.Content.TextContent}"
-                           Foreground="White" Background="Transparent"
+                           Foreground="Black" Background="Transparent"
                            BorderThickness="0"
                            FontSize="18" FontFamily="/Font/#Poppins"
                            Margin="20,10,10,0"
@@ -135,7 +227,15 @@
                                         </MenuItem.Header>
                                     </MenuItem>
 
-
+                                    <ItemsControl ItemsSource="{Binding EditingDataContext.NoteTags}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <CheckBox>
+                                                    <TextBlock Text="{Binding Name}"/>
+                                                </CheckBox>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
 
                                 </ContextMenu>
                             </Button.ContextMenu>

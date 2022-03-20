@@ -30,6 +30,7 @@
                     <DataTemplate>
                     <Button>
 
+                        <!-- This partly refuses to work for some reason -->
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
                                 <Style.Setters>
@@ -45,6 +46,7 @@
                                 </Style.Triggers>
                             </Style>
                         </Button.Style>
+                        <!-- Up to here -->
 
                         <Border Margin="10" MinHeight="100" Width="200"
                             CornerRadius="10" VerticalAlignment="Top"
