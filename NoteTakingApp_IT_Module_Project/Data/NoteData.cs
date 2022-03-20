@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using MySql.Data;
 using MySql.Data.MySqlClient;
-using NoteTakingApp_UI.Models;
+using NoteTakingApp_IT_Module_Project.Models;
 
-namespace NoteTakingApp_UI.Data
+namespace NoteTakingApp_IT_Module_Project.Data
 {
     class NoteData
     {

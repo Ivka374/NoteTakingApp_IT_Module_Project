@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NoteTakingApp_IT_Module_Project.Views"
-             xmlns:ManufakturaControls="clr-namespace:Manufaktura.Controls.WPF;assembly=Manufaktura.Controls.WPF" xmlns:viewmodels="clr-namespace:NoteTakingApp_UI.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MusicViewModel}"
+             xmlns:ManufakturaControls="clr-namespace:Manufaktura.Controls.WPF;assembly=Manufaktura.Controls.WPF" xmlns:viewmodels="clr-namespace:NoteTakingApp_IT_Module_Project.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MusicViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>

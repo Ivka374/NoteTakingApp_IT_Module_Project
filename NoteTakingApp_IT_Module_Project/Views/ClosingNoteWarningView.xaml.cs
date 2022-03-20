@@ -1,5 +1,5 @@
-﻿using NoteTakingApp_UI.Data;
-using NoteTakingApp_UI.Models;
+﻿using NoteTakingApp_IT_Module_Project.Data;
+using NoteTakingApp_IT_Module_Project.Models;
 
 using System;
 using System.Collections.Generic;

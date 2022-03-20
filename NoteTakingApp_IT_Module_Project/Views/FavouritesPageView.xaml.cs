@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NoteTakingApp_UI.Views
+namespace NoteTakingApp_IT_Module_Project.Views
 {
     /// <summary>
     /// Interaction logic for FavouritesView.xaml

@@ -4,7 +4,9 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:NoteTakingApp_IT_Module_Project.Views"
+        xmlns:local="clr-namespace:NoteTakingApp_IT_Module_Project.Views" 
+        xmlns:viewmodels="clr-namespace:NoteTakingApp_IT_Module_Project.ViewModels" 
+        d:DataContext="{d:DesignInstance Type=viewmodels:AddAndEditNoteViewModel}"
         mc:Ignorable="d"
         Height="400" Width="500"
         x:Name="NoteView"
@@ -37,7 +39,7 @@
             
             <!-- Column 0 -->
             <TextBox x:Name="titleTextBox" Grid.ColumnSpan="1"
-                           Text="{Binding Title}"
+                           Text="{Binding EditingDataContext.Title}"
                            Foreground="White"
                            FontSize="36" FontFamily="/Font/#Poppins"
                            Margin="20,10,10,0"
@@ -56,7 +58,7 @@
                           Style="{StaticResource LeftScrollViewer}">
                 <StackPanel>
                     <TextBox x:Name="noteTextBox"
-                           Text="{Binding Content}"
+                           Text="{Binding EditingDataContext.Content.TextContent}"
                            Foreground="White" Background="Transparent"
                            BorderThickness="0"
                            FontSize="18" FontFamily="/Font/#Poppins"
@@ -140,7 +142,7 @@
 
                         </Button>
 
-                        <ItemsControl ItemsSource="{Binding NoteTags}">
+                        <ItemsControl ItemsSource="{Binding EditingDataContext.NoteTags}">
 
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>

@@ -4,7 +4,7 @@ using System.Text;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace NoteTakingApp_UI.Data
+namespace NoteTakingApp_IT_Module_Project.Data
 {
     class Database
     {

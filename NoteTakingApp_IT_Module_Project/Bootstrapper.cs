@@ -1,11 +1,11 @@
 ﻿using Caliburn.Micro;
-using NoteTakingApp_UI.ViewModels;
+using NoteTakingApp_IT_Module_Project.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 
-namespace NoteTakingApp_UI
+namespace NoteTakingApp_IT_Module_Project
 {
     public class Bootstrapper : BootstrapperBase
     {

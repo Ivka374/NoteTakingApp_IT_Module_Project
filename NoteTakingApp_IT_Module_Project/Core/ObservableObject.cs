@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace NoteTakingApp_UI.Core
+namespace NoteTakingApp_IT_Module_Project.Core
 {
     class ObservableObject : INotifyPropertyChanged
     {
