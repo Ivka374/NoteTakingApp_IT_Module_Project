@@ -14,7 +14,8 @@
                    FontSize="28" FontFamily="/Font/#Poppins"
                    HorizontalAlignment="Left"
                    Margin="0,0,0,20"
-                   Text="{Binding SelectedTagName}"/>
+                   Text="{Binding RelativeSource={RelativeSource AncestorType=Window},
+            Path=DataContext.SelectedTag, Mode=TwoWay}"/>
 
 
 
