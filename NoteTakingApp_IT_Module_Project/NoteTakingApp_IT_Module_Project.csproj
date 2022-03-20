@@ -12,20 +12,17 @@
     <None Remove="Font\Poppins-Italic.ttf" />
     <None Remove="Font\Poppins-Regular.ttf" />
     <None Remove="Images\blackPlus.png" />
-    <None Remove="Images\bold.png" />
     <None Remove="Images\close.png" />
     <None Remove="Images\colourPalette.png" />
     <None Remove="Images\defaultContextMenuIcon.png" />
     <None Remove="Images\delete.png" />
     <None Remove="Images\expand.png" />
-    <None Remove="Images\italic.png" />
     <None Remove="Images\maximize.png" />
     <None Remove="Images\minimize.png" />
     <None Remove="Images\musicNotation.png" />
     <None Remove="Images\plus.png" />
     <None Remove="Images\purpleStar.png" />
     <None Remove="Images\questionMark.png" />
-    <None Remove="Images\underline.png" />
     <None Remove="Images\verticalMenu.png" />
     <None Remove="Images\whiteStar.png" />
   </ItemGroup>
@@ -59,9 +56,6 @@
     <Resource Include="Images\blackPlus.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\bold.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Images\close.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -77,9 +71,6 @@
     <Resource Include="Images\expand.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\italic.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Images\maximize.png" />
     <Resource Include="Images\minimize.png" />
     <Resource Include="Images\musicNotation.png">
@@ -90,9 +81,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\questionMark.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\underline.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\verticalMenu.png">

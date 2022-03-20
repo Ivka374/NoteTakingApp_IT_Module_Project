@@ -107,7 +107,8 @@
         </Style>
     </Window.Resources>
 
-    <Border Style="{StaticResource OpenNoteColoursChangeTheme}">
+    <Border Style="{DynamicResource OpenNoteColoursChangeTheme}">
+        
         <Border.Clip>
             <RectangleGeometry RadiusX="20" RadiusY="20"
                                Rect="0,0,500,400"/>
@@ -138,7 +139,8 @@
                      Background="Transparent"
                      BorderBrush="Transparent"
                      TextWrapping="Wrap"
-                     Width="370">
+                     Width="370"
+                     Tag="Title">
                 
                 
             </TextBox>
@@ -146,47 +148,18 @@
                 <RibbonSeparator Margin="20,10,10,0" 
                                  Grid.ColumnSpan="2" Grid.Row="1"/>
 
-            <ScrollViewer Grid.Row="2" Grid.ColumnSpan="2"
-                          Style="{StaticResource LeftScrollViewer}">
-                <StackPanel>
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                          Grid.Row="2" Grid.ColumnSpan="2">
+                <DockPanel>
                     <TextBox x:Name="noteTextBox"
                            Text="{Binding EditingDataContext.Content.TextContent}"
                            Foreground="Black" Background="Transparent"
                            BorderThickness="0"
                            FontSize="18" FontFamily="/Font/#Poppins"
                            Margin="20,10,10,0"
-                           TextWrapping="Wrap">
-
-                        <TextBox.ContextMenu>
-                            <ContextMenu Style="{StaticResource ContextMenuTheme}"
-                                 Foreground="Black"
-                                 FontFamily="/Font/#Poppins"
-                                 FontSize="14">
-
-                                <MenuItem Header="Bold">
-                                    <MenuItem.Icon>
-                                        <Image Source="/Images/bold.png"/>
-                                    </MenuItem.Icon>
-                                </MenuItem>
-
-                                <MenuItem Header="Italic">
-                                    <MenuItem.Icon>
-                                        <Image Source="/Images/italic.png"/>
-                                    </MenuItem.Icon>
-                                </MenuItem>
-
-                                <MenuItem Header="Underline">
-                                    <MenuItem.Icon>
-                                        <Image Source="/Images/underline.png"/>
-                                    </MenuItem.Icon>
-                                </MenuItem>
-
-                            </ContextMenu>
-                        </TextBox.ContextMenu>
-
-
-
-                    </TextBox>
+                           TextWrapping="Wrap"
+                         Tag="Content"
+                             DockPanel.Dock="Top"/>
 
                     <!-- Tags -->
                     <StackPanel Grid.Row="3" Grid.ColumnSpan="2"
@@ -268,9 +241,9 @@
 
                         </ItemsControl>
                     </StackPanel>
-                </StackPanel>
+                </DockPanel>
             </ScrollViewer>
-            
+
             <!-- Column 1 -->
             <StackPanel Grid.Column="1" 
                         Orientation="Horizontal"
