@@ -6,7 +6,6 @@ using System;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Caliburn.Micro;
-using NoteTakingApp_IT_Module_Project.ViewModels;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
@@ -34,7 +33,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ChangedButton == MouseButton.Left)  //crashes app when editing notes no idea why
+            if (e.ChangedButton == MouseButton.Left) 
             this.DragMove();
         }
         private void Close_Click(object sender, RoutedEventArgs e)
