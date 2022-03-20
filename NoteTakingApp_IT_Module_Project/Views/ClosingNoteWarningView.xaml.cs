@@ -1,5 +1,6 @@
 ﻿using NoteTakingApp_IT_Module_Project.Data;
 using NoteTakingApp_IT_Module_Project.Models;
+using NoteTakingApp_IT_Module_Project.ViewModels;
 
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
         }
         private void CloseWithSave_Click(object sender, RoutedEventArgs e)
         {
-            NoteModel note = new NoteModel();
+            NoteModel note = AddAndEditNoteViewModel.EditingDataContext;
             NoteContentModel noteContents = new NoteContentModel();
             noteContents.TextContent = AddAndEditNoteView.thisInstance.noteTextBox.Text;
             //noteContents.MusicContent = ???;     
@@ -49,11 +50,13 @@ namespace NoteTakingApp_IT_Module_Project.Views
             }
             //NoteData noteData = new NoteData();
             //noteData.AddNote(note);                    adds note to database
+            AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
             AddAndEditNoteView.thisInstance.Close();
         }
         private void CloseWithoutSave_Click(object sender, RoutedEventArgs e)
         {
+            AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
             AddAndEditNoteView.thisInstance.Close();
         }

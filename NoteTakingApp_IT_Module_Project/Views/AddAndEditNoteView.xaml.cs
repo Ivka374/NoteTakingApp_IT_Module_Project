@@ -1,11 +1,10 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using NoteTakingApp_IT_Module_Project.Models;
 using NoteTakingApp_IT_Module_Project.ViewModels;
-using NoteTakingApp_IT_Module_Project.Views;
 using Caliburn.Micro;
 using Manufaktura.Controls.Model;
+using NoteTakingApp_IT_Module_Project.Data;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
@@ -16,7 +15,6 @@ namespace NoteTakingApp_IT_Module_Project.Views
     {
         WindowManager _windowManager;
         public static AddAndEditNoteView thisInstance;
-
         public AddAndEditNoteView()
         {
             InitializeComponent();
@@ -25,6 +23,8 @@ namespace NoteTakingApp_IT_Module_Project.Views
             addScoreMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(addScoreeMenuItem_Click)); //add score now has onclick event
             Mouse.AddMouseDownHandler(this, Window_MouseDown); //window now has mouseDown event check
             this.PreviewKeyDown += new KeyEventHandler(AddAndEditNoteView_PreviewKeyDown); // window now detects mouseDown event
+            AddingHandlersToColors(); //all colors now have onclick events
+
             _windowManager = new WindowManager();
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -35,7 +35,14 @@ namespace NoteTakingApp_IT_Module_Project.Views
 
         private void deleteMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            this.Close(); 
+            if(HomePageView.editing == true)
+            {
+            NoteData noteData = new NoteData();
+            //noteData.DeleteNote(editingDataContext.ID);       deletes current opened note on the databse
+            HomePageView.editing = false;
+            }
+            AddAndEditNoteViewModel.EditingDataContext = null;
+            this.Close();
         }
         private void changeColourMenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -52,6 +59,39 @@ namespace NoteTakingApp_IT_Module_Project.Views
                 thisInstance = this;
                 _windowManager.ShowDialogAsync(new ClosingNoteWarningViewModel());
             }
+        }
+        private void Color0_Click(object sender, RoutedEventArgs e)
+        {
+            AddAndEditNoteViewModel.EditingDataContext.ThemeName = 0;
+        }
+        private void Color1_Click(object sender, RoutedEventArgs e)
+        {
+            AddAndEditNoteViewModel.EditingDataContext.ThemeName = 1;
+        }
+        private void Color2_Click(object sender, RoutedEventArgs e)
+        {
+            AddAndEditNoteViewModel.EditingDataContext.ThemeName = 2;
+        }
+        private void Color3_Click(object sender, RoutedEventArgs e)
+        {
+            AddAndEditNoteViewModel.EditingDataContext.ThemeName = 3;
+        }
+        private void Color4_Click(object sender, RoutedEventArgs e)
+        {
+            AddAndEditNoteViewModel.EditingDataContext.ThemeName = 4;
+        }
+        private void Color5_Click(object sender, RoutedEventArgs e)
+        {
+            AddAndEditNoteViewModel.EditingDataContext.ThemeName = 5;
+        }
+        private void AddingHandlersToColors()
+        {
+            color0.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color0_Click));
+            color1.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color1_Click));
+            color2.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color2_Click));
+            color3.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color3_Click));
+            color4.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color4_Click));
+            color5.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color5_Click));
         }
     }
 }
