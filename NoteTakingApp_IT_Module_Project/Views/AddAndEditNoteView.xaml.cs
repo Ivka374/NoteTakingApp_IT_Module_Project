@@ -15,6 +15,7 @@ using NoteTakingApp_UI.Views;
 using Caliburn.Micro;
 using NoteTakingApp_IT_Module_Project.ViewModels;
 using Manufaktura.Controls.Model;
+using NoteTakingApp_UI.Data;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
@@ -44,7 +45,14 @@ namespace NoteTakingApp_IT_Module_Project.Views
 
         private void deleteMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            this.Close(); 
+            if(HomePageView.editing == true)
+            {
+            NoteData noteData = new NoteData();
+            //noteData.DeleteNote(editingDataContext.ID);       deletes current opened note on the databse
+            HomePageView.editing = false;
+            }
+            AddAndEditNoteViewModel.
+            this.Close();
         }
         private void changeColourMenuItem_Click(object sender, RoutedEventArgs e)
         {
