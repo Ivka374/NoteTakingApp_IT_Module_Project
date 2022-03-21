@@ -91,7 +91,7 @@
                     </Setter>
                 </DataTrigger>
 
-                <DataTrigger Binding="{Binding EditingDataContext.ThemeName }"
+                <DataTrigger Binding="{Binding EditingDataContext.ThemeName}"
                                                  Value="5">
                     <Setter Property="Background">
                         <Setter.Value>
@@ -107,7 +107,7 @@
         </Style>
     </Window.Resources>
 
-    <Border Style="{DynamicResource OpenNoteColoursChangeTheme}">
+    <Border Style="{StaticResource OpenNoteColoursChangeTheme}">
         
         <Border.Clip>
             <RectangleGeometry RadiusX="20" RadiusY="20"
@@ -132,7 +132,7 @@
             
             <!-- Column 0 -->
             <TextBox x:Name="titleTextBox" Grid.ColumnSpan="1"
-                           Text="{Binding EditingDataContext.Title}"
+                           Text="{Binding EditingDataContext.Title, Mode=OneWay}"
                            Foreground="Black"
                            FontSize="36" FontFamily="/Font/#Poppins"
                            Margin="20,10,10,0"
@@ -152,7 +152,7 @@
                           Grid.Row="2" Grid.ColumnSpan="2">
                 <DockPanel>
                     <TextBox x:Name="noteTextBox"
-                           Text="{Binding EditingDataContext.Content.TextContent}"
+                           Text="{Binding EditingDataContext.Content.TextContent, Mode=OneWay}"
                            Foreground="Black" Background="Transparent"
                            BorderThickness="0"
                            FontSize="18" FontFamily="/Font/#Poppins"
@@ -200,7 +200,7 @@
                                         </MenuItem.Header>
                                     </MenuItem>
 
-                                    <ItemsControl ItemsSource="{Binding EditingDataContext.NoteTags}">
+                                    <ItemsControl ItemsSource="{Binding EditingDataContext.NoteTags, Mode=OneWay}">
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate>
                                                 <CheckBox>
@@ -215,7 +215,7 @@
 
                         </Button>
 
-                        <ItemsControl ItemsSource="{Binding EditingDataContext.NoteTags}">
+                        <ItemsControl ItemsSource="{Binding EditingDataContext.NoteTags, Mode=OneWay}">
 
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
