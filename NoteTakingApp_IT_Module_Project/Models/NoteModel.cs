@@ -15,10 +15,11 @@ namespace NoteTakingApp_IT_Module_Project.Models
         public int ThemeName { get; set; }
         public NoteModel()
         {
-
+            NoteTags = new List<TagModel>();
         }
         public NoteModel(int id, string title, string content, bool isFav, int themeName)
         {
+            NoteTags = new List<TagModel>();
             ID = id;
             Title = title;
             Content.TextContent = content;
