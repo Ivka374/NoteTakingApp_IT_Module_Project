@@ -7,6 +7,7 @@ using Manufaktura.Controls.Model;
 using NoteTakingApp_IT_Module_Project.Data;
 using System.Text.RegularExpressions;
 using NoteTakingApp_IT_Module_Project.Models;
+using System.Collections.Generic;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
@@ -19,9 +20,8 @@ namespace NoteTakingApp_IT_Module_Project.Views
             InitializeComponent();
 
             deleteMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(deleteMenuItem_Click)); //delete button now has onclick event
-            changeColourMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(changeColourMenuItem_Click)); //change color now has onclick event
             addScoreMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(addScoreeMenuItem_Click)); //add score now has onclick event
-
+            tagCreateMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(tagCreateMenuItem_Click)); //tag thing now has onclick event
             Mouse.AddMouseDownHandler(this, Window_MouseDown); //window now has mouseDown event check
             this.PreviewKeyDown += new KeyEventHandler(AddAndEditNoteView_PreviewKeyDown); // window now detects mouseDown event
 
@@ -40,15 +40,11 @@ namespace NoteTakingApp_IT_Module_Project.Views
             if(HomePageView.editing == true)
             {
             NoteData noteData = new NoteData();
-            //noteData.DeleteNote(editingDataContext.ID);       deletes current opened note on the databse
+            noteData.DeleteNote(AddAndEditNoteViewModel.EditingDataContext.ID);
             HomePageView.editing = false;
             }
             AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
-        }
-        private void changeColourMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            //waiting on window
         }
         private void addScoreeMenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -92,13 +88,12 @@ namespace NoteTakingApp_IT_Module_Project.Views
             if (regex.IsMatch(tagTextBox.Text))
             {
                 MessageBox.Show("You may not use special characters in your tags.", "Cannot create tag!", MessageBoxButton.OK, MessageBoxImage.Error);
-                tagTextBox.Text = "";
+                tagTextBox.Text = "Create New Tag";
             }
             else
             {
                 //gives error :/
-                TagModel newTag = new TagModel();
-                newTag.Name = tagTextBox.Text;
+                TagModel newTag = new TagModel() {Name = tagTextBox.Text};
                 AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(newTag);
             }
         }

@@ -1,4 +1,9 @@
-﻿using System;
+﻿using Caliburn.Micro;
+
+using NoteTakingApp_IT_Module_Project.Models;
+using NoteTakingApp_IT_Module_Project.ViewModels;
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,14 +23,21 @@ namespace NoteTakingApp_IT_Module_Project.Views
     /// </summary>
     public partial class FavouritesPageView : UserControl
     {
+        public static bool editing;
+
+        WindowManager _windowManager = new WindowManager();
         public FavouritesPageView()
         {
             InitializeComponent();
         }
 
-        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Note_Click(object sender, RoutedEventArgs e)
         {
-            //also opens note that was clicked on (maybe the 2 views should be merged if I can figure out how)
+            Button clickedNote = sender as Button;
+            var dataObject = clickedNote.DataContext as NoteModel;
+            editing = true;
+            AddAndEditNoteViewModel.EditingDataContext = dataObject;
+            _windowManager.ShowDialogAsync(new AddAndEditNoteViewModel());
         }
     }
 }
