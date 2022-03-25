@@ -23,6 +23,7 @@
                         </Border>
                          
                         <ControlTemplate.Triggers>
+                            <Trigger Property="FontFamily" Value="/Font/#Poppins"/>
                             <Trigger Property="HasDropShadow"
                                      Value="False">
                                 <Setter TargetName="Border"

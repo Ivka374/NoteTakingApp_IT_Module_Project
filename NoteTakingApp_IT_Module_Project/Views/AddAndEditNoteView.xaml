@@ -29,7 +29,7 @@
 
             <Style.Triggers>
 
-                <DataTrigger Binding="{Binding EditingDataContext.ThemeName}"
+                <DataTrigger Binding="{Binding EditingDataContext.ThemeName, UpdateSourceTrigger=PropertyChanged}"
                                                  Value="0">
                     <Setter Property="Background">
                         <Setter.Value>
@@ -42,7 +42,7 @@
                 </DataTrigger>
 
 
-                <DataTrigger Binding="{Binding EditingDataContext.ThemeName}"
+                <DataTrigger Binding="{Binding EditingDataContext.ThemeName, UpdateSourceTrigger=PropertyChanged}"
                                                  Value="1">
                     <Setter Property="Background">
                         <Setter.Value>
@@ -54,7 +54,7 @@
                     </Setter>
                 </DataTrigger>
 
-                <DataTrigger Binding="{Binding EditingDataContext.ThemeName}"
+                <DataTrigger Binding="{Binding EditingDataContext.ThemeName, UpdateSourceTrigger=PropertyChanged}"
                                                  Value="2">
                     <Setter Property="Background">
                         <Setter.Value>
@@ -67,7 +67,7 @@
 
                 </DataTrigger>
 
-                <DataTrigger Binding="{Binding EditingDataContext.ThemeName}"
+                <DataTrigger Binding="{Binding EditingDataContext.ThemeName, UpdateSourceTrigger=PropertyChanged}"
                                                  Value="3">
                     <Setter Property="Background">
                         <Setter.Value>
@@ -79,7 +79,7 @@
                     </Setter>
                 </DataTrigger>
 
-                <DataTrigger Binding="{Binding EditingDataContext.ThemeName}"
+                <DataTrigger Binding="{Binding EditingDataContext.ThemeName, UpdateSourceTrigger=PropertyChanged}"
                                                  Value="4">
                     <Setter Property="Background">
                         <Setter.Value>
@@ -91,7 +91,7 @@
                     </Setter>
                 </DataTrigger>
 
-                <DataTrigger Binding="{Binding EditingDataContext.ThemeName}"
+                <DataTrigger Binding="{Binding EditingDataContext.ThemeName, UpdateSourceTrigger=PropertyChanged}"
                                                  Value="5">
                     <Setter Property="Background">
                         <Setter.Value>
@@ -167,8 +167,7 @@
                             Margin="20,10,10,0">
 
                         <!-- Button for adding a tag -->
-                        <Button Margin="7" Height="30" MinWidth="40"
-                        Background="Transparent" 
+                        <Button Margin="7"
                         x:Name="AddTagToNote">
 
                             <Button.Style>
@@ -176,10 +175,13 @@
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="Button">
-                                                <Border CornerRadius="15" BorderThickness="0.5"
-                                                BorderBrush="Black">
-                                                    <Image Source="/Images/blackPlus.png"/>
-                                                </Border>
+                                                <Button Background="Transparent" BorderBrush="Transparent">
+                                                    <Border CornerRadius="15" BorderThickness="0.5"
+                                                            BorderBrush="Black"
+                                                            MinWidth="40" Height="30">
+                                                        <Image Source="/Images/blackPlus.png"/>
+                                                    </Border>
+                                                </Button>
                                             </ControlTemplate>
                                         </Setter.Value>
                                     </Setter>
@@ -189,12 +191,14 @@
                             <Button.ContextMenu>
                                 <ContextMenu Style="{StaticResource ContextMenuTheme}">
 
-                                    <MenuItem x:Name="tagCreateMenuItem" >
+                                    <MenuItem x:Name="tagCreateMenuItem" Margin="3">
                                         <MenuItem.Icon>
                                             <Image Source="/Images/blackPlus.png" Width="20"/>
                                         </MenuItem.Icon>
                                         <MenuItem.Header>
-                                            <TextBox x:Name="tagTextBox">
+                                            <TextBox x:Name="tagTextBox"
+                                                     FontFamily="/Font/#Poppins"
+                                                     FontSize="14">
                                                 Create New Tag
                                             </TextBox>
                                         </MenuItem.Header>
@@ -203,8 +207,11 @@
                                     <ItemsControl ItemsSource="{Binding EditingDataContext.NoteTags, Mode=OneWay}">
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate>
-                                                <CheckBox>
-                                                    <TextBlock Text="{Binding Name}"/>
+                                                <CheckBox Margin="3">
+                                                    <TextBlock Text="{Binding Name}"
+                                                               FontFamily="/Font/#Poppins"
+                                                               FontSize="14"
+                                                               VerticalAlignment="Center"/>
                                                 </CheckBox>
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
@@ -260,7 +267,7 @@
                     DisabledUnchecked="/Images/purpleStar.png"/>
 
                 <!-- Settings Menu Button -->
-                <Button Background="Transparent"
+                <Button Background="Transparent" BorderBrush="Transparent"
                         VerticalAlignment="Center"
                         x:Name="NoteSettingsButton">
                     <Image Source="/Images/verticalMenu.png"

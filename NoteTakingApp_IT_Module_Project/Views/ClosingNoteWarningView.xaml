@@ -21,11 +21,13 @@
             </Grid.RowDefinitions>
 
             <!-- Row 0 -->
+            <!-- Prompt -->
             <TextBlock Margin="20,20,5,20" 
                        FontSize="16" FontFamily="/Font/#Poppins"
                        Text="Do you want to save changes before exit?"
                        TextWrapping="WrapWithOverflow"/>
             
+            <!-- Question mark -->
             <Image Source="/Images/questionMark.png"
                    Grid.Column="1"/>
 
@@ -34,25 +36,83 @@
                              Margin="10,5,5,0" />
 
             <!-- Row 2 -->
+            <!-- Buttons spanning all columns -->
             <StackPanel Grid.Row="2" Margin="20,10,20,20"
                         Orientation="Horizontal"
-                        Grid.ColumnSpan="2">
+                        Grid.ColumnSpan="2" 
+                        HorizontalAlignment="Center" VerticalAlignment="Center">
 
+                <!-- 'Yes' button -->
                 <Button x:Name="CloseWithSave"
-                        Content=" Yes " FontFamily="/Font/#Poppins"
-                        BorderBrush="MediumPurple" 
-                        Background="Transparent"
-                        Margin="7" FontSize="20"/>
+                        Margin="5">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Button Background="Transparent" BorderBrush="Transparent">
+                                            <Border CornerRadius="12" BorderThickness="0.5"
+                                                            BorderBrush="MediumPurple"
+                                                            MinWidth="40" Height="30">
+                                                <TextBlock Text="Yes" Margin="7"
+                                                           FontSize="20" FontFamily="/Font/#Poppins" 
+                                                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </Button>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                
+                <!-- 'No' button-->
                 <Button x:Name="CloseWithoutSave"
-                        Content=" No " FontFamily="/Font/#Poppins"
-                        BorderBrush="MediumPurple" 
-                        Background="Transparent"
-                        Margin="5" FontSize="20"/>
+                        Margin="5">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Button Background="Transparent" BorderBrush="Transparent">
+                                            <Border CornerRadius="12" BorderThickness="0.5"
+                                                            BorderBrush="MediumPurple"
+                                                            MinWidth="40" Height="30">
+                                                <TextBlock Text="No" Margin="7"
+                                                           FontSize="20" FontFamily="/Font/#Poppins" 
+                                                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </Button>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                
+                <!-- 'Cancel' button -->
                 <Button x:Name="CancelClose"
-                        Content=" Cancel " FontFamily="/Font/#Poppins"
-                        BorderBrush="MediumPurple" 
-                        Background="Transparent"
-                        Margin="5" FontSize="20"/>
+                        Margin="5">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Button Background="Transparent" BorderBrush="Transparent">
+                                            <Border CornerRadius="12" BorderThickness="0.5"
+                                                            BorderBrush="MediumPurple"
+                                                            MinWidth="40" Height="30">
+                                                <TextBlock Text="Cancel" Margin="7"
+                                                           FontSize="20" FontFamily="/Font/#Poppins" 
+                                                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </Button>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
 
             </StackPanel>
         </Grid>

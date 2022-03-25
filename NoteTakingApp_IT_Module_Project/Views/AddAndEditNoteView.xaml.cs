@@ -7,7 +7,6 @@ using Manufaktura.Controls.Model;
 using NoteTakingApp_IT_Module_Project.Data;
 using System.Text.RegularExpressions;
 using NoteTakingApp_IT_Module_Project.Models;
-using System.Collections.Generic;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
@@ -59,6 +58,8 @@ namespace NoteTakingApp_IT_Module_Project.Views
             }
         }
 
+        //will add a litener or sth
+        
         private void Color0_Click(object sender, RoutedEventArgs e)
         {
             AddAndEditNoteViewModel.EditingDataContext.ThemeName = 0;

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:NoteTakingApp_IT_Module_Project.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <ToggleButton Background="Transparent"
+    <ToggleButton Background="Transparent" BorderBrush="Transparent"
                               IsChecked='{Binding RelativeSource=
                     {RelativeSource FindAncestor, AncestorType=
                     {x:Type ToggleButton} }, Path=IsChecked}'>
