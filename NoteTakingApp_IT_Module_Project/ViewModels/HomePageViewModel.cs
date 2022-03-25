@@ -15,11 +15,16 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         public HomePageViewModel()
         {
             _allNotes = new List<NoteModel>();
-            
-            _allNotes.Add(new NoteModel() { Title = "ExperimentView1",
+
+            #region Testing data
+
+            _allNotes.Add(new NoteModel()
+            {
+                Title = "ExperimentView1",
                 IsFavourite = false,
                 Content = new NoteContentModel() { TextContent = "Does this display properly?" },
-                ThemeName = 1 });
+                ThemeName = 1
+            });
             _allNotes.Add(new NoteModel()
             {
                 Title = "ExperimentView2",
@@ -55,6 +60,7 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
                 Content = new NoteContentModel() { TextContent = "Does this display properly at last?" },
                 ThemeName = 5
             });
+            #endregion        
         }
         public List<NoteModel> AllNotes 
         { 

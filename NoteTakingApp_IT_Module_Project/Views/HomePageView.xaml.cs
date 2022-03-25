@@ -1,15 +1,11 @@
 ﻿using Caliburn.Micro;
 using NoteTakingApp_IT_Module_Project.ViewModels;
-using NoteTakingApp_IT_Module_Project.Views;
 using NoteTakingApp_IT_Module_Project.Models;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
-    /// <summary>
-    /// Interaction logic for HomeView.xaml
-    /// </summary>
     public partial class HomePageView : UserControl
     {
         public static bool editing;

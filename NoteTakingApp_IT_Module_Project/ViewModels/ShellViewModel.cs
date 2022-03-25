@@ -1,15 +1,10 @@
 ﻿using Caliburn.Micro;
-using NoteTakingApp_IT_Module_Project.ViewModels;
 using NoteTakingApp_IT_Module_Project.Models;
-using System.Windows;
-using System.Windows.Input;
-using NoteTakingApp_IT_Module_Project.Views;
 
 namespace NoteTakingApp_IT_Module_Project.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
-        public static ShellViewModel homeWindow;
         WindowManager _windowManager;
         private BindableCollection<TagModel> tags;
         public BindableCollection<TagModel> Tags { 
@@ -23,15 +18,14 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
             } 
         }
 
-        private TagModel selectedTag;
+        private static TagModel selectedTag;
 
-        public TagModel SelectedTag
+        public static TagModel SelectedTag
         {
             get { return selectedTag; }
             set 
             { 
                 selectedTag = value;
-                NotifyOfPropertyChange(() => SelectedTag);
             }
         }
 
@@ -46,7 +40,6 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
             LoadHomePage();
 
             _windowManager = new WindowManager();
-            homeWindow = this;
         }
         public void LoadHomePage()
         {

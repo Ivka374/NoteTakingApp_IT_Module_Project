@@ -12,42 +12,53 @@ namespace NoteTakingApp_IT_Module_Project.Views
 {
     public partial class AddAndEditNoteView : Window
     {
+        #region Basics
         WindowManager _windowManager;
         public static AddAndEditNoteView thisInstance;
+
         public AddAndEditNoteView()
         {
             InitializeComponent();
 
-            deleteMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(deleteMenuItem_Click)); //delete button now has onclick event
-            addScoreMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(addScoreeMenuItem_Click)); //add score now has onclick event
-            tagCreateMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(tagCreateMenuItem_Click)); //tag thing now has onclick event
-            Mouse.AddMouseDownHandler(this, Window_MouseDown); //window now has mouseDown event check
-            this.PreviewKeyDown += new KeyEventHandler(AddAndEditNoteView_PreviewKeyDown); // window now detects mouseDown event
+            //handles context menu
+            deleteMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(deleteMenuItem_Click));
+            addScoreMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(addScoreeMenuItem_Click));
+            tagCreateMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(tagCreateMenuItem_Click));
 
-            AddingHandlersToColors(); //all colors now have onclick events
+            //makes window draggable
+            Mouse.AddMouseDownHandler(this, Window_MouseDown);
+            this.PreviewKeyDown += new KeyEventHandler(AddAndEditNoteView_PreviewKeyDown);
+
+            //all colors now have onclick events
+            AddingHandlersToColors();
 
             _windowManager = new WindowManager();
         }
+
+        //handles window dragging
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
+        #endregion
+
+        #region Context menu events
 
         private void deleteMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            if(HomePageView.editing == true)
+            if (HomePageView.editing == true)
             {
-            NoteData noteData = new NoteData();
-            noteData.DeleteNote(AddAndEditNoteViewModel.EditingDataContext.ID);
-            HomePageView.editing = false;
+                NoteData noteData = new NoteData();
+                noteData.DeleteNote(AddAndEditNoteViewModel.EditingDataContext.ID);
+                HomePageView.editing = false;
             }
             AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
         }
         private void addScoreeMenuItem_Click(object sender, RoutedEventArgs e)
         {
-           //this will open a seperate window that is linked to the MusicContent property of the current note
+            //this will open a seperate window that is linked to the MusicContent property of the current note
         }
         private void AddAndEditNoteView_PreviewKeyDown(object sender, KeyEventArgs e)
         {
@@ -58,8 +69,12 @@ namespace NoteTakingApp_IT_Module_Project.Views
             }
         }
 
-        //will add a litener or sth
-        
+        #endregion
+
+        #region Changing note colour
+
+        //will add a listener or sth
+
         private void Color0_Click(object sender, RoutedEventArgs e)
         {
             AddAndEditNoteViewModel.EditingDataContext.ThemeName = 0;
@@ -85,6 +100,19 @@ namespace NoteTakingApp_IT_Module_Project.Views
             AddAndEditNoteViewModel.EditingDataContext.ThemeName = 5;
         }
 
+        private void AddingHandlersToColors()
+        {
+            color0.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color0_Click));
+            color1.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color1_Click));
+            color2.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color2_Click));
+            color3.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color3_Click));
+            color4.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color4_Click));
+            color5.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color5_Click));
+        }
+
+        #endregion
+
+        //attempts to add a tag to a note
         private void tagCreateMenuItem_Click(object sender, RoutedEventArgs e)
         {
             var regex = new Regex(@"[^a-zA-Z0-9\s]");
@@ -99,15 +127,6 @@ namespace NoteTakingApp_IT_Module_Project.Views
                 TagModel newTag = new TagModel() { Name = tagTextBox.Text };
                 AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(newTag);
             }
-        }
-        private void AddingHandlersToColors()
-        {
-            color0.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color0_Click));
-            color1.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color1_Click));
-            color2.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color2_Click));
-            color3.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color3_Click));
-            color4.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color4_Click));
-            color5.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color5_Click));
         }
     }
 }
