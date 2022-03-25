@@ -62,6 +62,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
                 _windowManager.ShowDialogAsync(new ClosingNoteWarningViewModel());
             }
         }
+
         private void Color0_Click(object sender, RoutedEventArgs e)
         {
             AddAndEditNoteViewModel.EditingDataContext.ThemeName = 0;
@@ -86,6 +87,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
         {
             AddAndEditNoteViewModel.EditingDataContext.ThemeName = 5;
         }
+
         private void tagCreateMenuItem_Click(object sender, RoutedEventArgs e)
         {
             var regex = new Regex(@"[^a-zA-Z0-9\s]");
@@ -97,8 +99,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
             else
             {
                 //gives error :/
-                TagModel newTag = new TagModel();
-                newTag.Name = tagTextBox.Text;
+                TagModel newTag = new TagModel() { Name = tagTextBox.Text };
                 AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(newTag);
             }
         }
