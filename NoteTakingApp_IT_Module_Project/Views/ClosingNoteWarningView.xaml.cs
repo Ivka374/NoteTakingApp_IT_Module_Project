@@ -36,9 +36,9 @@ namespace NoteTakingApp_IT_Module_Project.Views
             NoteContentModel noteContents = new NoteContentModel();
             noteContents.TextContent = AddAndEditNoteView.thisInstance.noteTextBox.Text;
             //noteContents.MusicContent = ???;     
-            note.Title = AddAndEditNoteView.thisInstance.titleTextBox.Text;    
-            //note.ThemeName = ???;
-            //note.NoteTags = ???;
+            note.Title = AddAndEditNoteView.thisInstance.titleTextBox.Text;
+            note.ThemeName = AddAndEditNoteViewModel.EditingDataContext.ThemeName;
+            note.NoteTags = AddAndEditNoteViewModel.EditingDataContext.NoteTags;
             note.Content = noteContents;
             if (AddAndEditNoteView.thisInstance.favoriteButton.IsChecked == true)
             {
@@ -48,8 +48,17 @@ namespace NoteTakingApp_IT_Module_Project.Views
             {
                 note.IsFavourite = false;
             }
-            //NoteData noteData = new NoteData();
-            //noteData.AddNote(note);                    adds note to database
+            if(HomePageView.editing == true)
+            {
+                NoteData noteData = new NoteData();
+                noteData.UpdateNote(note);
+                HomePageView.editing = false;
+            }
+            else
+            {
+                NoteData noteData = new NoteData();
+                noteData.AddNote(note);
+            }
             AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
             AddAndEditNoteView.thisInstance.Close();
