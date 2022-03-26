@@ -63,6 +63,8 @@ namespace NoteTakingApp_IT_Module_Project.Views
             }
 
             //clears the data context for the view
+            AddAndEditNoteViewModel.EditingDataContext.Content = null;
+            AddAndEditNoteViewModel.EditingDataContext.NoteTags = null;
             AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
             AddAndEditNoteView.thisInstance.Close();
@@ -77,6 +79,8 @@ namespace NoteTakingApp_IT_Module_Project.Views
         //handles closes without saving
         private void CloseWithoutSave_Click(object sender, RoutedEventArgs e)
         {
+            AddAndEditNoteViewModel.EditingDataContext.Content = null;
+            AddAndEditNoteViewModel.EditingDataContext.NoteTags = null;
             AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
             AddAndEditNoteView.thisInstance.Close();
