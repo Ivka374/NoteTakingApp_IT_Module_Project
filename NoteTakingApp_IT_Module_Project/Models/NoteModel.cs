@@ -20,7 +20,7 @@ namespace NoteTakingApp_IT_Module_Project.Models
             set 
             {
                 noteTags = value;
-                NotifyPropertyChanged();
+                //NotifyPropertyChanged(); -> introduces bugs
             }
         }
 
@@ -28,7 +28,11 @@ namespace NoteTakingApp_IT_Module_Project.Models
         public int ThemeName
         {
             get { return themeName; }
-            set { themeName = value; NotifyPropertyChanged(); }
+            set
+            { 
+                themeName = value; 
+                NotifyPropertyChanged(); //disregards the saving changes window, but should be fine for this one
+            }
         }
 
         public NoteModel()

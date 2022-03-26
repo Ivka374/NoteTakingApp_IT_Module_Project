@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using NoteTakingApp_IT_Module_Project.Models;
@@ -13,7 +11,11 @@ namespace NoteTakingApp_IT_Module_Project.Data
         //DB Commands for Three Tables approach
         //Everything has been tested except the CheckForDuplicate_ Methods
 
-        public List<NoteModel> GetAllNotes() //returns a list with every note in the DB
+        /// <summary>
+        /// Returns a list with every note in the DB
+        /// </summary>
+        /// <returns></returns>
+        public List<NoteModel> GetAllNotes()
         {
             var noteList = new List<NoteModel>();
             using (var connection = Database.GetConnection())
@@ -43,7 +45,11 @@ namespace NoteTakingApp_IT_Module_Project.Data
             return noteList;
         }
 
-        public List<TagModel> GetAllTags() //returns a list with all tags in the db
+        /// <summary>
+        /// Returns a list with all tags in the db
+        /// </summary>
+        /// <returns></returns>
+        public List<TagModel> GetAllTags()
         {
             var tagList = new List<TagModel>();
             using (var connection = Database.GetConnection())
@@ -70,7 +76,11 @@ namespace NoteTakingApp_IT_Module_Project.Data
             return tagList;
         }
 
-        public List<NoteModel> GetFavoriteNotes() //returns all notes labeled as 'favorite' (bool: IsFavorite == true)
+        /// <summary>
+        /// Returns all notes labeled as 'favorite' (bool: IsFavorite == true)
+        /// </summary>
+        /// <returns></returns>
+        public List<NoteModel> GetFavoriteNotes()
         {
             var noteList = new List<NoteModel>();
             using (var connection = Database.GetConnection())
@@ -100,7 +110,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
             return noteList;
         }
 
-        public NoteModel GetNoteByTitle(string title) //returns a note with the given title
+        /// <summary>
+        /// Returns a note with the given title
+        /// </summary>
+        /// <param name="title"></param>
+        /// <returns></returns>
+        public NoteModel GetNoteByTitle(string title)
         {
             NoteModel note = null;
             using (var connection = Database.GetConnection())
@@ -129,7 +144,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
             return note;
         }
 
-        public NoteModel GetNoteById(int id) //returns a note with the given id
+        /// <summary>
+        /// Returns a note with the given id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public NoteModel GetNoteById(int id)
         {
             NoteModel note = null;
             using (var connection = Database.GetConnection())
@@ -158,7 +178,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
             return note;
         }
 
-        public List<TagModel> GetTagsForNote(int id) //returns every tag for a note with the id 'int id'
+        /// <summary>
+        /// Returns every tag for a note with the id 'int id'
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public List<TagModel> GetTagsForNote(int id)
         {
             List<TagModel> tagList = new List<TagModel>();
             TagModel tag = null;
@@ -183,7 +208,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
             return tagList;
         }
 
-        public List<NoteModel> GetNotesForTag(int id) //returns every note that has a tag with an id 'int id'
+        /// <summary>
+        /// Returns every note that has a tag with an id 'int id'
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public List<NoteModel> GetNotesForTag(int id)
         {
             List<NoteModel> tagList = new List<NoteModel>();
             NoteModel note = null;
@@ -208,7 +238,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
             return tagList;
         }
 
-        public TagModel GetTagById(int id) //returns a tag with an id 'int id'
+        /// <summary>
+        /// Returns a tag with an id 'int id'
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public TagModel GetTagById(int id)
         {
             TagModel tag = null;
             using (var connection = Database.GetConnection())
@@ -234,7 +269,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
             return tag;
         }
 
-        public TagModel GetTagByName(string name) //returns a tag with the given name
+        /// <summary>
+        /// Returns a tag with the given name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public TagModel GetTagByName(string name)
         {
             TagModel tag = null;
             using (var connection = Database.GetConnection())
@@ -260,7 +300,11 @@ namespace NoteTakingApp_IT_Module_Project.Data
             return tag;
         }
 
-        public void AddNote(NoteModel note) //adds a note to the DB
+        /// <summary>
+        /// Adds a note to the DB
+        /// </summary>
+        /// <param name="note"></param>
+        public void AddNote(NoteModel note)
         {
             using (var connection = Database.GetConnection())
             {
@@ -280,8 +324,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
                 }
             }
         }
-        
-        public void AddTag(TagModel tag) //Adds a tag to the DB
+
+        /// <summary>
+        /// Adds a tag to the DB
+        /// </summary>
+        /// <param name="tag"></param>
+        public void AddTag(TagModel tag)
         {
             using (var connection = Database.GetConnection())
             {
@@ -294,7 +342,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
             }
         }
 
-        public void AddTagToNote(TagModel tag, NoteModel note) //Connects an existing Note and an existing Tag
+        /// <summary>
+        /// Connects an existing Note and an existing Tag
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <param name="note"></param>
+        public void AddTagToNote(TagModel tag, NoteModel note)
         {
             using (var connection = Database.GetConnection())
             {
@@ -307,7 +360,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
             }
         }
 
-        public NoteModel CheckForDuplicateTitles(string title) //Checks if there already exists a note with the given title
+        /// <summary>
+        /// Checks if there already exists a note with the given title
+        /// </summary>
+        /// <param name="title"></param>
+        /// <returns></returns>
+        public NoteModel CheckForDuplicateTitles(string title)
         {
             NoteModel note = null;
             using (var connection = Database.GetConnection())
@@ -336,7 +394,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
             return note;
         }
 
-        public TagModel CheckForDuplicateTagNames(string name) //Checks if there already exists a tag with the given name
+        /// <summary>
+        /// Checks if there already exists a tag with the given name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public TagModel CheckForDuplicateTagNames(string name)
         {
             TagModel tag = null;
             using (var connection = Database.GetConnection())
@@ -362,7 +425,11 @@ namespace NoteTakingApp_IT_Module_Project.Data
             return tag;
         }
 
-        public void UpdateNote(NoteModel note) //updates the fields of a note (without changing its tags)
+        /// <summary>
+        /// Updates the fields of a note (without changing its tags)
+        /// </summary>
+        /// <param name="note"></param>
+        public void UpdateNote(NoteModel note)
         {
             using (var connection = Database.GetConnection())
             {
@@ -379,7 +446,11 @@ namespace NoteTakingApp_IT_Module_Project.Data
 
         }
 
-        public void UpdateTag(TagModel tag) //updates the fields of a tag (without adding or removing it from notes)
+        /// <summary>
+        /// Updates the fields of a tag (without adding or removing it from notes)
+        /// </summary>
+        /// <param name="tag"></param>
+        public void UpdateTag(TagModel tag)
         {
             using (var connection = Database.GetConnection())
             {
@@ -393,7 +464,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
             }
         }
 
-        public void RemoveTagToNote(TagModel tag, NoteModel note) //removes a Note-Tag relationship from the DB
+        /// <summary>
+        /// Removes a Note-Tag relationship from the DB
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <param name="note"></param>
+        public void RemoveTagToNote(TagModel tag, NoteModel note)
         {
             using (var connection = Database.GetConnection())
             {
@@ -406,7 +482,11 @@ namespace NoteTakingApp_IT_Module_Project.Data
             }
         }
 
-        public void DeleteNote(int id) //deletes a note from the DB
+        /// <summary>
+        /// Deletes a note from the DB
+        /// </summary>
+        /// <param name="id"></param>
+        public void DeleteNote(int id)
         {
             NoteModel note = GetNoteById(id);
             DeleteConnectionsForNote(note);
@@ -420,7 +500,11 @@ namespace NoteTakingApp_IT_Module_Project.Data
             }
         }
 
-        public void DeleteConnectionsForNote(NoteModel note) //deletes the note-tag relationships for a deleted note
+        /// <summary>
+        /// Deletes the note-tag relationships for a deleted note
+        /// </summary>
+        /// <param name="note"></param>
+        public void DeleteConnectionsForNote(NoteModel note)
         {
             foreach (var tag in note.NoteTags)
             {
@@ -428,7 +512,11 @@ namespace NoteTakingApp_IT_Module_Project.Data
             }
         }
 
-        public void DeleteTag(int id) //deletes a tag from the db
+        /// <summary>
+        /// Deletes a tag from the db
+        /// </summary>
+        /// <param name="id"></param>
+        public void DeleteTag(int id)
         {
             TagModel tag = GetTagById(id);
             DeleteConnectionsForTag(tag);
@@ -442,7 +530,11 @@ namespace NoteTakingApp_IT_Module_Project.Data
             }
         }
 
-        public void DeleteConnectionsForTag(TagModel tag) //deletes the note-tag relationships for a deleted tag
+        /// <summary>
+        /// Deletes the note-tag relationships for a deleted tag
+        /// </summary>
+        /// <param name="tag"></param>
+        public void DeleteConnectionsForTag(TagModel tag)
         {
             using (var connection = Database.GetConnection())
             {
