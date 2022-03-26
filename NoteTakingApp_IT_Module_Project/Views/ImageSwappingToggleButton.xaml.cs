@@ -86,9 +86,9 @@ namespace NoteTakingApp_IT_Module_Project.Views
             typeof(ImageSwappingToggleButton),
             new PropertyMetadata(onCheckedChangedCallback));
 
-        public Boolean IsChecked
+        public bool IsChecked
         {
-            get { return (Boolean)GetValue(IsCheckedProperty); }
+            get { return (bool)GetValue(IsCheckedProperty); }
             set { if (value != IsChecked) SetValue(IsCheckedProperty, value); }
         }
 

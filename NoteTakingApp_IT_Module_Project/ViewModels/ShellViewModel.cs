@@ -48,13 +48,12 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
 
         public ShellViewModel()
         {
-            //simulating content of tags
+            //getting necessary information from DB
             NoteData noteData = new NoteData();
             Tags = new List<TagModel>();
             Tags = noteData.GetAllTags();
-
             LoadHomePage();
-            //getting necessary information from DB
+            
             _windowManager = new WindowManager();
         }
 

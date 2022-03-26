@@ -66,8 +66,6 @@ namespace NoteTakingApp_IT_Module_Project.Views
             }
             AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
-            AddAndEditNoteViewModel.EditingDataContext.Content = null;
-            AddAndEditNoteViewModel.EditingDataContext.NoteTags = null;
         }
 
         /// <summary>
@@ -202,6 +200,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
                     ShellViewModel.Tags.Add(newTag);
                     NoteData noteData = new NoteData();
                     noteData.AddTag(newTag);
+                    newTag = noteData.GetTagByName(newTag.Name);
                     noteData.AddTagToNote(newTag, AddAndEditNoteViewModel.EditingDataContext);
                     AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(newTag);
                 }

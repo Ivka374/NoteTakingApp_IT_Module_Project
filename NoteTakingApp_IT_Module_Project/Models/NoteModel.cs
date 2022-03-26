@@ -9,9 +9,39 @@ namespace NoteTakingApp_IT_Module_Project.Models
     {
         
         public int ID { get; set; }
-        public string Title { get; set; }
-        public NoteContentModel Content { get; set; }
-        public bool IsFavourite { get; set; }
+
+        //for title
+        private string title;
+        public string Title
+        {
+            get { return title; }
+            set
+            {
+                title = value;
+                NotifyPropertyChanged();
+            }
+        }
+        private NoteContentModel content;
+
+        public NoteContentModel Content
+        {
+            get { return content; }
+            set 
+            { 
+                content = value;
+                NotifyPropertyChanged();
+            }
+        }
+        private bool isFavourite;
+        public bool IsFavourite
+        {
+            get { return isFavourite; }
+            set
+            {
+                isFavourite = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         private List<TagModel> noteTags;
         public List<TagModel> NoteTags 
@@ -20,7 +50,7 @@ namespace NoteTakingApp_IT_Module_Project.Models
             set 
             {
                 noteTags = value;
-                //NotifyPropertyChanged(); -> introduces bugs
+                NotifyPropertyChanged();
             }
         }
 
@@ -31,13 +61,14 @@ namespace NoteTakingApp_IT_Module_Project.Models
             set
             { 
                 themeName = value; 
-                NotifyPropertyChanged(); //disregards the saving changes window, but should be fine for this one
+                NotifyPropertyChanged();
             }
         }
 
         public NoteModel()
         {
             NoteTags = new List<TagModel>();
+            Content = new NoteContentModel();
         }
 
         #region Property change handler
@@ -53,6 +84,7 @@ namespace NoteTakingApp_IT_Module_Project.Models
 
         public NoteModel(int id, string title, string content, bool isFav, int themeName)
         {
+            Content = new NoteContentModel();
             NoteTags = new List<TagModel>();
             ID = id;
             Title = title;

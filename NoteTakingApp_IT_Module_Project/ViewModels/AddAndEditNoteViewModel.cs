@@ -57,7 +57,6 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
                 //checks if the note contains the current tag
                 return AddAndEditNoteViewModel.EditingDataContext.NoteTags.Any(t => t.Name == this.Name);
             }
-
             set
             {
                 if (value)

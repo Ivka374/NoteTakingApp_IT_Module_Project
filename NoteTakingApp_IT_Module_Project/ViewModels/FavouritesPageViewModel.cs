@@ -11,7 +11,7 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
     public class FavouritesPageViewModel : Screen
     {
         private List<NoteModel> _favouriteNotes;
-        private NoteData _noteData;
+        private NoteData _noteData = new NoteData();
         public FavouritesPageViewModel()
         {
             _favouriteNotes = new List<NoteModel>();
