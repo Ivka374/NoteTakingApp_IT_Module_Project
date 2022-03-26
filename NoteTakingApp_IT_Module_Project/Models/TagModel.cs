@@ -14,7 +14,6 @@ namespace NoteTakingApp_IT_Module_Project.Models
         {
             ID = id;
             Name = name;
-            Colour = colour;
         }
     }
 }
