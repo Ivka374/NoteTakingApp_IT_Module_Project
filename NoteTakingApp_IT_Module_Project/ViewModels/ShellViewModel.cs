@@ -1,5 +1,9 @@
 ﻿using Caliburn.Micro;
+
+using NoteTakingApp_IT_Module_Project.Data;
 using NoteTakingApp_IT_Module_Project.Models;
+
+using System.Collections.Generic;
 
 namespace NoteTakingApp_IT_Module_Project.ViewModels
 {
@@ -9,12 +13,12 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
 
         #region Tag management
 
-        private static BindableCollection<TagModel> tags;
+        private static List<TagModel> tags;
 
         /// <summary>
         /// A collection of all available tags; meant to hook into database
         /// </summary>
-        public static BindableCollection<TagModel> Tags
+        public static List<TagModel> Tags
         {
             get
             {
@@ -45,14 +49,12 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         public ShellViewModel()
         {
             //simulating content of tags
-            Tags = new BindableCollection<TagModel>();
-            Tags.Add(new TagModel { Name = "Personal" });
-            Tags.Add(new TagModel { Name = "Work" });
-            Tags.Add(new TagModel { Name = "Cool" });
-            Tags.Add(new TagModel { Name = "Cute" });
+            NoteData noteData = new NoteData();
+            Tags = new List<TagModel>();
+            Tags = noteData.GetAllTags();
 
             LoadHomePage();
-
+            //getting necessary information from DB
             _windowManager = new WindowManager();
         }
 

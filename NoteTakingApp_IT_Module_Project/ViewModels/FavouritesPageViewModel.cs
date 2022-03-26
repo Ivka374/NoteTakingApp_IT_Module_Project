@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+
+using NoteTakingApp_IT_Module_Project.Data;
 using NoteTakingApp_IT_Module_Project.Models;
 using System;
 using System.Collections.Generic;
@@ -8,11 +10,11 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
 {
     public class FavouritesPageViewModel : Screen
     {
-        private BindableCollection<NoteModel> _favouriteNotes;
-
+        private List<NoteModel> _favouriteNotes;
+        private NoteData _noteData;
         public FavouritesPageViewModel()
         {
-            _favouriteNotes = new BindableCollection<NoteModel>();
+            _favouriteNotes = new List<NoteModel>();
 
             #region Test data
             _favouriteNotes.Add(new NoteModel()
@@ -43,9 +45,9 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         /// <summary>
         /// Meant to hook into databsae by getting only the notes marked as favourite
         /// </summary>
-        public BindableCollection<NoteModel> FavouriteNotes
+        public List<NoteModel> FavouriteNotes
         {
-            get { return _favouriteNotes; }
+            get { return _noteData.GetFavoriteNotes(); }
             set { _favouriteNotes = value; }
         }
     }

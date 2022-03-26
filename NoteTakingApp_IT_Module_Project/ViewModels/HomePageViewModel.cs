@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+
+using NoteTakingApp_IT_Module_Project.Data;
 using NoteTakingApp_IT_Module_Project.Models;
 using System.Collections.Generic;
 
@@ -7,14 +9,15 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
     public class HomePageViewModel : Screen
     {
         private List<NoteModel> _allNotes;
-
+        private NoteData _noteData;
         public HomePageViewModel()
         {
             _allNotes = new List<NoteModel>();
+             _noteData = new NoteData();
 
-            #region Testing data
+        #region Testing data
 
-            _allNotes.Add(new NoteModel()
+        _allNotes.Add(new NoteModel()
             {
                 Title = "ExperimentView1",
                 IsFavourite = false,
@@ -64,7 +67,7 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         /// </summary>
         public List<NoteModel> AllNotes 
         { 
-            get { return _allNotes; }
+            get { return _noteData.GetAllNotes(); }
             set { _allNotes = value; }
         }
      
