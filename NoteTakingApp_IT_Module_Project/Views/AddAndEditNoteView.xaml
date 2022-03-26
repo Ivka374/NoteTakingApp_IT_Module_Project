@@ -211,7 +211,7 @@
                             <ItemsControl ItemsSource="{Binding CheckBoxTags}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <CheckBox Margin="3" IsChecked="{Binding IsChecked, Mode=OneWay}">
+                                        <CheckBox Margin="3" IsChecked="{Binding IsChecked, Mode=TwoWay}">
                                             <TextBlock Text="{Binding Name}"
                                                                FontFamily="/Font/#Poppins"
                                                                FontSize="14"
