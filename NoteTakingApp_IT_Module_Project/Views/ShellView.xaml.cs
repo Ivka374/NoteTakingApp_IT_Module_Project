@@ -50,11 +50,5 @@ namespace NoteTakingApp_IT_Module_Project.Views
             MainWindow.WindowState = WindowState.Minimized;
         }
         #endregion
-
-        //private void Expander_Expanded(object sender, RoutedEventArgs e)
-        //{
-        //    System.Console.WriteLine();
-        //}
-
     }
 }

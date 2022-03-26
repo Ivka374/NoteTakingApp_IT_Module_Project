@@ -53,6 +53,8 @@ namespace NoteTakingApp_IT_Module_Project.Views
                 noteData.DeleteNote(AddAndEditNoteViewModel.EditingDataContext.ID);
                 HomePageView.editing = false;
             }
+            AddAndEditNoteViewModel.EditingDataContext.Content = null;
+            AddAndEditNoteViewModel.EditingDataContext.NoteTags = null;
             AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
         }
