@@ -12,6 +12,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
 {
     public partial class AddAndEditNoteView : Window
     {
+
         #region Basics
         WindowManager _windowManager;
         public static AddAndEditNoteView thisInstance;
