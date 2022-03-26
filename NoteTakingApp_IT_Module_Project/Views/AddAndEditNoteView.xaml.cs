@@ -8,6 +8,7 @@ using NoteTakingApp_IT_Module_Project.Data;
 using System.Text.RegularExpressions;
 using NoteTakingApp_IT_Module_Project.Models;
 using System.Linq;
+using System.Collections;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
@@ -33,7 +34,6 @@ namespace NoteTakingApp_IT_Module_Project.Views
 
             //all colors now have onclick events
             AddingHandlersToColors();
-
             _windowManager = new WindowManager();
         }
 
@@ -138,9 +138,11 @@ namespace NoteTakingApp_IT_Module_Project.Views
                 else
                 {
                     ShellViewModel.Tags.Add(newTag);
+                    //NoteData noteData = new NoteData();
+                    //noteData.AddTag(newTag);
+                    //noteData.AddTagToNote(newTag, AddAndEditNoteViewModel.EditingDataContext);
                     AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(newTag);
                 }
-                
             }
         }
         #endregion
