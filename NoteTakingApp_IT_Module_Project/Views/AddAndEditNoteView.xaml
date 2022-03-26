@@ -16,6 +16,7 @@
 
     <Window.Resources>
         <Style x:Key="OpenNoteColoursChangeTheme" TargetType="Border">
+            
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush>
@@ -29,7 +30,7 @@
 
             <Style.Triggers>
 
-                <DataTrigger Binding="{Binding EditingDataContext.ThemeName, UpdateSourceTrigger=PropertyChanged}"
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=Self}}"
                                                  Value="0">
                     <Setter Property="Background">
                         <Setter.Value>
