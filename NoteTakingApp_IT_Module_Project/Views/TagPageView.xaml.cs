@@ -21,7 +21,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
             Button clickedNote = sender as Button;
             var dataObject = clickedNote.DataContext as NoteModel;
             AddAndEditNoteViewModel.EditingDataContext = dataObject;
-
+            HomePageView.editing = true;
             _windowManager.ShowDialogAsync(new AddAndEditNoteViewModel());
         }
     }

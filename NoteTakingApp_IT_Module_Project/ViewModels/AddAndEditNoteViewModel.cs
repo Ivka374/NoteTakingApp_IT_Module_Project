@@ -14,15 +14,10 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         //}
 
         private static NoteModel editingDataContext;
-
         public static NoteModel EditingDataContext // this is the var for the note that was open to be edited
         {
+            set { editingDataContext = value; }
             get { return editingDataContext; }
-            set 
-            { 
-                editingDataContext = value;
-                //NotifyStaticPropertyChanged(nameof(EditingDataContext.ThemeName));
-            }
         }
 
         public AddAndEditNoteViewModel()
