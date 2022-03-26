@@ -64,10 +64,10 @@ namespace NoteTakingApp_IT_Module_Project.Views
                 noteData.DeleteNote(AddAndEditNoteViewModel.EditingDataContext.ID);
                 HomePageView.editing = false;
             }
-            AddAndEditNoteViewModel.EditingDataContext.Content = null;
-            AddAndEditNoteViewModel.EditingDataContext.NoteTags = null;
             AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
+            AddAndEditNoteViewModel.EditingDataContext.Content = null;
+            AddAndEditNoteViewModel.EditingDataContext.NoteTags = null;
         }
 
         /// <summary>
@@ -200,9 +200,9 @@ namespace NoteTakingApp_IT_Module_Project.Views
                 else
                 {
                     ShellViewModel.Tags.Add(newTag);
-                    //NoteData noteData = new NoteData();
-                    //noteData.AddTag(newTag);
-                    //noteData.AddTagToNote(newTag, AddAndEditNoteViewModel.EditingDataContext);
+                    NoteData noteData = new NoteData();
+                    noteData.AddTag(newTag);
+                    noteData.AddTagToNote(newTag, AddAndEditNoteViewModel.EditingDataContext);
                     AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(newTag);
                 }
             }
