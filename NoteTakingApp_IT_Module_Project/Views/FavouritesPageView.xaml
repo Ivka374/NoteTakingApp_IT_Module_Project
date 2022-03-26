@@ -9,97 +9,110 @@
              mc:Ignorable="d" Background="Transparent"
              d:DesignHeight="450" d:DesignWidth="800"
              x:Name="favouritesPage">
-    <StackPanel Orientation="Vertical">
+    <Grid>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
         <TextBlock Text="Favourites"
                    Foreground="White"
                    FontSize="28" FontFamily="/Font/#Poppins"
                    HorizontalAlignment="Left"
-                   Margin="0,0,0,20"/>
+                   Margin="0,0,0,20"
+                   Grid.Row="0"/>
 
         <!-- Display of notes -->
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      Margin="10,0,10,20" Grid.Row="1">
+
             <ItemsControl ItemsSource="{Binding FavouriteNotes}">
 
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
 
-            <ItemsControl.ItemTemplate>
+                <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                            <Button>
+                        <Button>
 
-                        <Button.Style>
-                            <Style TargetType="{x:Type Button}">
-                                <Style.Setters>
-                                    <EventSetter Event="Button.Click" Handler="Note_Click" />
-                                    <Setter Property="Background" Value="Transparent"/>
-                                    <Setter Property="BorderBrush" Value="Transparent"/>
-                                </Style.Setters>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#5D4B89"/>
-                                        <Setter Property="BorderBrush" Value="#423860"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                                
-                        <Button.Content>
-                            <Border Margin="10"  MinHeight="100" Width="200"
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Style.Setters>
+                                        <EventSetter Event="Button.Click" Handler="Note_Click" />
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Setter Property="BorderBrush" Value="Transparent"/>
+                                    </Style.Setters>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#5D4B89"/>
+                                            <Setter Property="BorderBrush" Value="#423860"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Content>
+                                <Border Margin="10"  MinHeight="100" Width="200"
                                 CornerRadius="10"
                                 Style="{StaticResource NoteColoursChangeTheme}">
 
-                            <Grid>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Title}"
+                                    <Grid>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Title}"
                                                TextWrapping="Wrap"
                                                 Foreground="Black"
                                                 FontSize="14" FontFamily="/Font/#Poppins"
                                                 Margin="10,5,5,0"/>
 
-                                    <Separator Margin="10,5,10,0" 
+                                            <Separator Margin="10,5,10,0" 
                                                         Grid.ColumnSpan="2" Grid.Row="1"/>
 
-                                    <TextBlock Text="{Binding Content.TextContent}"
+                                            <TextBlock Text="{Binding Content.TextContent}"
                                                 TextWrapping="Wrap"
                                                 Foreground="Black"
                                                 FontSize="12" FontFamily="/Font/#Poppins"
                                                 Margin="10,5,5,5"/>
 
-                                    <!-- Tag view -->
-                                    <ItemsControl ItemsSource="{Binding NoteTags}">
+                                            <!-- Tag view -->
+                                            <ItemsControl ItemsSource="{Binding NoteTags}">
 
-                                        <ItemsControl.ItemsPanel>
-                                            <ItemsPanelTemplate>
-                                                <WrapPanel/>
-                                            </ItemsPanelTemplate>
-                                        </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel/>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
 
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate>
-                                                <Border Margin="7" Height="30" MinWidth="40"
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Border Margin="7" Height="30" MinWidth="40"
                                                     BorderBrush="Black" BorderThickness="0.5"
                                                     Background="Transparent" CornerRadius="15">
 
-                                                    <TextBlock Text="{Binding Name}"
+                                                            <TextBlock Text="{Binding Name}"
                                                            Foreground="Black"
                                                            FontSize="12" FontFamily="/Font/#Poppins"
                                                            Margin="5" VerticalAlignment="Center"
                                                            HorizontalAlignment="Center"/>
 
-                                                </Border>
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
-                                </StackPanel>
-                            </Grid>
-                        </Border>
-                        </Button.Content>
-                    </Button>
+                                                        </Border>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Button.Content>
+                        </Button>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-    </StackPanel>
+
+        </ScrollViewer>    
+        
+    </Grid>
 </UserControl>

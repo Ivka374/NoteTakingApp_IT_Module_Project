@@ -151,9 +151,10 @@
                                  Grid.ColumnSpan="2" Grid.Row="1"/>
 
             <ScrollViewer VerticalScrollBarVisibility="Auto"
-                          Grid.Row="2" Grid.ColumnSpan="2">
-                <DockPanel>
-                    <TextBox x:Name="noteTextBox"
+                          Grid.Row="2" Grid.ColumnSpan="2" 
+                          Margin="20,0"
+                          MaxHeight="225">
+                <TextBox x:Name="noteTextBox"
                            Text="{Binding EditingDataContext.Content.TextContent, Mode=OneWay}"
                            Foreground="Black" Background="Transparent"
                            BorderThickness="0"
@@ -162,97 +163,96 @@
                            TextWrapping="Wrap"
                          Tag="Content"
                              DockPanel.Dock="Top"/>
+            </ScrollViewer>
 
-                    <!-- Tags -->
-                    <StackPanel Grid.Row="3" Grid.ColumnSpan="2"
+            <!-- Tags -->
+            <StackPanel Grid.Row="3" Grid.ColumnSpan="2"
                             Orientation="Horizontal" 
                             Margin="20,10,10,0">
 
-                        <!-- Button for adding a tag -->
-                        <Button Margin="7"
+                <!-- Button for adding a tag -->
+                <Button Margin="7"
                         x:Name="AddTagToNote">
 
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="Button">
-                                                <Button Background="Transparent" BorderBrush="Transparent">
-                                                    <Border CornerRadius="15" BorderThickness="0.5"
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Button Background="Transparent" BorderBrush="Transparent">
+                                            <Border CornerRadius="15" BorderThickness="0.5"
                                                             BorderBrush="Black"
                                                             MinWidth="40" Height="30">
-                                                        <Image Source="/Images/blackPlus.png"/>
-                                                    </Border>
-                                                </Button>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </Button.Style>
+                                                <Image Source="/Images/blackPlus.png"/>
+                                            </Border>
+                                        </Button>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
 
-                            <Button.ContextMenu>
-                                <ContextMenu Style="{StaticResource ContextMenuTheme}">
+                    <Button.ContextMenu>
+                        <ContextMenu Style="{StaticResource ContextMenuTheme}">
 
-                                    <MenuItem x:Name="tagCreateMenuItem" Margin="3">
-                                        <MenuItem.Icon>
-                                            <Image Source="/Images/blackPlus.png" Width="20"/>
-                                        </MenuItem.Icon>
-                                        <MenuItem.Header>
-                                            <TextBox x:Name="tagTextBox"
+                            <MenuItem x:Name="tagCreateMenuItem" Margin="3">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/blackPlus.png" Width="20"/>
+                                </MenuItem.Icon>
+                                <MenuItem.Header>
+                                    <TextBox x:Name="tagTextBox"
                                                      FontFamily="/Font/#Poppins"
                                                      FontSize="14">
-                                                Create New Tag
-                                            </TextBox>
-                                        </MenuItem.Header>
-                                    </MenuItem>
+                                        Create New Tag
+                                    </TextBox>
+                                </MenuItem.Header>
+                            </MenuItem>
 
-                                    <ItemsControl ItemsSource="{Binding Source={StaticResource shellViewModelDummy}, Path=Tags}">
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate>
-                                                <CheckBox Margin="3">
-                                                    <TextBlock Text="{Binding Name}"
+                            <ItemsControl ItemsSource="{Binding Source={StaticResource shellViewModelDummy}, Path=Tags}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <CheckBox Margin="3">
+                                            <TextBlock Text="{Binding Name}"
                                                                FontFamily="/Font/#Poppins"
                                                                FontSize="14"
                                                                VerticalAlignment="Center"/>
-                                                </CheckBox>
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
+                                        </CheckBox>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
 
-                                </ContextMenu>
-                            </Button.ContextMenu>
+                        </ContextMenu>
+                    </Button.ContextMenu>
 
-                        </Button>
+                </Button>
 
-                        <ItemsControl ItemsSource="{Binding EditingDataContext.NoteTags, Mode=OneWay}">
+                <ItemsControl ItemsSource="{Binding EditingDataContext.NoteTags, Mode=OneWay}">
 
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel/>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
 
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Border Margin="7" Height="30" MinWidth="40"
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="7" Height="30" MinWidth="40"
                                                     BorderBrush="Black" BorderThickness="0.5"
                                                     Background="Transparent" CornerRadius="15">
 
-                                        <TextBlock Text="{Binding Name}"
+                                <TextBlock Text="{Binding Name}"
                                                            Foreground="Black"
                                                            FontSize="12" FontFamily="/Font/#Poppins"
                                                            Margin="5" VerticalAlignment="Center"
                                                            HorizontalAlignment="Center"/>
 
-                                    </Border>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
 
-                        </ItemsControl>
-                        
-                    </StackPanel>
-                </DockPanel>
-            </ScrollViewer>
+                </ItemsControl>
+
+            </StackPanel>
 
             <!-- Column 1 -->
             <StackPanel Grid.Column="1" 
