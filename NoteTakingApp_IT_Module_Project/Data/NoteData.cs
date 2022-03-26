@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using Manufaktura.Controls.Model;
 using Newtonsoft.Json;
 using NoteTakingApp_IT_Module_Project.Models;
 
@@ -38,7 +39,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
                         if (!reader.IsDBNull(5)) music = reader.GetString(5);
                         if (music != null)
                         {
-                            MusicContent musicContent = JsonConvert.DeserializeObject<MusicContent>(music);
+                            Score musicContent = JsonConvert.DeserializeObject<Score>(music);
                             note.Content.MusicContent = musicContent;
                         }
                         note.NoteTags = GetTagsForNote(note.ID);
@@ -109,7 +110,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
                         if (!reader.IsDBNull(5)) music = reader.GetString(5);
                         if (music != null)
                         {
-                            MusicContent musicContent = JsonConvert.DeserializeObject<MusicContent>(music);
+                            Score musicContent = JsonConvert.DeserializeObject<Score>(music);
                             note.Content.MusicContent = musicContent;
                         }
                         note.NoteTags = GetTagsForNote(note.ID);
@@ -152,7 +153,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
                         if(!reader.IsDBNull(5)) music = reader.GetString(5);
                         if (music != null)
                         {
-                            MusicContent musicContent = JsonConvert.DeserializeObject<MusicContent>(music);
+                            Score musicContent = JsonConvert.DeserializeObject<Score>(music);
                             note.Content.MusicContent = musicContent;
                         }
                         note.NoteTags = GetTagsForNote(note.ID);
@@ -192,7 +193,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
                         );
                         if (music != null)
                         {
-                            MusicContent musicContent = JsonConvert.DeserializeObject<MusicContent>(music);
+                            Score musicContent = JsonConvert.DeserializeObject<Score>(music);
                             note.Content.MusicContent = musicContent;
                         }
                         note.NoteTags = GetTagsForNote(note.ID);
@@ -413,7 +414,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
                         if (!reader.IsDBNull(5)) music = reader.GetString(5);
                         if (music != null)
                         {
-                            MusicContent musicContent = JsonConvert.DeserializeObject<MusicContent>(music);
+                            Score musicContent = JsonConvert.DeserializeObject<Score>(music);
                             note.Content.MusicContent = musicContent;
                         }
                         note.NoteTags = GetTagsForNote(note.ID);
@@ -445,8 +446,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
                     {
                         tag = new TagModel(
                             reader.GetInt32(0),
-                            reader.GetString(1),
-                            (ConsoleColor)reader.GetInt32(2)
+                            reader.GetString(1)
                         );
                     }
                 }
