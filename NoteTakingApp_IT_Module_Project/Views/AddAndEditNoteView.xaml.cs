@@ -127,6 +127,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
             {
                 //gives error :/
                 TagModel newTag = new TagModel() { Name = tagTextBox.Text };
+                ShellViewModel.Tags.Add(newTag);
                 AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(newTag);
             }
         }
