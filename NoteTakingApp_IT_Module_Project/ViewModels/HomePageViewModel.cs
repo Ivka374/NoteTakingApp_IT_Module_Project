@@ -1,10 +1,6 @@
 ﻿using Caliburn.Micro;
 using NoteTakingApp_IT_Module_Project.Models;
-using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
 
 namespace NoteTakingApp_IT_Module_Project.ViewModels
 {
@@ -62,6 +58,10 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
             });
             #endregion        
         }
+
+        /// <summary>
+        /// Meant to hook into database to get all the notes
+        /// </summary>
         public List<NoteModel> AllNotes 
         { 
             get { return _allNotes; }

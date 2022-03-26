@@ -14,6 +14,7 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         {
             _favouriteNotes = new BindableCollection<NoteModel>();
 
+            #region Test data
             _favouriteNotes.Add(new NoteModel()
             {
                 Title = "FavouriteExperimentView1",
@@ -36,8 +37,12 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
                 ThemeName = 3,
                 NoteTags = new List<TagModel>() { new TagModel() { Name = "Cool"}, new TagModel() { Name = "Cute"}, new TagModel() { Name = "Funny"} }
             });
+            #endregion
         }
 
+        /// <summary>
+        /// Meant to hook into databsae by getting only the notes marked as favourite
+        /// </summary>
         public BindableCollection<NoteModel> FavouriteNotes
         {
             get { return _favouriteNotes; }

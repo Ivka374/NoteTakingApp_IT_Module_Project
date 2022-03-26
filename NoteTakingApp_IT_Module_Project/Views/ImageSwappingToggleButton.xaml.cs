@@ -12,12 +12,13 @@ namespace NoteTakingApp_IT_Module_Project.Views
             InitializeComponent();
         }
 
+        #region EnabledUncheckedProperty
         public static readonly DependencyProperty EnabledUncheckedProperty =
-            DependencyProperty.Register(
-                "EnabledUnchecked",
-                typeof(ImageSource),
-                typeof(ImageSwappingToggleButton),
-                new PropertyMetadata(onEnabledUncheckedChangedCallback));
+           DependencyProperty.Register(
+               "EnabledUnchecked",
+               typeof(ImageSource),
+               typeof(ImageSwappingToggleButton),
+               new PropertyMetadata(onEnabledUncheckedChangedCallback));
 
         public ImageSource EnabledUnckecked
         {
@@ -31,7 +32,9 @@ namespace NoteTakingApp_IT_Module_Project.Views
         {
 
         }
+        #endregion
 
+        #region DisabledUncheckedProperty
         public static readonly DependencyProperty DisabledUncheckedProperty =
             DependencyProperty.Register(
             "DisabledUnchecked",
@@ -51,7 +54,9 @@ namespace NoteTakingApp_IT_Module_Project.Views
         {
 
         }
+        #endregion
 
+        #region EnabledCheckedProperty
         public static readonly DependencyProperty EnabledCheckedProperty =
             DependencyProperty.Register(
             "EnabledChecked",
@@ -71,7 +76,9 @@ namespace NoteTakingApp_IT_Module_Project.Views
         {
 
         }
+        #endregion
 
+        #region IsCheckedProperty
         public static readonly DependencyProperty IsCheckedProperty =
             DependencyProperty.Register(
             "IsChecked",
@@ -90,7 +97,8 @@ namespace NoteTakingApp_IT_Module_Project.Views
             DependencyPropertyChangedEventArgs args)
         {
 
-        }
+        } 
+        #endregion
 
     }
 }

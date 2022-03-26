@@ -24,14 +24,18 @@ namespace NoteTakingApp_IT_Module_Project.Views
 
         #region Button handlers
 
-        //hadles saving changes
+        /// <summary>
+        /// Handles saving changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CloseWithSave_Click(object sender, RoutedEventArgs e)
         {
             NoteModel note = AddAndEditNoteViewModel.EditingDataContext;
 
             NoteContentModel noteContents = new NoteContentModel();
             noteContents.TextContent = AddAndEditNoteView.thisInstance.noteTextBox.Text;
-            //noteContents.MusicContent = ???;     
+            //noteContents.MusicContent = to be added in the future     
 
             note.Title = AddAndEditNoteView.thisInstance.titleTextBox.Text;
             note.ThemeName = AddAndEditNoteViewModel.EditingDataContext.ThemeName;
@@ -70,13 +74,21 @@ namespace NoteTakingApp_IT_Module_Project.Views
             AddAndEditNoteView.thisInstance.Close();
         }
 
-        //handles cancelation of escape
+        /// <summary>
+        /// Handled cancelation of closing the opened note
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        //handles closes without saving
+        /// <summary>
+        /// Closes note without saving changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CloseWithoutSave_Click(object sender, RoutedEventArgs e)
         {
             AddAndEditNoteViewModel.EditingDataContext.Content = null;
@@ -87,7 +99,11 @@ namespace NoteTakingApp_IT_Module_Project.Views
         }
         #endregion
 
-        //handles dragging
+        /// <summary>
+        /// Handles dragging of window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)

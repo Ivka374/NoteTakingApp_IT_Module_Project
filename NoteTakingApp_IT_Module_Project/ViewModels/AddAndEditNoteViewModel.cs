@@ -9,7 +9,9 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
     {
         private static NoteModel editingDataContext;
 
-        // this is the property for the note that was open to be edited
+        /// <summary>
+        /// The data context for the note that was opened
+        /// </summary>
         public static NoteModel EditingDataContext 
         {
             get { return editingDataContext; }
@@ -20,7 +22,7 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         }
 
         /// <summary>
-        /// A list of tags with checkable values
+        /// A list of tags suited for checkBox use
         /// </summary>
         public List<CheckBoxTag> CheckBoxTags
         {
@@ -31,7 +33,6 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         }
     }
 
-
     /// <summary>
     /// A class meant to enable checking wether a tag from the overall collection belongs to that of the current note
     /// </summary>
@@ -40,6 +41,7 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         //A list of the tags of the open note
         List<TagModel> assignedTags = new List<TagModel>();
 
+        #region Constructors
         public CheckBoxTag()
         {
             assignedTags = AddAndEditNoteViewModel.EditingDataContext.NoteTags.ToList();
@@ -51,6 +53,7 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
             ID = id;
             assignedTags = AddAndEditNoteViewModel.EditingDataContext.NoteTags.ToList();
         }
+        #endregion
 
         public bool IsChecked
         {

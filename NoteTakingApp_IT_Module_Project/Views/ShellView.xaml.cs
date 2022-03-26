@@ -19,7 +19,11 @@ namespace NoteTakingApp_IT_Module_Project.Views
             Mouse.AddMouseDownHandler(this, Window_MouseDown);
         }
 
-        //handles dragging
+        /// <summary>
+        /// Handles dragging of window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left) 
@@ -28,10 +32,21 @@ namespace NoteTakingApp_IT_Module_Project.Views
 
         #region Closing, minimizing and maximizing
 
+        /// <summary>
+        /// Closes window through custom button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
         }
+
+        /// <summary>
+        /// Maximizes window through custom button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Maximize_Click(object sender, RoutedEventArgs e)
         {
             if (isMaximized == false)
@@ -45,6 +60,12 @@ namespace NoteTakingApp_IT_Module_Project.Views
                 isMaximized = false;
             }
         }
+
+        /// <summary>
+        /// Minimizes window through custom button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Minimize_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.WindowState = WindowState.Minimized;

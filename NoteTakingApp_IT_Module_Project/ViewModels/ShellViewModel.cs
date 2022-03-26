@@ -10,6 +10,10 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         #region Tag management
 
         private static BindableCollection<TagModel> tags;
+
+        /// <summary>
+        /// A collection of all available tags; meant to hook into database
+        /// </summary>
         public static BindableCollection<TagModel> Tags
         {
             get
@@ -23,6 +27,10 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         }
 
         private static TagModel selectedTag;
+
+        /// <summary>
+        /// Refers to the selected tag within the comboBox in the left-side menu
+        /// </summary>
         public static TagModel SelectedTag
         {
             get { return selectedTag; }
@@ -50,20 +58,34 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
 
         #region Manageing displayed notes
 
+        /// <summary>
+        /// Loads HomePageView user control
+        /// </summary>
         public void LoadHomePage()
         {
             ActivateItemAsync(new HomePageViewModel());
         }
+
+        /// <summary>
+        /// Loads FavouritesPageView user control
+        /// </summary>
         public void LoadFavouritesPage()
         {
             ActivateItemAsync(new FavouritesPageViewModel());
         }
+
+        /// <summary>
+        /// Loads TagPageView user control
+        /// </summary>
         public void LoadTagPage()
         {
             ActivateItemAsync(new TagPageViewModel());
         }
         #endregion
 
+        /// <summary>
+        /// Opens a blank/default note
+        /// </summary>
         public void CreateNote() 
         {
             NoteModel newNote = new NoteModel();

@@ -13,6 +13,12 @@ namespace NoteTakingApp_IT_Module_Project.Views
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Opens selected note on click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Note_Click(object sender, RoutedEventArgs e)
         {
             Button clickedNote = sender as Button;

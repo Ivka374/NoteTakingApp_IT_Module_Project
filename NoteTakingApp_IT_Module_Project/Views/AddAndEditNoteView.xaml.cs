@@ -37,7 +37,11 @@ namespace NoteTakingApp_IT_Module_Project.Views
             _windowManager = new WindowManager();
         }
 
-        //handles window dragging
+        /// <summary>
+        /// Handles window dragging
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
@@ -47,6 +51,11 @@ namespace NoteTakingApp_IT_Module_Project.Views
 
         #region Context menu events
 
+        /// <summary>
+        /// Deletes opened note
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void deleteMenuItem_Click(object sender, RoutedEventArgs e)
         {
             if (HomePageView.editing == true)
@@ -60,10 +69,22 @@ namespace NoteTakingApp_IT_Module_Project.Views
             AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
         }
+
+        /// <summary>
+        /// Will add a music score to the note content
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addScoreeMenuItem_Click(object sender, RoutedEventArgs e)
         {
             //this will open a seperate window that is linked to the MusicContent property of the current note
         }
+
+        /// <summary>
+        /// Opens window to confirm exit and data change actions
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddAndEditNoteView_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == System.Windows.Input.Key.Escape)
@@ -77,33 +98,70 @@ namespace NoteTakingApp_IT_Module_Project.Views
 
         #region Changing note colour
 
-        //will add a listener or sth
-
+        /// <summary>
+        /// Sets purple theme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Color0_Click(object sender, RoutedEventArgs e)
         {
             AddAndEditNoteViewModel.EditingDataContext.ThemeName = 0;
         }
+
+        /// <summary>
+        /// Sets blue theme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Color1_Click(object sender, RoutedEventArgs e)
         {
             AddAndEditNoteViewModel.EditingDataContext.ThemeName = 1;
         }
+
+        /// <summary>
+        /// Sets yellow theme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Color2_Click(object sender, RoutedEventArgs e)
         {
             AddAndEditNoteViewModel.EditingDataContext.ThemeName = 2;
         }
+
+        /// <summary>
+        /// Sets dawn theme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Color3_Click(object sender, RoutedEventArgs e)
         {
             AddAndEditNoteViewModel.EditingDataContext.ThemeName = 3;
         }
+
+        /// <summary>
+        /// Sets aurora borealis theme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Color4_Click(object sender, RoutedEventArgs e)
         {
             AddAndEditNoteViewModel.EditingDataContext.ThemeName = 4;
         }
+
+        /// <summary>
+        /// Sets pink and blue theme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Color5_Click(object sender, RoutedEventArgs e)
         {
             AddAndEditNoteViewModel.EditingDataContext.ThemeName = 5;
         }
 
+
+        /// <summary>
+        /// Handles all the colour changes
+        /// </summary>
         private void AddingHandlersToColors()
         {
             color0.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(Color0_Click));
@@ -118,7 +176,11 @@ namespace NoteTakingApp_IT_Module_Project.Views
 
         #region Manageing tags
 
-        //attempts to add a tag to a note
+        /// <summary>
+        /// Attempts to add a tag to a note
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tagCreateMenuItem_Click(object sender, RoutedEventArgs e)
         {
             var regex = new Regex(@"[^a-zA-Z0-9\s]");
