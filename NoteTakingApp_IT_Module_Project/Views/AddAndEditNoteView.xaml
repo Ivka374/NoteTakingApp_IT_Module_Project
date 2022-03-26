@@ -16,7 +16,7 @@
 
     <Window.Resources>
         <Style x:Key="OpenNoteColoursChangeTheme" TargetType="Border">
-            
+
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush>
@@ -30,7 +30,7 @@
 
             <Style.Triggers>
 
-                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=Self}}"
+                <DataTrigger Binding="{Binding EditingDataContext.ThemeName, UpdateSourceTrigger=PropertyChanged}"
                                                  Value="0">
                     <Setter Property="Background">
                         <Setter.Value>
@@ -106,8 +106,6 @@
 
             </Style.Triggers>
         </Style>
-
-        <viewmodels:ShellViewModel x:Key="shellViewModelDummy"/>
     </Window.Resources>
 
     <Border Style="{StaticResource OpenNoteColoursChangeTheme}">
@@ -210,10 +208,10 @@
                                 </MenuItem.Header>
                             </MenuItem>
 
-                            <ItemsControl ItemsSource="{Binding Source={StaticResource shellViewModelDummy}, Path=Tags}">
+                            <ItemsControl ItemsSource="{Binding CheckBoxTags}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <CheckBox Margin="3">
+                                        <CheckBox Margin="3" IsChecked="{Binding IsChecked, Mode=OneWay}">
                                             <TextBlock Text="{Binding Name}"
                                                                FontFamily="/Font/#Poppins"
                                                                FontSize="14"
@@ -222,7 +220,7 @@
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
-                            
+
                         </ContextMenu>
                     </Button.ContextMenu>
 

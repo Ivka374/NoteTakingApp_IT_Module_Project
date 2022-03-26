@@ -11,10 +11,32 @@ namespace NoteTakingApp_IT_Module_Project.Models
         public int ID { get; set; }
         public string Title { get; set; }
         public NoteContentModel Content { get; set; }
-        public List<TagModel> NoteTags { get; set; }
         public bool IsFavourite { get; set; }
-        private int themeName;
 
+        private List<TagModel> noteTags;
+        public List<TagModel> NoteTags 
+        {
+            get { return noteTags; }
+            set 
+            {
+                noteTags = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        private int themeName;
+        public int ThemeName
+        {
+            get { return themeName; }
+            set { themeName = value; NotifyPropertyChanged(); }
+        }
+
+        public NoteModel()
+        {
+            NoteTags = new List<TagModel>();
+        }
+
+        #region Property change handler
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
@@ -23,16 +45,8 @@ namespace NoteTakingApp_IT_Module_Project.Models
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+        #endregion
 
-        public int ThemeName
-        {
-            get { return themeName; }
-            set { themeName = value; NotifyPropertyChanged(); }
-        }
-        public NoteModel()
-        {
-            NoteTags = new List<TagModel>();
-        }
         public NoteModel(int id, string title, string content, bool isFav, int themeName)
         {
             NoteTags = new List<TagModel>();
