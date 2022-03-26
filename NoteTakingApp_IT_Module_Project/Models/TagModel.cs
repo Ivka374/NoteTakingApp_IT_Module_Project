@@ -6,12 +6,11 @@ namespace NoteTakingApp_IT_Module_Project.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public ConsoleColor Colour { get; set; } //please remove
         public TagModel()
         {
 
         }
-        public TagModel(int id, string name, ConsoleColor colour)
+        public TagModel(int id, string name)
         {
             ID = id;
             Name = name;

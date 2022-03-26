@@ -70,8 +70,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
                     {
                         var tag = new TagModel(
                             reader.GetInt32(0),
-                            reader.GetString(1),
-                            (ConsoleColor)reader.GetInt32(2)
+                            reader.GetString(1)
                         );
 
                         tagList.Add(tag);
@@ -285,8 +284,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
                     {
                         tag = new TagModel(
                             reader.GetInt32(0),
-                            reader.GetString(1),
-                            (ConsoleColor)reader.GetInt32(2)
+                            reader.GetString(1)
                         );
                     }
                 }
@@ -316,8 +314,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
                     {
                         tag = new TagModel(
                             reader.GetInt32(0),
-                            reader.GetString(1),
-                            (ConsoleColor)reader.GetInt32(2)
+                            reader.GetString(1)
                         );
                     }
                 }
@@ -362,9 +359,8 @@ namespace NoteTakingApp_IT_Module_Project.Data
         {
             using (var connection = Database.GetConnection())
             {
-                var command = new MySqlCommand("INSERT INTO tagmodel (tagname, tagcolor) VALUES(@tagname, @tagcolor)", connection);
+                var command = new MySqlCommand("INSERT INTO tagmodel (tagname) VALUES(@tagname)", connection);
                 command.Parameters.AddWithValue("tagname", tag.Name);
-                command.Parameters.AddWithValue("tagcolor", (int)tag.Colour);
                 connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -491,9 +487,8 @@ namespace NoteTakingApp_IT_Module_Project.Data
         {
             using (var connection = Database.GetConnection())
             {
-                var command = new MySqlCommand("UPDATE tagmodel SET tagname=@tagname, tagcolor=@tagcolor WHERE tagid=@tagid", connection);
+                var command = new MySqlCommand("UPDATE tagmodel SET tagname=@tagname WHERE tagid=@tagid", connection);
                 command.Parameters.AddWithValue("tagname", tag.Name);
-                command.Parameters.AddWithValue("tagcolor", (int)tag.Colour);
                 command.Parameters.AddWithValue("tagid", tag.ID);
                 connection.Open();
                 command.ExecuteNonQuery();
