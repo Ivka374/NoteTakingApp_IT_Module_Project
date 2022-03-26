@@ -133,6 +133,7 @@
             
             
             <!-- Column 0 -->
+            <!-- Title text box -->
             <TextBox x:Name="titleTextBox" Grid.ColumnSpan="1"
                            Text="{Binding EditingDataContext.Title, Mode=OneWay}"
                            Foreground="Black"
@@ -141,15 +142,14 @@
                      Background="Transparent"
                      BorderBrush="Transparent"
                      TextWrapping="Wrap"
-                     Width="370"
-                     Tag="Title">
-                
+                     Width="370">
                 
             </TextBox>
             
                 <RibbonSeparator Margin="20,10,10,0" 
                                  Grid.ColumnSpan="2" Grid.Row="1"/>
 
+            <!-- Scrollable text box -->
             <ScrollViewer VerticalScrollBarVisibility="Auto"
                           Grid.Row="2" Grid.ColumnSpan="2" 
                           Margin="20,0"
@@ -162,7 +162,8 @@
                            FontSize="18" FontFamily="/Font/#Poppins"
                            Margin="20,10,10,0"
                            TextWrapping="Wrap"
-                           Tag="Content"/>
+                           Tag="Content"
+                           AcceptsReturn="True"/>
             </ScrollViewer>
 
             <!-- Tags -->
@@ -255,6 +256,7 @@
             </StackPanel>
 
             <!-- Column 1 -->
+            <!-- Top-right buttons -->
             <StackPanel Grid.Column="1" 
                         Orientation="Horizontal"
                         HorizontalAlignment="Right"
