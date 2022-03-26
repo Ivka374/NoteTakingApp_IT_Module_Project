@@ -9,7 +9,7 @@ namespace NoteTakingApp_IT_Module_Project.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public ConsoleColor Colour { get; set; } //will remove this soon if agreed
+        public ConsoleColor Colour { get; set; } //please remove
         public TagModel()
         {
 

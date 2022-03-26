@@ -29,11 +29,5 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         {
 
         }
-        
-        public void AddTagToNote()
-        {
-            //should be reassigned after the menu
-        }
-
     }
 }

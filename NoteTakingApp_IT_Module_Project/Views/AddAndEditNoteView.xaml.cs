@@ -112,6 +112,8 @@ namespace NoteTakingApp_IT_Module_Project.Views
 
         #endregion
 
+        #region Manageing tags
+
         //attempts to add a tag to a note
         private void tagCreateMenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -128,5 +130,6 @@ namespace NoteTakingApp_IT_Module_Project.Views
                 AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(newTag);
             }
         }
+        #endregion
     }
 }

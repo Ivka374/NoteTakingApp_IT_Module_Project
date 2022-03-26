@@ -154,6 +154,7 @@
                           Grid.Row="2" Grid.ColumnSpan="2" 
                           Margin="20,0"
                           MaxHeight="225">
+                
                 <TextBox x:Name="noteTextBox"
                            Text="{Binding EditingDataContext.Content.TextContent, Mode=OneWay}"
                            Foreground="Black" Background="Transparent"
@@ -161,8 +162,7 @@
                            FontSize="18" FontFamily="/Font/#Poppins"
                            Margin="20,10,10,0"
                            TextWrapping="Wrap"
-                         Tag="Content"
-                             DockPanel.Dock="Top"/>
+                           Tag="Content"/>
             </ScrollViewer>
 
             <!-- Tags -->
@@ -220,7 +220,7 @@
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
-
+                            
                         </ContextMenu>
                     </Button.ContextMenu>
 
