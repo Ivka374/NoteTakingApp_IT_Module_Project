@@ -17,10 +17,9 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
             set { data = value; OnPropertyChanged(() => Data); }
         }
 
-
+        #region For reference to music
         public void LoadTestData()
         {
-            #region For reference to music
             Score score = Score.CreateOneStaffScore(Clef.Treble, new MajorScale(Step.C, false));
             score.FirstStaff.Elements.Add(new Note(Pitch.C5, RhythmicDuration.Quarter));
             score.FirstStaff.Elements.Add(new Note(Pitch.B4, RhythmicDuration.Quarter));
@@ -48,8 +47,7 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
             score.Staves[3].Elements.Add(new Note(Pitch.G3, RhythmicDuration.Half));
             score.Staves[3].Elements.Add(new Note(Pitch.C3, RhythmicDuration.Half));
             score.Staves[3].Elements.Add(new Barline());
-
-            #endregion        
         }
+        #endregion 
     }
 }

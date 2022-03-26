@@ -68,7 +68,8 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         {
             NoteModel newNote = new NoteModel();
             AddAndEditNoteViewModel.EditingDataContext = newNote;
-            _windowManager.ShowDialogAsync(new AddAndEditNoteViewModel()); 
+
+            _windowManager.ShowDialogAsync(new AddAndEditNoteViewModel());
         }
         
     }

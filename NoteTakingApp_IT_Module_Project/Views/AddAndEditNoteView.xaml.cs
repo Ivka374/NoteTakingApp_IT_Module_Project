@@ -117,7 +117,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
         //attempts to add a tag to a note
         private void tagCreateMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            var regex = new Regex(@"[^a-zA-Z0-9\s]");
+            var regex = new Regex(@"[^a-zA-Z0-9/s]");
             if (regex.IsMatch(tagTextBox.Text))
             {
                 MessageBox.Show("You may not use special characters in your tags.", "Cannot create tag!", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -128,6 +128,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
                 //gives error :/
                 TagModel newTag = new TagModel() { Name = tagTextBox.Text };
                 AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(newTag);
+                ShellViewModel.Tags.Add(newTag);
             }
         }
         #endregion
