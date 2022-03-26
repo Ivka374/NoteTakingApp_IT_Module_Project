@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using NoteTakingApp_IT_Module_Project.Models;
 
 namespace NoteTakingApp_IT_Module_Project.Data
@@ -18,6 +19,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
         public List<NoteModel> GetAllNotes()
         {
             var noteList = new List<NoteModel>();
+            string music = null;
             using (var connection = Database.GetConnection())
             {
                 var command = new MySqlCommand("SELECT * FROM notemodel", connection);
@@ -33,6 +35,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
                             reader.GetBoolean(3),
                             reader.GetInt32(4)
                         );
+                        if (!reader.IsDBNull(5)) music = reader.GetString(5);
+                        if (music != null)
+                        {
+                            MusicContent musicContent = JsonConvert.DeserializeObject<MusicContent>(music);
+                            note.Content.MusicContent = musicContent;
+                        }
                         note.NoteTags = GetTagsForNote(note.ID);
 
                         noteList.Add(note);
@@ -83,6 +91,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
         public List<NoteModel> GetFavoriteNotes()
         {
             var noteList = new List<NoteModel>();
+            string music = null;
             using (var connection = Database.GetConnection())
             {
                 var command = new MySqlCommand("SELECT * FROM notemodel WHERE noteisfav = 1", connection);
@@ -98,6 +107,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
                             reader.GetBoolean(3),
                             reader.GetInt32(4)
                         );
+                        if (!reader.IsDBNull(5)) music = reader.GetString(5);
+                        if (music != null)
+                        {
+                            MusicContent musicContent = JsonConvert.DeserializeObject<MusicContent>(music);
+                            note.Content.MusicContent = musicContent;
+                        }
                         note.NoteTags = GetTagsForNote(note.ID);
 
                         noteList.Add(note);
@@ -118,6 +133,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
         public NoteModel GetNoteByTitle(string title)
         {
             NoteModel note = null;
+            string music = null;
             using (var connection = Database.GetConnection())
             {
                 var command = new MySqlCommand("SELECT * FROM notemodel WHERE notetitle=@notetitle", connection);
@@ -134,6 +150,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
                             reader.GetBoolean(3),
                             reader.GetInt32(4)
                         );
+                        if(!reader.IsDBNull(5)) music = reader.GetString(5);
+                        if (music != null)
+                        {
+                            MusicContent musicContent = JsonConvert.DeserializeObject<MusicContent>(music);
+                            note.Content.MusicContent = musicContent;
+                        }
                         note.NoteTags = GetTagsForNote(note.ID);
                     }
                 }
@@ -152,6 +174,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
         public NoteModel GetNoteById(int id)
         {
             NoteModel note = null;
+            string music = null;
             using (var connection = Database.GetConnection())
             {
                 var command = new MySqlCommand("SELECT * FROM notemodel WHERE noteid=@noteid", connection);
@@ -168,6 +191,11 @@ namespace NoteTakingApp_IT_Module_Project.Data
                             reader.GetBoolean(3),
                             reader.GetInt32(4)
                         );
+                        if (music != null)
+                        {
+                            MusicContent musicContent = JsonConvert.DeserializeObject<MusicContent>(music);
+                            note.Content.MusicContent = musicContent;
+                        }
                         note.NoteTags = GetTagsForNote(note.ID);
                     }
                 }
@@ -308,12 +336,13 @@ namespace NoteTakingApp_IT_Module_Project.Data
         {
             using (var connection = Database.GetConnection())
             {
-                var command = new MySqlCommand("INSERT INTO notemodel (notetitle, notecontent, noteisfav, notethemename) VALUES(@notetitle, @notecontent, @noteisfav, @notetheme)", connection);
+                var command = new MySqlCommand("INSERT INTO notemodel (notetitle, notecontent, noteisfav, notethemename, notemusiccontent) VALUES(@notetitle, @notecontent, @noteisfav, @notetheme, @notemusiccontent)", connection);
                 command.Parameters.AddWithValue("notetitle", note.Title);
                 NoteContentModel noteContent = note.Content;
                 command.Parameters.AddWithValue("notecontent", noteContent.TextContent);
                 command.Parameters.AddWithValue("noteisfav", note.IsFavourite);
                 command.Parameters.AddWithValue("notetheme", note.ThemeName);
+                command.Parameters.AddWithValue("notemusiccontent", JsonConvert.SerializeObject(noteContent.MusicContent));
                 connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -368,6 +397,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
         public NoteModel CheckForDuplicateTitles(string title)
         {
             NoteModel note = null;
+            string music = null;
             using (var connection = Database.GetConnection())
             {
                 var command = new MySqlCommand("SELECT * FROM notemodel WHERE notetitle=@notetitle", connection);
@@ -384,6 +414,12 @@ namespace NoteTakingApp_IT_Module_Project.Data
                             reader.GetBoolean(3),
                             reader.GetInt32(4)
                         );
+                        if (!reader.IsDBNull(5)) music = reader.GetString(5);
+                        if (music != null)
+                        {
+                            MusicContent musicContent = JsonConvert.DeserializeObject<MusicContent>(music);
+                            note.Content.MusicContent = musicContent;
+                        }
                         note.NoteTags = GetTagsForNote(note.ID);
                     }
                 }
@@ -433,12 +469,13 @@ namespace NoteTakingApp_IT_Module_Project.Data
         {
             using (var connection = Database.GetConnection())
             {
-                var command = new MySqlCommand("UPDATE notemodel SET notetitle=@notetitle, notecontent=@notecontent, noteisfav=@noteisfav, notethemename=@notethemename WHERE noteid=@id", connection);
+                var command = new MySqlCommand("UPDATE notemodel SET notetitle=@notetitle, notecontent=@notecontent, noteisfav=@noteisfav, notethemename=@notethemename, notemusiccontent=@notemusiccontent WHERE noteid=@id", connection);
                 command.Parameters.AddWithValue("id", note.ID);
                 command.Parameters.AddWithValue("notetitle", note.Title);
                 command.Parameters.AddWithValue("notecontent", note.Content.TextContent);
                 command.Parameters.AddWithValue("noteisfav", note.IsFavourite);
                 command.Parameters.AddWithValue("notethemename", note.ThemeName);
+                command.Parameters.AddWithValue("notemusiccontent", JsonConvert.SerializeObject(note.Content.MusicContent));
                 connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
