@@ -38,20 +38,15 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
     /// </summary>
     public class CheckBoxTag : TagModel
     {
-        //A list of the tags of the open note
-        List<TagModel> assignedTags = new List<TagModel>();
-
         #region Constructors
         public CheckBoxTag()
         {
-            assignedTags = AddAndEditNoteViewModel.EditingDataContext.NoteTags.ToList();
         }
 
         public CheckBoxTag(string name, int id)
         {
             Name = name;
             ID = id;
-            assignedTags = AddAndEditNoteViewModel.EditingDataContext.NoteTags.ToList();
         }
         #endregion
 
@@ -60,7 +55,20 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
             get
             {
                 //checks if the note contains the current tag
-                return assignedTags.Any(t => t.Name == this.Name);
+                return AddAndEditNoteViewModel.EditingDataContext.NoteTags.Any(t => t.Name == this.Name);
+            }
+
+            set
+            {
+                if (value)
+                {
+                    AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(ShellViewModel.Tags.First(t => t.Name == this.Name));
+                } else
+                {
+                    var tag = AddAndEditNoteViewModel.EditingDataContext.NoteTags.First(t => t.Name == this.Name);
+                    AddAndEditNoteViewModel.EditingDataContext.NoteTags.Remove(tag);
+                }
+                
             }
         }
     }
