@@ -6,41 +6,50 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
     public class ShellViewModel : Conductor<object>
     {
         WindowManager _windowManager;
-        private BindableCollection<TagModel> tags;
-        public BindableCollection<TagModel> Tags { 
-            get 
+
+        #region Tag management
+
+        private static BindableCollection<TagModel> tags;
+        public static BindableCollection<TagModel> Tags
+        {
+            get
             {
                 return tags;
             }
-            set 
+            set
             {
-                this.tags = value;
-            } 
+                tags = value;
+            }
         }
 
         private static TagModel selectedTag;
-
         public static TagModel SelectedTag
         {
             get { return selectedTag; }
-            set 
-            { 
+            set
+            {
                 selectedTag = value;
             }
-        }
+        } 
+        #endregion
 
 
         public ShellViewModel()
         {
-            //simulating content of tags - probably make them default
+            //simulating content of tags
             Tags = new BindableCollection<TagModel>();
             Tags.Add(new TagModel { Name = "Personal" });
             Tags.Add(new TagModel { Name = "Work" });
+            Tags.Add(new TagModel { Name = "Cool" });
+            Tags.Add(new TagModel { Name = "Cute" });
 
             LoadHomePage();
 
             _windowManager = new WindowManager();
         }
+
+        #region Manageing displayed notes
+
         public void LoadHomePage()
         {
             ActivateItemAsync(new HomePageViewModel());
@@ -53,6 +62,7 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         {
             ActivateItemAsync(new TagPageViewModel());
         }
+        #endregion
 
         public void CreateNote() 
         {

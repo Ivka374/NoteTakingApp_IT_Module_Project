@@ -105,6 +105,8 @@
 
             </Style.Triggers>
         </Style>
+
+        <viewmodels:ShellViewModel x:Key="shellViewModelDummy"/>
     </Window.Resources>
 
     <Border Style="{StaticResource OpenNoteColoursChangeTheme}">
@@ -204,7 +206,7 @@
                                         </MenuItem.Header>
                                     </MenuItem>
 
-                                    <ItemsControl ItemsSource="{Binding EditingDataContext.NoteTags, Mode=OneWay}">
+                                    <ItemsControl ItemsSource="{Binding Source={StaticResource shellViewModelDummy}, Path=Tags}">
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate>
                                                 <CheckBox Margin="3">

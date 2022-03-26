@@ -5,7 +5,7 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
 {
     public class TagPageViewModel : Screen
     {
-        private BindableCollection<NoteModel> selectedTagCollection;
+        private static BindableCollection<NoteModel> selectedTagCollection;
 
         public string SelectedTagName
         {
@@ -14,10 +14,17 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
                 return ShellViewModel.SelectedTag.Name;
             }
         }
-        public BindableCollection<NoteModel> SelectedTagCollection
+        public static BindableCollection<NoteModel> SelectedTagCollection
         {
-            get { return selectedTagCollection; }
-            set { selectedTagCollection = value; }
+            get
+            { 
+                return selectedTagCollection;
+            }
+            set 
+            { 
+
+                selectedTagCollection = value; 
+            }
         }
     }
 }

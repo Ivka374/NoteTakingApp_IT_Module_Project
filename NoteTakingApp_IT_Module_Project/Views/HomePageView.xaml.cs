@@ -11,6 +11,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
         public static bool editing;
 
         WindowManager _windowManager = new WindowManager();
+
         public HomePageView()
         {
             InitializeComponent();

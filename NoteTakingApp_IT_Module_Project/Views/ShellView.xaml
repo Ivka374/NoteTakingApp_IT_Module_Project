@@ -30,6 +30,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
+            
             <!-- Column 0 -->
             <TextBlock Text="StaveN"
                        VerticalAlignment="Center" HorizontalAlignment="Left"

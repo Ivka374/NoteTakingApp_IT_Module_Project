@@ -1,19 +1,28 @@
-﻿using System.Windows.Controls;
-using System.Windows.Input;
+﻿using Caliburn.Micro;
+using NoteTakingApp_IT_Module_Project.Models;
+using NoteTakingApp_IT_Module_Project.ViewModels;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
 
     public partial class TagPageView : UserControl
     {
+        WindowManager _windowManager = new WindowManager();
+
         public TagPageView()
         {
             InitializeComponent();
         }
 
-        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Note_Click(object sender, RoutedEventArgs e)
         {
-            //similar to the others, opens the not that has been clicked on
+            Button clickedNote = sender as Button;
+            var dataObject = clickedNote.DataContext as NoteModel;
+            AddAndEditNoteViewModel.EditingDataContext = dataObject;
+
+            _windowManager.ShowDialogAsync(new AddAndEditNoteViewModel());
         }
     }
 }
