@@ -247,6 +247,7 @@
                             </ItemsControl.ItemTemplate>
 
                         </ItemsControl>
+                        
                     </StackPanel>
                 </DockPanel>
             </ScrollViewer>
@@ -257,7 +258,7 @@
                         HorizontalAlignment="Right"
                         Margin="10,10,20,0">
 
-                <!-- Fvourited Note Button -->
+                <!-- Favourited Note Button -->
                 <local:ImageSwappingToggleButton x:Name="favoriteButton" 
                                                  VerticalAlignment="Center"
                     IsChecked="False"
