@@ -70,8 +70,6 @@ namespace NoteTakingApp_IT_Module_Project.Views
             AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
             AddAndEditNoteView.thisInstance.Close();
-            AddAndEditNoteViewModel.EditingDataContext.Content = null;
-            AddAndEditNoteViewModel.EditingDataContext.NoteTags = null;
         }
 
         /// <summary>
@@ -94,8 +92,6 @@ namespace NoteTakingApp_IT_Module_Project.Views
             AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
             AddAndEditNoteView.thisInstance.Close();
-            AddAndEditNoteViewModel.EditingDataContext.Content = null;
-            AddAndEditNoteViewModel.EditingDataContext.NoteTags = null;
         }
         #endregion
 
