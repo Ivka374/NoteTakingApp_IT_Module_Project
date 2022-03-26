@@ -53,6 +53,8 @@ namespace NoteTakingApp_IT_Module_Project.Views
                 noteData.DeleteNote(AddAndEditNoteViewModel.EditingDataContext.ID);
                 HomePageView.editing = false;
             }
+            AddAndEditNoteViewModel.EditingDataContext.Content = null;
+            AddAndEditNoteViewModel.EditingDataContext.NoteTags = null;
             AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
         }
@@ -127,6 +129,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
             {
                 //gives error :/
                 TagModel newTag = new TagModel() { Name = tagTextBox.Text };
+                ShellViewModel.Tags.Add(newTag);
                 AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(newTag);
                 ShellViewModel.Tags.Add(newTag);
             }
