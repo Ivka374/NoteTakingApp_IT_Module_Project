@@ -7,6 +7,8 @@ using Manufaktura.Controls.Model;
 using NoteTakingApp_IT_Module_Project.Data;
 using System.Text.RegularExpressions;
 using NoteTakingApp_IT_Module_Project.Models;
+using System.Linq;
+using System.Collections;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
@@ -32,7 +34,6 @@ namespace NoteTakingApp_IT_Module_Project.Views
 
             //all colors now have onclick events
             AddingHandlersToColors();
-
             _windowManager = new WindowManager();
         }
 
@@ -120,7 +121,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
         //attempts to add a tag to a note
         private void tagCreateMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            var regex = new Regex(@"[^a-zA-Z0-9/s]");
+            var regex = new Regex(@"[^a-zA-Z0-9\s]");
             if (regex.IsMatch(tagTextBox.Text))
             {
                 MessageBox.Show("You may not use special characters in your tags.", "Cannot create tag!", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -128,11 +129,20 @@ namespace NoteTakingApp_IT_Module_Project.Views
             }
             else
             {
-                //gives error :/
                 TagModel newTag = new TagModel() { Name = tagTextBox.Text };
-                ShellViewModel.Tags.Add(newTag);
-                AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(newTag);
-                ShellViewModel.Tags.Add(newTag);
+                if (ShellViewModel.Tags.Any(p => p.Name == tagTextBox.Text))
+                {
+                    MessageBox.Show("You already have a tag with this name.", "Cannot create tag!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    tagTextBox.Text = "Create New Tag";
+                }
+                else
+                {
+                    ShellViewModel.Tags.Add(newTag);
+                    //NoteData noteData = new NoteData();
+                    //noteData.AddTag(newTag);
+                    //noteData.AddTagToNote(newTag, AddAndEditNoteViewModel.EditingDataContext);
+                    AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(newTag);
+                }
             }
         }
         #endregion

@@ -210,10 +210,10 @@
                                 </MenuItem.Header>
                             </MenuItem>
 
-                            <ItemsControl ItemsSource="{Binding Source={StaticResource shellViewModelDummy}, Path=Tags}">
+                            <ItemsControl x:Name="tagsList" ItemsSource="{Binding Source={StaticResource shellViewModelDummy}, Path=Tags}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <CheckBox Margin="3">
+                                        <CheckBox x:Name="tagCheckBox" Margin="3">
                                             <TextBlock Text="{Binding Name}"
                                                                FontFamily="/Font/#Poppins"
                                                                FontSize="14"
