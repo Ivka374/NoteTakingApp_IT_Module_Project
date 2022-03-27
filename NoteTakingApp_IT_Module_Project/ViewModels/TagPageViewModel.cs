@@ -32,7 +32,6 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
             }
             set 
             { 
-
                 selectedTagCollection = value; 
             }
         }
