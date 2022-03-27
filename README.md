@@ -43,18 +43,18 @@ The frame surrounding the contents of whatever selection has been made contains:
 - A button for creating a new note
 - A selection of custom buttons in the upper-right-hand corener, replacing the standard buttons for minimization, maximization and closing a window
 ### Home page
-The home page displays all the tags stored inside the database and allows the user to select and open them in order to edit each individual note.
+The home page displays all the notes stored inside the database and allows the user to select and open them in order to edit each individual note.
 ### Favourites page
-Has the same functionality as the home page accept that it only shows the tags that have been marked as favourite
+Has the same functionality as the home page except that it only shows the notes that have been marked as favourite.
 ### Tag view page
-Again, similar to the home page, but its title changes depending on the selected tag and the contents correspond to notes that have that same tag
+Again, similar to the home page, but its title changes depending on the selected tag and the content corresponds to notes that have that same tag.
 ### Note view window
-This window is opened either when a new tag is being created, in which case its contents are black and the background is set to the default,
-or when a note is selected and opened, in which case, the window is populated with the date from said note.  
+This window is opened either when a new note is being created, in which case its contents are blank and the background is set to the default,
+or when a note is selected and opened, in which case, the window is populated with the data from said note.  
 The background also changes dynamically. Tags can also be adjusted and altered, as well as created.
 ### Warning winow
 In oreder to exit from the note view window the user has to either delete the note through the settings or press 'Escape'
-When the button is pressed this window appears, askin whether the user wants to save any changes made to the note.
+When the button is pressed this window appears, asking whether the user wants to save any changes made to the note.
 It offers the option to save the file and exit it, simply exit without saving or cancel out of the operation and contionue editing the note.
 ### Everything else
 All the other classes and structures are meant to enable the previously mentioned classes to perform their job.
@@ -98,7 +98,7 @@ As previously mentioned, the goal from the start was to enable the user to add m
 За библиотеките, позволяващи създаването и изобразяването на петолиния, не съществъва почти никаква формална документация или друг вид информазия. Това доведе до отлагането на имплементацията на тази функционалност до бъдещи версии на приложението въпреки времето прекарано в пручването на темата.  
 Друг проблем, който затрудни процеса на работа беше невъзможността за връзка с базата данни до един много късен етап в разработката. Това доведе до доста забавяния в процеса на работа и беше от огромно значение за завършването на проекта.  
 Последно, но не и по важност, беше предизвикателството при употребата на WPF. Като човек, който е имал някакво малко количество опит за работа с JavaFX и съответно .xml файлове, разработчика на графичния интерфейс беше решил да изпробва подобен начин на решение. Прекалено късно след началото обаче беше станало ясно, че това е много по-голямо предизвикателство от очакваното.  
-Въпреки всичко след упорит и дълъг труд и благодарение на екипна работа, бе завършена работеща и разбираема версия на приложението.
+Въпреки всичко след упорит и дълъг труд и благодарение на  добра екипна работа, бе завършена работеща и разбираема версия на приложението.
 ### Езици за програмиране
 - C#
 - MySQL
@@ -111,23 +111,22 @@ As previously mentioned, the goal from the start was to enable the user to add m
 - Бутон за създаване на нова бележка
 - Редица от оригинални бутони, заместващи фунцоналността на стандартните за затваряне, максимизиране и минимизиране на прозореца
 ### Home page
-The home page displays all the tags stored inside the database and allows the user to select and open them in order to edit each individual note.
+Изобразява всички бележки, намиращи се в базата данни и позволява на потребителя да селектра бележки и да ги отваря, за да променя съдържанието им.
 ### Favourites page
-Has the same functionality as the home page accept that it only shows the tags that have been marked as favourite
+Има същата функционалност сразликата, че изобразява само бележките, които са отбелязани като любими.
 ### Tag view page
-Again, similar to the home page, but its title changes depending on the selected tag and the contents correspond to notes that have that same tag
+Отново с подобна функционалност, но този път и заглавието се променя така, че да отговаря на селектирания таг, а съдържанието изобразява бележките, в които се намира той.
 ### Note view window
-This window is opened either when a new tag is being created, in which case its contents are black and the background is set to the default,
-or when a note is selected and opened, in which case, the window is populated with the date from said note.  
-The background also changes dynamically. Tags can also be adjusted and altered, as well as created.
+Този прозорец се отваря в два случая. Единият е когато се създава нова бележка. Тогава Той се отваря с празни полета и дефолтен фон. Другият е когато се отваря съществуваща бележка. В такъв случай прозореца се популира с данните на съответната бележка.  
+Фонът също може да се променя динамично. Таговете също могат да бъдат променяни.
 ### Warning winow
-In oreder to exit from the note view window the user has to either delete the note through the settings or press 'Escape'
-When the button is pressed this window appears, askin whether the user wants to save any changes made to the note.
-It offers the option to save the file and exit it, simply exit without saving or cancel out of the operation and contionue editing the note.
+За да излезе потребителят от вече отворена бележка, той трябва или да я изтрие, или да натисне 'Escape' бутона.
+Когато бутонът бъде натиснат се появява прозорец, който иска потвърждение относно това, какво да прави с промените по бележката.
+Предоставя се опцията да се затвори прозореца и да се запазят промените, да се затвори прозореца без да се запазват промените или да се прекрати затварянето на бележката.
 ### Всичко останало
-All the other classes and structures are meant to enable the previously mentioned classes to perform their job.
+Всички останали класове и структури съществуват с цел осъществяване фунциите на описаните по-горе функции.
 ## Бъдещо развитие
-As previously mentioned, the goal from the start was to enable the user to add musical scores to their notes. Due to various restrictions that was not possible for theis version. The goal for the future is to utilise the groundwork that has been laid for that functionality.
+Като вече беше споменато, в началото целта беше да се предостваи въможността потребителя да собавя петолиния към своите бележки. Поради определени ограничения това не беше възможно за тази версия. Целта за бъдещото развитие на този проект е създаването на именно тзаи функционалност за бъдещите версии на приложението с помощта на вече създадените й основи.
 ## (Основни) Източници
 - Google
 - Stack Overflow
