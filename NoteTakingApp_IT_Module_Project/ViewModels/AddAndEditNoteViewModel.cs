@@ -1,7 +1,9 @@
 ﻿using Caliburn.Micro;
 using NoteTakingApp_IT_Module_Project.Models;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace NoteTakingApp_IT_Module_Project.ViewModels
 {
@@ -9,6 +11,16 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
     {
         private static NoteModel editingDataContext;
 
+        #region Property change handler
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+        #endregion
         /// <summary>
         /// The data context for the note that was opened
         /// </summary>
@@ -28,8 +40,10 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         {
             get
             {
+                NotifyPropertyChanged();
                 return ShellViewModel.Tags.Select(parent => new CheckBoxTag(parent.Name, parent.ID)).ToList();
             }
+           
         }
     }
 
@@ -38,6 +52,16 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
     /// </summary>
     public class CheckBoxTag : TagModel
     {
+        #region Property change handler
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+        #endregion
         #region Constructors
         public CheckBoxTag()
         {
@@ -59,13 +83,16 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
             }
             set
             {
+
                 if (value)
                 {
                     AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(ShellViewModel.Tags.First(t => t.Name == this.Name));
+                    NotifyPropertyChanged();
                 } else
                 {
                     var tag = AddAndEditNoteViewModel.EditingDataContext.NoteTags.First(t => t.Name == this.Name);
                     AddAndEditNoteViewModel.EditingDataContext.NoteTags.Remove(tag);
+                    NotifyPropertyChanged();
                 }
                 
             }
