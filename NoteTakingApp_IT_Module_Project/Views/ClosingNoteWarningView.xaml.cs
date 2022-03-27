@@ -1,6 +1,8 @@
 ﻿using NoteTakingApp_IT_Module_Project.Data;
 using NoteTakingApp_IT_Module_Project.Models;
 using NoteTakingApp_IT_Module_Project.ViewModels;
+
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -20,8 +22,17 @@ namespace NoteTakingApp_IT_Module_Project.Views
 
             //makes window draggable
             Mouse.AddMouseDownHandler(this, Window_MouseDown);
+            NoteData noteData = new NoteData();
+            foreach (TagModel tagModel in noteData.GetAllTags())
+            {
+                List<NoteModel> listForCheck = null;
+                listForCheck = noteData.GetNotesForTag(tagModel.ID);
+                if (listForCheck.Count == 0)
+                {
+                    noteData.DeleteTag(tagModel.ID);
+                }
+            }
         }
-
         #region Button handlers
 
         /// <summary>
@@ -67,8 +78,6 @@ namespace NoteTakingApp_IT_Module_Project.Views
             }
 
             //clears the data context for the view
-            AddAndEditNoteViewModel.EditingDataContext.Content = null;
-            AddAndEditNoteViewModel.EditingDataContext.NoteTags = null;
             AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
             AddAndEditNoteView.thisInstance.Close();
@@ -91,8 +100,6 @@ namespace NoteTakingApp_IT_Module_Project.Views
         /// <param name="e"></param>
         private void CloseWithoutSave_Click(object sender, RoutedEventArgs e)
         {
-            AddAndEditNoteViewModel.EditingDataContext.Content = null;
-            AddAndEditNoteViewModel.EditingDataContext.NoteTags = null;
             AddAndEditNoteViewModel.EditingDataContext = null;
             this.Close();
             AddAndEditNoteView.thisInstance.Close();
