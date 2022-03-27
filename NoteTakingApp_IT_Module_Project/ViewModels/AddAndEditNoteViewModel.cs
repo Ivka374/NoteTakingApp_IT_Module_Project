@@ -21,6 +21,7 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
             }
         }
         #endregion
+
         /// <summary>
         /// The data context for the note that was opened
         /// </summary>
@@ -62,6 +63,7 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
             }
         }
         #endregion
+
         #region Constructors
         public CheckBoxTag()
         {
@@ -86,10 +88,12 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
 
                 if (value)
                 {
+                    //if the checkBox gets checked, then add the tag from the full list to list of tags for the note
                     AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(ShellViewModel.Tags.First(t => t.Name == this.Name));
                     NotifyPropertyChanged();
                 } else
                 {
+                    //if the chackBox is not checked, then remove said tag from the list of tags for the note
                     var tag = AddAndEditNoteViewModel.EditingDataContext.NoteTags.First(t => t.Name == this.Name);
                     AddAndEditNoteViewModel.EditingDataContext.NoteTags.Remove(tag);
                     NotifyPropertyChanged();

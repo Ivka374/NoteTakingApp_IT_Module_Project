@@ -10,8 +10,20 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
     public class TagPageViewModel : Screen
     {
         private static List<NoteModel> selectedTagCollection;
+
         /// <summary>
         /// The name of the tag, the notes of which are displayed
+        /// </summary>
+        public static string SelectedTagName
+        {
+            get
+            {
+                return ShellViewModel.SelectedTag.Name;
+            }
+        }
+
+        /// <summary>
+        /// The ID of the tag, the notes of which are displayed
         /// </summary>
         public static int SelectedTagNameID
         {

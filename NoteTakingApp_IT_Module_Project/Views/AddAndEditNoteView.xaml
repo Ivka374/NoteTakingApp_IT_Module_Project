@@ -264,7 +264,7 @@
                 <!-- Favourited Note Button -->
                 <local:ImageSwappingToggleButton x:Name="favoriteButton" 
                                                  VerticalAlignment="Center"
-                    IsChecked="False"
+                    IsChecked="{Binding EditingDataContext.IsFavourite}"
                     IsEnabled="True"
                     EnabledChecked="/Images/purpleStar.png"
                     EnabledUnckecked="/Images/whiteStar.png"
@@ -298,11 +298,11 @@
                             </ContextMenu.Resources>
 
                             <!-- Adding Score Button-->
-                            <!--<MenuItem x:Name="addScoreMenuItem" Header="Add/Edit Score">
+                            <MenuItem x:Name="addScoreMenuItem" Header="Add/Edit Score">
                                 <MenuItem.Icon>
                                     <Image Source="/Images/musicNotation.png"/>
                                 </MenuItem.Icon>
-                            </MenuItem>-->
+                            </MenuItem>
 
                             <!-- Changing colour button -->
                             <MenuItem x:Name="changeColourMenuItem" Header="Change Colour">
