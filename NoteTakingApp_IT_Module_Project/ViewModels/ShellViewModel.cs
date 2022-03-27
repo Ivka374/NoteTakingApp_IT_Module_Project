@@ -4,12 +4,24 @@ using NoteTakingApp_IT_Module_Project.Data;
 using NoteTakingApp_IT_Module_Project.Models;
 using NoteTakingApp_IT_Module_Project.Views;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace NoteTakingApp_IT_Module_Project.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
         WindowManager _windowManager;
+
+        #region Property change handler
+        public static event PropertyChangedEventHandler StaticPropertyChanged;
+
+        private static void NotifyStaticPropertyChanged(
+            [CallerMemberName] string propertyName = null)
+        {
+            StaticPropertyChanged?.Invoke(null, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
 
         #region Tag management
 
@@ -27,6 +39,7 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
             set
             {
                 tags = value;
+                NotifyStaticPropertyChanged("Tags");
             }
         }
 
