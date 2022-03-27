@@ -74,6 +74,14 @@ namespace NoteTakingApp_IT_Module_Project.Views
             {
                 NoteData noteData = new NoteData();
                 noteData.UpdateNote(note);
+                foreach(TagModel tag in noteData.GetNoteById(note.ID).NoteTags)
+                {
+                    noteData.RemoveTagToNote(tag, note);
+                }
+                foreach(TagModel tag in AddAndEditNoteViewModel.EditingDataContext.NoteTags)
+                {
+                    noteData.AddTagToNote(tag, note);
+                }
                 HomePageView.editing = false;
             }
             else
