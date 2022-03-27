@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+
+using NoteTakingApp_IT_Module_Project.Data;
 using NoteTakingApp_IT_Module_Project.Models;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,14 +89,16 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
                 if (value)
                 {
                     AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(ShellViewModel.Tags.First(t => t.Name == this.Name));
-                    NotifyPropertyChanged();
+                    NoteData noteData = new NoteData();
+                    noteData.AddTagToNote(ShellViewModel.Tags.First(t => t.Name == this.Name), AddAndEditNoteViewModel.EditingDataContext);
                 } else
                 {
                     var tag = AddAndEditNoteViewModel.EditingDataContext.NoteTags.First(t => t.Name == this.Name);
                     AddAndEditNoteViewModel.EditingDataContext.NoteTags.Remove(tag);
-                    NotifyPropertyChanged();
+                    NoteData noteData = new NoteData();
+                    noteData.RemoveTagToNote(tag, AddAndEditNoteViewModel.EditingDataContext);
                 }
-                
+                NotifyPropertyChanged();
             }
         }
     }
