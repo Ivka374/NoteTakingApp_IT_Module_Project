@@ -68,7 +68,6 @@ namespace NoteTakingApp_IT_Module_Project.Views
             {
                 note.IsFavourite = false;
             }
-
             //checks if note has been edited
             if (HomePageView.editing == true)
             {
