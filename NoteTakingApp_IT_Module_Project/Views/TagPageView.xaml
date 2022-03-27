@@ -38,6 +38,25 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Button>
+
+                            <!-- This partly refuses to work for some reason -->
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Style.Setters>
+                                        <EventSetter Event="Button.Click" Handler="Note_Click" />
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Setter Property="BorderBrush" Value="Transparent"/>
+                                    </Style.Setters>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseCaptured" Value="True">
+                                            <Setter Property="Background" Value="#5D4B89"/>
+                                            <Setter Property="BorderBrush" Value="#423860"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <!-- Up to here -->
+
                             <Border Margin="10" MinHeight="100" Width="200"
                             CornerRadius="10"
                             Style="{StaticResource NoteColoursChangeTheme}">
@@ -81,15 +100,15 @@
                                                            HorizontalAlignment="Center"/>
 
                                                     </Border>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+
+                                        </ItemsControl>
+
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
                         </Button>
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-
-                                    </ItemsControl>
-
-                                </StackPanel>
-                            </Grid>
-                        </Border>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
