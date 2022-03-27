@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+
+using NoteTakingApp_IT_Module_Project.Data;
 using NoteTakingApp_IT_Module_Project.Models;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -90,15 +92,17 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
                 {
                     //if the checkBox gets checked, then add the tag from the full list to list of tags for the note
                     AddAndEditNoteViewModel.EditingDataContext.NoteTags.Add(ShellViewModel.Tags.First(t => t.Name == this.Name));
-                    NotifyPropertyChanged();
+                    NoteData noteData = new NoteData();
+                    noteData.AddTagToNote(ShellViewModel.Tags.First(t => t.Name == this.Name), AddAndEditNoteViewModel.EditingDataContext);
                 } else
                 {
                     //if the chackBox is not checked, then remove said tag from the list of tags for the note
                     var tag = AddAndEditNoteViewModel.EditingDataContext.NoteTags.First(t => t.Name == this.Name);
                     AddAndEditNoteViewModel.EditingDataContext.NoteTags.Remove(tag);
-                    NotifyPropertyChanged();
+                    NoteData noteData = new NoteData();
+                    noteData.RemoveTagToNote(tag, AddAndEditNoteViewModel.EditingDataContext);
                 }
-                
+                NotifyPropertyChanged();
             }
         }
     }

@@ -3,6 +3,7 @@ using NoteTakingApp_IT_Module_Project.Models;
 using NoteTakingApp_IT_Module_Project.ViewModels;
 
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -11,6 +12,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
 {
     public partial class ClosingNoteWarningView : Window
     {
+        public List<TagModel> tagStoring;
         public ClosingNoteWarningView()
         {
             InitializeComponent();
@@ -23,6 +25,9 @@ namespace NoteTakingApp_IT_Module_Project.Views
             //makes window draggable
             Mouse.AddMouseDownHandler(this, Window_MouseDown);
             NoteData noteData = new NoteData();
+
+
+            //this only updates each app reset
             foreach (TagModel tagModel in noteData.GetAllTags())
             {
                 List<NoteModel> listForCheck = null;
@@ -69,6 +74,14 @@ namespace NoteTakingApp_IT_Module_Project.Views
             {
                 NoteData noteData = new NoteData();
                 noteData.UpdateNote(note);
+                foreach(TagModel tag in noteData.GetNoteById(note.ID).NoteTags)
+                {
+                    noteData.RemoveTagToNote(tag, note);
+                }
+                foreach(TagModel tag in AddAndEditNoteViewModel.EditingDataContext.NoteTags)
+                {
+                    noteData.AddTagToNote(tag, note);
+                }
                 HomePageView.editing = false;
             }
             else
