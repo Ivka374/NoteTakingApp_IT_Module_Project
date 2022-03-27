@@ -44,7 +44,7 @@ The frame surrounding the contents of whatever selection has been made contains:
 - A selection of custom buttons in the upper-right-hand corener, replacing the standard buttons for minimization, maximization and closing a window
 ### Home page
 The home page displays all the notes stored inside the database and allows the user to select and open them in order to edit each individual note.
-### Favourites page
+### Favourites page - not finished
 Has the same functionality as the home page except that it only shows the notes that have been marked as favourite.
 ### Tag view page
 Again, similar to the home page, but its title changes depending on the selected tag and the content corresponds to notes that have that same tag.
@@ -81,7 +81,7 @@ As previously mentioned, the goal from the start was to enable the user to add m
   Слой за данни - Васил Кръстенов.
 ### Библиотеки
 - Caliburn.Micro (by Nigel Sampson, Rob Eisenberg, Thomas Ibel, Marco Amendola, Chin Bae, Ryan Cromwell, Matt Hidinger, Ken Tucker)
-- Calibur.Micro.Core (by the creators of Caliburn.Micro)
+- Caliburn.Micro.Core (by the creators of Caliburn.Micro)
 - EntityFramework (by Microsoft)
 - MySql.Data (by Oracle)
 - Newtonsoft.Json (by James Newton-King)
@@ -95,7 +95,7 @@ As previously mentioned, the goal from the start was to enable the user to add m
 - github.com and Git Bash
 - Pichion
 ### Ниво на сложност
-За библиотеките, позволяващи създаването и изобразяването на петолиния, не съществъва почти никаква формална документация или друг вид информазия. Това доведе до отлагането на имплементацията на тази функционалност до бъдещи версии на приложението въпреки времето прекарано в пручването на темата.  
+За библиотеките, позволяващи създаването и изобразяването на петолиния, не съществъва почти никаква формална документация или друг вид информация. Това доведе до отлагането на имплементацията на тази функционалност до бъдещи версии на приложението въпреки времето прекарано в пручването на темата.  
 Друг проблем, който затрудни процеса на работа беше невъзможността за връзка с базата данни до един много късен етап в разработката. Това доведе до доста забавяния в процеса на работа и беше от огромно значение за завършването на проекта.  
 Последно, но не и по важност, беше предизвикателството при употребата на WPF. Като човек, който е имал някакво малко количество опит за работа с JavaFX и съответно .xml файлове, разработчика на графичния интерфейс беше решил да изпробва подобен начин на решение. Прекалено късно след началото обаче беше станало ясно, че това е много по-голямо предизвикателство от очакваното.  
 Въпреки всичко след упорит и дълъг труд и благодарение на  добра екипна работа, бе завършена работеща и разбираема версия на приложението.
@@ -112,7 +112,7 @@ As previously mentioned, the goal from the start was to enable the user to add m
 - Редица от оригинални бутони, заместващи фунцоналността на стандартните за затваряне, максимизиране и минимизиране на прозореца
 ### Home page
 Изобразява всички бележки, намиращи се в базата данни и позволява на потребителя да селектра бележки и да ги отваря, за да променя съдържанието им.
-### Favourites page
+### Favourites page - незаеършена
 Има същата функционалност сразликата, че изобразява само бележките, които са отбелязани като любими.
 ### Tag view page
 Отново с подобна функционалност, но този път и заглавието се променя така, че да отговаря на селектирания таг, а съдържанието изобразява бележките, в които се намира той.
