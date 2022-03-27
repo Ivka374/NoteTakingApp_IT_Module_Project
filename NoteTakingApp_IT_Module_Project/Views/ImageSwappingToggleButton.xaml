@@ -7,9 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <ToggleButton Background="Transparent" BorderBrush="Transparent"
-                              IsChecked='{Binding RelativeSource=
-                    {RelativeSource FindAncestor, AncestorType=
-                    {x:Type ToggleButton} }, Path=IsChecked}'>
+                              IsChecked="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=IsChecked, Mode=TwoWay}">
         <Image x:Name="FavouritesStar">
             <Image.Style>
                 <Style TargetType="{x:Type Image}">

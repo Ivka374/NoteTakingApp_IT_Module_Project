@@ -2,7 +2,7 @@
 
 using NoteTakingApp_IT_Module_Project.Data;
 using NoteTakingApp_IT_Module_Project.Models;
-
+using NoteTakingApp_IT_Module_Project.Views;
 using System.Collections.Generic;
 
 namespace NoteTakingApp_IT_Module_Project.ViewModels
@@ -68,12 +68,12 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         }
 
         /// <summary>
-        /// Loads FavouritesPageView user control
+        /// Loads FavouritesPageView user control (data updates to be made)
         /// </summary>
-        public void LoadFavouritesPage()
-        {
-            ActivateItemAsync(new FavouritesPageViewModel());
-        }
+        //public void LoadFavouritesPage()
+        //{
+        //    ActivateItemAsync(new FavouritesPageViewModel());
+        //}
 
         /// <summary>
         /// Loads TagPageView user control
@@ -91,7 +91,7 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         {
             NoteModel newNote = new NoteModel();
             AddAndEditNoteViewModel.EditingDataContext = newNote;
-
+            HomePageView.editing = false;
             _windowManager.ShowDialogAsync(new AddAndEditNoteViewModel());
         }
         

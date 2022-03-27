@@ -1,12 +1,25 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace NoteTakingApp_IT_Module_Project.Views
 {
-    public partial class ImageSwappingToggleButton : UserControl
+    public partial class ImageSwappingToggleButton : UserControl, INotifyPropertyChanged
     {
+        #region Property change handler
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+        #endregion
         public ImageSwappingToggleButton()
         {
             InitializeComponent();
@@ -82,13 +95,13 @@ namespace NoteTakingApp_IT_Module_Project.Views
         public static readonly DependencyProperty IsCheckedProperty =
             DependencyProperty.Register(
             "IsChecked",
-            typeof(Boolean),
+            typeof(bool),
             typeof(ImageSwappingToggleButton),
             new PropertyMetadata(onCheckedChangedCallback));
 
         public bool IsChecked
         {
-            get { return (bool)GetValue(IsCheckedProperty); }
+            get { return (bool)GetValue(IsCheckedProperty);}
             set { if (value != IsChecked) SetValue(IsCheckedProperty, value); }
         }
 

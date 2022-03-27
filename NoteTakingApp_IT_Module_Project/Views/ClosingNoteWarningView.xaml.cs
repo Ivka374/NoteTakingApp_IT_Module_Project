@@ -3,7 +3,6 @@ using NoteTakingApp_IT_Module_Project.Models;
 using NoteTakingApp_IT_Module_Project.ViewModels;
 
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -60,14 +59,14 @@ namespace NoteTakingApp_IT_Module_Project.Views
             note.Content = noteContents;
 
             //check if note is set as favourite
-            if (AddAndEditNoteView.thisInstance.favoriteButton.IsChecked == true)
-            {
-                note.IsFavourite = true;
-            }
-            else
-            {
-                note.IsFavourite = false;
-            }
+            //if (AddAndEditNoteView.thisInstance.favoriteButton.IsChecked == true)
+            //{
+            //    note.IsFavourite = true;
+            //}
+            //else
+            //{
+            //    note.IsFavourite = false;
+            //}
 
             //checks if note has been edited
             if (HomePageView.editing == true)

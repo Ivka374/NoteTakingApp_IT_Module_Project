@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using MySql.Data;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace NoteTakingApp_IT_Module_Project.Data
 {
@@ -11,7 +7,7 @@ namespace NoteTakingApp_IT_Module_Project.Data
         //CRUDUsingDBCommands Method
         //NOTE: Add Connection String ASAP!!!
         //Connection String Template: "Server=localhost; Database=databaseName; username = someUsername; password = somePassword"
-        private static string connectionString = "Server=localhost; Database=noteapp; username = root; password = 54321ati";
+        private static string connectionString = "Server=localhost; Database=noteapp; username = root; password = G$sZen+TsQT%?Q8r";
         public static MySqlConnection GetConnection()
         {
             return new MySqlConnection(connectionString);

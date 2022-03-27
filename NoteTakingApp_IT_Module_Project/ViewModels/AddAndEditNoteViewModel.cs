@@ -43,7 +43,6 @@ namespace NoteTakingApp_IT_Module_Project.ViewModels
         {
             get
             {
-                NotifyPropertyChanged();
                 return ShellViewModel.Tags.Select(parent => new CheckBoxTag(parent.Name, parent.ID)).ToList();
             }
            

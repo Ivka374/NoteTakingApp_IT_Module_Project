@@ -261,14 +261,14 @@
                         HorizontalAlignment="Right"
                         Margin="10,10,20,0">
 
-                <!-- Favourited Note Button -->
-                <local:ImageSwappingToggleButton x:Name="favoriteButton" 
+                <!-- Favourited Note Button (not finished) -->
+                <!--<local:ImageSwappingToggleButton x:Name="favoriteButton" 
                                                  VerticalAlignment="Center"
-                    IsChecked="{Binding EditingDataContext.IsFavourite}"
+                    IsChecked="{Binding EditingDataContext.IsFavourite, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                     IsEnabled="True"
                     EnabledChecked="/Images/purpleStar.png"
                     EnabledUnckecked="/Images/whiteStar.png"
-                    DisabledUnchecked="/Images/purpleStar.png"/>
+                    DisabledUnchecked="/Images/purpleStar.png"/>-->
 
                 <!-- Settings Menu Button -->
                 <Button Background="Transparent" BorderBrush="Transparent"

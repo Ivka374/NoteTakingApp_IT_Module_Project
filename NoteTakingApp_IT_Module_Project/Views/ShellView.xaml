@@ -48,12 +48,12 @@
                              FontSize="14" FontFamily="/Font/#Poppins"
                              Style="{StaticResource MenuButtonTheme}"/>
 
-                <RadioButton x:Name="LoadFavouritesPage"
+                <!--<RadioButton x:Name="LoadFavouritesPage"
                              Content="Favourites"
                              MinHeight="50"
                              Foreground="White"
                              FontSize="14" FontFamily="/Font/#Poppins"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"/>-->
 
                 <ComboBox Foreground="White"
                           MinHeight="50"
