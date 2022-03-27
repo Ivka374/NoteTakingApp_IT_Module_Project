@@ -1,5 +1,4 @@
 ﻿using Caliburn.Micro;
-
 using NoteTakingApp_IT_Module_Project.Data;
 using NoteTakingApp_IT_Module_Project.Models;
 using System.Collections.Generic;
