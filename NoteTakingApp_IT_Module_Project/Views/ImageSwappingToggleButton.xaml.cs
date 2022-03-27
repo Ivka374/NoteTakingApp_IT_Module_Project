@@ -24,7 +24,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
         {
             InitializeComponent();
         }
-
+       
         #region EnabledUncheckedProperty
         public static readonly DependencyProperty EnabledUncheckedProperty =
            DependencyProperty.Register(
@@ -80,7 +80,7 @@ namespace NoteTakingApp_IT_Module_Project.Views
         public ImageSource EnabledChecked
         {
             get { return (ImageSource)GetValue(EnabledCheckedProperty); }
-            set { SetValue(EnabledCheckedProperty, value); }
+            set { SetValue(EnabledCheckedProperty, value);  }
         }
 
         static void onEnabledCheckedChangedCallback(
