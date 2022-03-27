@@ -25,7 +25,6 @@ namespace NoteTakingApp_IT_Module_Project.Views
 
             //handles context menu
             deleteMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(deleteMenuItem_Click));
-            addScoreMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(addScoreeMenuItem_Click));
             tagCreateMenuItem.AddHandler(MenuItem.ClickEvent, new RoutedEventHandler(tagCreateMenuItem_Click));
 
             //makes window draggable

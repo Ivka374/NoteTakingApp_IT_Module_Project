@@ -37,7 +37,7 @@
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Button>
+                        <Button Click="Note_Click">
                             <Border Margin="10" MinHeight="100" Width="200"
                             CornerRadius="10"
                             Style="{StaticResource NoteColoursChangeTheme}">
@@ -81,8 +81,8 @@
                                                            HorizontalAlignment="Center"/>
 
                                                     </Border>
-                        </Button>
                                             </DataTemplate>
+                                                
                                         </ItemsControl.ItemTemplate>
 
                                     </ItemsControl>
@@ -90,6 +90,7 @@
                                 </StackPanel>
                             </Grid>
                         </Border>
+                        </Button>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
